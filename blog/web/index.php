@@ -5,9 +5,15 @@
  * Time: 14:54
  */
 
+use app\Autoloader;
+
 // load and initialize any global libraries
 require_once '../src/model.php';
 require_once '../vendor/autoload.php';
+require '../app/Autoloader.php';
+
+// load autoloader
+Autoloader::register();
 
 // load twig
 $loader = new Twig_Loader_Filesystem('../views/templates');
