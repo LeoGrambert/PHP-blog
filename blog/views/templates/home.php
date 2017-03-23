@@ -11,7 +11,7 @@ ob_start();
 
 echo $posts;
 ?>
-    Voir une page article : <a href="/blog/web/index.php/show?id=1">Cliquez ici</a> (message issu de la vue)
+    Voir une page article : <a href="/web/index.php/show?id=1">Cliquez ici</a> (message issu de la vue)
 <?php
 
 $content = ob_get_clean();
