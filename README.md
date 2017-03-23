@@ -1,4 +1,4 @@
-# formaCPMDev_Blog
+# Projet3_CPMDev
 
 Create a blog to a writter without framework or CMS
 
