@@ -1,0 +1,26 @@
+{#
+ * User: leo
+ * Date: 23/03/17
+ * Time: 15:05
+#}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jean Forteroche - {% block title %}{% endblock %}</title>
+        <link href="../../web/lib/materialize/css/materialize.min.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="container">
+            <h3>Billet simple pour l'Alaska - Blog de Jean Forteroche</h3>
+            {% block content %}
+            {% endblock %}
+            <hr>
+            <a href="/web/">Retour à l'accueil</a>
+        </div>
+
+        <script src="../../web/lib/jquery/jquery.min.js"></script>
+        <script src="../../web/lib/materialize/js/materialize.min.js"></script>
+    </body>
+</html>
