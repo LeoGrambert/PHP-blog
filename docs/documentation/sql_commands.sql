@@ -58,10 +58,12 @@ VALUES
     Mauris eu lacus vel dolor molestie tempus. Donec a sem sem. Duis ex lectus, mollis vitae sollicitudin et, vestibulum sit amet mi. Aenean venenatis consectetur massa. Phasellus risus mauris, sollicitudin at suscipit sit amet, congue et nisi. Quisque posuere tortor sagittis, eleifend libero ac, rhoncus elit. Ut egestas efficitur ipsum in semper. Ut vitae turpis ac odio convallis sollicitudin nec ac lectus.
 
     Sed eu viverra nulla, id placerat ex. Sed tellus lectus, sagittis accumsan pulvinar a, rhoncus nec ligula. Duis maximus aliquam laoreet. Duis sed velit dolor. Donec suscipit efficitur elit, a luctus urna scelerisque sit amet. Duis vel suscipit eros, vitae fermentum magna. Sed pellentesque ipsum et tincidunt lobortis. Integer id lacus sit amet justo faucibus malesuada.', 1);
+INSERT INTO Comment(article_id, author, content, report, reply)
+VALUES (1, 'Leo', 'Commentaire test', 0, 1);
 /* ---------------------------- */
 
 
 /*24.03.2017 : Add a foreign key on article_id on Comment*/
 ALTER TABLE Comment
-ADD CONSTRAINT fk_article_id FOREIGN KEY (article_id) REFERENCES Article(id);
+ADD CONSTRAINT fk_article_id FOREIGN KEY (article_id) REFERENCES Article(id) ON DELETE CASCADE;
 /* ---------------------------- */

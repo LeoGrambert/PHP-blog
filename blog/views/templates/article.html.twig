@@ -9,5 +9,12 @@
 {% block title %}Page Article{% endblock %}
 
 {% block content %}
-<p>Ceci est le template de la page article</p>
+    <p>Ceci est le template de la page article</p>
+
+    <h3>Titre de l'article : {{ article.title }}</h3>
+    <em>Date d'ajout : {{ article.dateAdd }}</em><br/>
+    <p><strong>Résumé : {{ article.summary }}</strong></p><br/>
+    <p>{{ article.content }}</p><br/><br/>
+    <em>Etat de l'article : {{ article.isPublished }}</em>
+
 {% endblock %}
