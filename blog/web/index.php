@@ -7,6 +7,7 @@
 
 use src\Autoloader;
 use src\Table\Article;
+use src\Table\Comment;
 
 // load and initialize any global libraries
 require_once '../vendor/autoload.php';
@@ -28,13 +29,16 @@ $articles = Article::getArticles();
 //query to get article by id
 $article = Article::getArticleById();
 
+//query to get all comments by article id
+$comments = Comment::getComments();
+
 // route the request internally
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 if ('/web/index.php' === $uri || '/web/' === $uri) {
     echo $twig->render('home.html.twig', ['articles'=>$articles]);
 } elseif ('/web/index.php/article' === $uri && isset($_GET['id'])) {
-    echo $twig->render('article.html.twig', ['article'=>$article]);
+    echo $twig->render('article.html.twig', ['article'=>$article, 'comments'=>$comments]);
 } elseif ('/web/index.php/admin' === $uri){
     echo $twig->render('admin.html.twig');
 } else {

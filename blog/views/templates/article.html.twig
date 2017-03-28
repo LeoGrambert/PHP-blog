@@ -17,4 +17,15 @@
     <p>{{ article.content }}</p><br/><br/>
     <em>Etat de l'article : {{ article.isPublished }}</em>
 
+    <hr>
+
+    <h5>Commentaires :</h5>
+    {% if comments %}
+        {% for comment in comments %}
+            <div><strong>{{ comment.author }}</strong>, le {{ comment.date_add }} :<br/> {{ comment.content }}</div>
+        {% endfor %}
+    {% else %}
+        <p>Pas de commentaires.</p>
+    {% endif %}
+
 {% endblock %}

@@ -32,32 +32,78 @@
       <file leaf-file-name="Article.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Table/Article.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="351">
+              <caret line="136" column="45" selection-start-line="136" selection-start-column="45" selection-end-line="136" selection-end-column="45" />
               <folding>
                 <element signature="e#7#60#0#PHP" expanded="true" />
-                <marker date="1490732089789" expanded="true" signature="1931:1952" placeholder="SELECT * FRO... Article" />
-                <marker date="1490732089789" expanded="true" signature="2199:2233" placeholder="SELECT * FRO... Article" />
+                <element signature="e#335#416#0#PHP" expanded="false" />
+                <element signature="e#459#515#0#PHP" expanded="false" />
+                <element signature="e#558#625#0#PHP" expanded="false" />
+                <element signature="e#668#730#0#PHP" expanded="false" />
+                <element signature="e#794#886#0#PHP" expanded="false" />
+                <element signature="e#929#995#0#PHP" expanded="false" />
+                <element signature="e#1061#1161#0#PHP" expanded="false" />
+                <element signature="e#1204#1270#0#PHP" expanded="false" />
+                <element signature="e#1336#1436#0#PHP" expanded="false" />
+                <element signature="e#1480#1727#0#PHP" expanded="false" />
+                <element signature="e#1798#1917#0#PHP" expanded="false" />
+                <element signature="e#1993#2173#0#PHP" expanded="false" />
+                <marker date="1490733234298" expanded="true" signature="2103:2124" placeholder="SELECT * FRO... Article" />
+                <marker date="1490733234298" expanded="true" signature="2371:2405" placeholder="SELECT * FRO... Article" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Comment.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Comment.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Table/Comment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            <state relative-caret-position="411">
+              <caret line="115" column="53" selection-start-line="115" selection-start-column="53" selection-end-line="115" selection-end-column="53" />
+              <folding>
+                <element signature="e#360#416#0#PHP" expanded="false" />
+                <element signature="e#459#525#0#PHP" expanded="false" />
+                <element signature="e#568#635#0#PHP" expanded="false" />
+                <element signature="e#678#742#0#PHP" expanded="false" />
+                <element signature="e#807#903#0#PHP" expanded="false" />
+                <element signature="e#946#1012#0#PHP" expanded="false" />
+                <element signature="e#1078#1178#0#PHP" expanded="false" />
+                <element signature="e#1221#1285#0#PHP" expanded="false" />
+                <element signature="e#1328#1425#0#PHP" expanded="false" />
+                <element signature="e#1468#1552#0#PHP" expanded="false" />
+                <element signature="e#1628#1766#0#PHP" expanded="false" />
+                <marker date="1490734443058" expanded="true" signature="1927:1936" placeholder="SELECT * FRO... Article" />
+                <marker date="1490734443058" expanded="true" signature="1927:1969" placeholder="SELECT * FRO... Comment" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="article.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/templates/article.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/templates/home.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="38" column="42" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
+            <state relative-caret-position="114">
+              <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
               <folding>
                 <element signature="e#61#80#0#PHP" expanded="true" />
               </folding>
@@ -88,13 +134,13 @@
         <option value="$PROJECT_DIR$/src/Autoloader.php" />
         <option value="$PROJECT_DIR$/src/Src.php" />
         <option value="$PROJECT_DIR$/views/templates/error404.html.twig" />
-        <option value="$PROJECT_DIR$/web/index.php" />
         <option value="$PROJECT_DIR$/app/App.php" />
-        <option value="$PROJECT_DIR$/views/templates/article.html.twig" />
         <option value="$PROJECT_DIR$/src/Table/ParentTable.php" />
         <option value="$PROJECT_DIR$/src/Database.php" />
         <option value="$PROJECT_DIR$/src/Table/Article.php" />
+        <option value="$PROJECT_DIR$/views/templates/article.html.twig" />
         <option value="$PROJECT_DIR$/src/Table/Comment.php" />
+        <option value="$PROJECT_DIR$/web/index.php" />
       </list>
     </option>
   </component>
@@ -322,16 +368,16 @@
       <workItem from="1490450666230" duration="6754000" />
       <workItem from="1490620018972" duration="610000" />
       <workItem from="1490687869016" duration="4387000" />
-      <workItem from="1490727412698" duration="3485000" />
+      <workItem from="1490727412698" duration="5948000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23810000" />
+    <option name="totallyTimeSpent" value="26273000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1423" y="24" width="1863" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12904997" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -339,7 +385,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.008237232" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26556018" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26556018" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -383,7 +429,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -393,8 +441,20 @@
           <caret line="130" column="33" selection-start-line="130" selection-start-column="33" selection-end-line="130" selection-end-column="33" />
           <folding>
             <element signature="e#7#60#0#PHP" expanded="true" />
-            <marker date="1490732089789" expanded="true" signature="1931:1952" placeholder="SELECT * FRO... Article" />
-            <marker date="1490732089789" expanded="true" signature="2199:2233" placeholder="SELECT * FRO... Article" />
+            <element signature="e#335#416#0#PHP" expanded="false" />
+            <element signature="e#459#515#0#PHP" expanded="false" />
+            <element signature="e#558#625#0#PHP" expanded="false" />
+            <element signature="e#668#730#0#PHP" expanded="false" />
+            <element signature="e#794#886#0#PHP" expanded="false" />
+            <element signature="e#929#995#0#PHP" expanded="false" />
+            <element signature="e#1061#1161#0#PHP" expanded="false" />
+            <element signature="e#1204#1270#0#PHP" expanded="false" />
+            <element signature="e#1336#1436#0#PHP" expanded="false" />
+            <element signature="e#1480#1727#0#PHP" expanded="false" />
+            <element signature="e#1798#1917#0#PHP" expanded="false" />
+            <element signature="e#1993#2173#0#PHP" expanded="false" />
+            <marker date="1490733234298" expanded="true" signature="2103:2124" placeholder="SELECT * FRO... Article" />
+            <marker date="1490733234298" expanded="true" signature="2371:2405" placeholder="SELECT * FRO... Article" />
           </folding>
         </state>
       </provider>
@@ -403,7 +463,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#360#416#0#PHP" expanded="false" />
+            <element signature="e#459#525#0#PHP" expanded="false" />
+            <element signature="e#568#635#0#PHP" expanded="false" />
+            <element signature="e#678#742#0#PHP" expanded="false" />
+            <element signature="e#807#903#0#PHP" expanded="false" />
+            <element signature="e#946#1012#0#PHP" expanded="false" />
+            <element signature="e#1078#1178#0#PHP" expanded="false" />
+            <element signature="e#1221#1285#0#PHP" expanded="false" />
+            <element signature="e#1328#1425#0#PHP" expanded="false" />
+            <element signature="e#1468#1552#0#PHP" expanded="false" />
+            <element signature="e#1628#1766#0#PHP" expanded="false" />
+            <marker date="1490734443058" expanded="true" signature="1927:1936" placeholder="SELECT * FRO... Article" />
+            <marker date="1490734443058" expanded="true" signature="1927:1969" placeholder="SELECT * FRO... Comment" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -439,8 +513,20 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#7#60#0#PHP" expanded="true" />
-            <marker date="1490732089789" expanded="true" signature="1931:1952" placeholder="SELECT * FRO... Article" />
-            <marker date="1490732089789" expanded="true" signature="2199:2233" placeholder="SELECT * FRO... Article" />
+            <element signature="e#335#416#0#PHP" expanded="false" />
+            <element signature="e#459#515#0#PHP" expanded="false" />
+            <element signature="e#558#625#0#PHP" expanded="false" />
+            <element signature="e#668#730#0#PHP" expanded="false" />
+            <element signature="e#794#886#0#PHP" expanded="false" />
+            <element signature="e#929#995#0#PHP" expanded="false" />
+            <element signature="e#1061#1161#0#PHP" expanded="false" />
+            <element signature="e#1204#1270#0#PHP" expanded="false" />
+            <element signature="e#1336#1436#0#PHP" expanded="false" />
+            <element signature="e#1480#1727#0#PHP" expanded="false" />
+            <element signature="e#1798#1917#0#PHP" expanded="false" />
+            <element signature="e#1993#2173#0#PHP" expanded="false" />
+            <marker date="1490733234298" expanded="true" signature="2103:2124" placeholder="SELECT * FRO... Article" />
+            <marker date="1490733234298" expanded="true" signature="2371:2405" placeholder="SELECT * FRO... Article" />
           </folding>
         </state>
       </provider>
@@ -459,6 +545,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -478,8 +565,20 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#7#60#0#PHP" expanded="true" />
-            <marker date="1490732089789" expanded="true" signature="1931:1952" placeholder="SELECT * FRO... Article" />
-            <marker date="1490732089789" expanded="true" signature="2199:2233" placeholder="SELECT * FRO... Article" />
+            <element signature="e#335#416#0#PHP" expanded="false" />
+            <element signature="e#459#515#0#PHP" expanded="false" />
+            <element signature="e#558#625#0#PHP" expanded="false" />
+            <element signature="e#668#730#0#PHP" expanded="false" />
+            <element signature="e#794#886#0#PHP" expanded="false" />
+            <element signature="e#929#995#0#PHP" expanded="false" />
+            <element signature="e#1061#1161#0#PHP" expanded="false" />
+            <element signature="e#1204#1270#0#PHP" expanded="false" />
+            <element signature="e#1336#1436#0#PHP" expanded="false" />
+            <element signature="e#1480#1727#0#PHP" expanded="false" />
+            <element signature="e#1798#1917#0#PHP" expanded="false" />
+            <element signature="e#1993#2173#0#PHP" expanded="false" />
+            <marker date="1490733234298" expanded="true" signature="2103:2124" placeholder="SELECT * FRO... Article" />
+            <marker date="1490733234298" expanded="true" signature="2371:2405" placeholder="SELECT * FRO... Article" />
           </folding>
         </state>
       </provider>
@@ -498,6 +597,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -529,6 +629,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -603,13 +704,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/db.php" />
-    <entry file="file://$PROJECT_DIR$/views/templates/home.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model.php" />
     <entry file="file://$PROJECT_DIR$/views/templates/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
@@ -633,23 +727,6 @@
         <state relative-caret-position="189">
           <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/templates/article.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="38" column="42" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
-          <folding>
-            <element signature="e#61#80#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -677,23 +754,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/templates/home.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/templates/article.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Table/Article.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="351">
+          <caret line="136" column="45" selection-start-line="136" selection-start-column="45" selection-end-line="136" selection-end-column="45" />
           <folding>
             <element signature="e#7#60#0#PHP" expanded="true" />
-            <marker date="1490732089789" expanded="true" signature="1931:1952" placeholder="SELECT * FRO... Article" />
-            <marker date="1490732089789" expanded="true" signature="2199:2233" placeholder="SELECT * FRO... Article" />
+            <element signature="e#335#416#0#PHP" expanded="false" />
+            <element signature="e#459#515#0#PHP" expanded="false" />
+            <element signature="e#558#625#0#PHP" expanded="false" />
+            <element signature="e#668#730#0#PHP" expanded="false" />
+            <element signature="e#794#886#0#PHP" expanded="false" />
+            <element signature="e#929#995#0#PHP" expanded="false" />
+            <element signature="e#1061#1161#0#PHP" expanded="false" />
+            <element signature="e#1204#1270#0#PHP" expanded="false" />
+            <element signature="e#1336#1436#0#PHP" expanded="false" />
+            <element signature="e#1480#1727#0#PHP" expanded="false" />
+            <element signature="e#1798#1917#0#PHP" expanded="false" />
+            <element signature="e#1993#2173#0#PHP" expanded="false" />
+            <marker date="1490733234298" expanded="true" signature="2103:2124" placeholder="SELECT * FRO... Article" />
+            <marker date="1490733234298" expanded="true" signature="2371:2405" placeholder="SELECT * FRO... Article" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Table/Comment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="411">
+          <caret line="115" column="53" selection-start-line="115" selection-start-column="53" selection-end-line="115" selection-end-column="53" />
+          <folding>
+            <element signature="e#360#416#0#PHP" expanded="false" />
+            <element signature="e#459#525#0#PHP" expanded="false" />
+            <element signature="e#568#635#0#PHP" expanded="false" />
+            <element signature="e#678#742#0#PHP" expanded="false" />
+            <element signature="e#807#903#0#PHP" expanded="false" />
+            <element signature="e#946#1012#0#PHP" expanded="false" />
+            <element signature="e#1078#1178#0#PHP" expanded="false" />
+            <element signature="e#1221#1285#0#PHP" expanded="false" />
+            <element signature="e#1328#1425#0#PHP" expanded="false" />
+            <element signature="e#1468#1552#0#PHP" expanded="false" />
+            <element signature="e#1628#1766#0#PHP" expanded="false" />
+            <marker date="1490734443058" expanded="true" signature="1927:1936" placeholder="SELECT * FRO... Article" />
+            <marker date="1490734443058" expanded="true" signature="1927:1969" placeholder="SELECT * FRO... Comment" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+          <folding>
+            <element signature="e#61#80#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

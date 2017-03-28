@@ -7,6 +7,8 @@
 
 namespace src\Table;
 
+use app\App;
+
 /**
  * Class Comment
  * @package src\Table
@@ -14,7 +16,7 @@ namespace src\Table;
 class Comment
 {
     private $id;
-    private $article_id;
+    private $article;
     private $date_add;
     private $content;
     private $author;
@@ -31,8 +33,8 @@ class Comment
     /**
      * @return mixed
      */
-    public function getArticleId(){
-        return $this->article_id;
+    public function getArticle(){
+        return $this->article;
     }
 
     /**
@@ -51,9 +53,11 @@ class Comment
 
     /**
      * @param $author
+     * @return $this
      */
     public function setAuthor($author){
         $this->author = $author;
+        return $this;
     }
 
     /**
@@ -65,9 +69,11 @@ class Comment
 
     /**
      * @param $content
+     * @return $this
      */
     public function setContent($content){
         $this->content = $content;
+        return $this;
     }
 
     /**
@@ -78,10 +84,11 @@ class Comment
     }
 
     /**
-     * 
+     * @return $this
      */
     public function newReport(){
         $this->report = $this->report++;
+        return $this;
     }
 
     /**
@@ -93,9 +100,23 @@ class Comment
 
     /**
      * @param $parent_comment_id
+     * @return $this
      */
     public function setParentCommentId($parent_comment_id){
         $this->parent_comment_id = $parent_comment_id;
+        return $this;
     }
 
+    /**
+     * @return array|mixed
+     */
+    public static function getComments(){
+        return App::getDatabase()
+            ->prepare(
+                'SELECT * FROM Comment WHERE article_id = ?',
+                [$_GET['id']],
+                __CLASS__,
+                true
+            );
+    }
 }

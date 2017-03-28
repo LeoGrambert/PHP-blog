@@ -53,9 +53,11 @@ class Article
 
     /**
      * @param $title
+     * @return $this
      */
     public function setTitle($title){
         $this->title = $title;
+        return $this;
     }
 
     /**
@@ -67,9 +69,11 @@ class Article
 
     /**
      * @param $summary
+     * @return $this
      */
     public function setSummary($summary){
         $this->summary = $summary;
+        return $this;
     }
 
     /**
@@ -81,9 +85,11 @@ class Article
 
     /**
      * @param $content
+     * @return $this
      */
     public function setContent($content){
         $this->content = $content;
+        return $this;
     }
 
     /**
@@ -102,9 +108,11 @@ class Article
 
     /**
      * @param $is_published
+     * @return $this
      */
     public function setIsPublished($is_published){
         $this->is_published = $is_published;
+        return $this;
     }
 
     /**
@@ -128,7 +136,7 @@ class Article
             ->prepare(
                 'SELECT * FROM Article WHERE id = ?',
                 [$_GET['id']], 
-                get_called_class(),
+                __CLASS__,
                 true
             );
     }
