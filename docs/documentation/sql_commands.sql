@@ -67,3 +67,15 @@ VALUES (1, 'Leo', 'Commentaire test', 0, 1);
 ALTER TABLE Comment
 ADD CONSTRAINT fk_article_id FOREIGN KEY (article_id) REFERENCES Article(id) ON DELETE CASCADE;
 /* ---------------------------- */
+
+
+/*28.03.2017 : Modification Comment table*/
+ALTER TABLE Comment
+CHANGE report report INT NOT NULL DEFAULT 0;
+/* ---------------------------- */
+
+
+/*28.03.2017 : Modification Comment table*/
+ALTER TABLE Comment
+CHANGE reply parent_comment_id INT UNSIGNED DEFAULT NULL;
+/*28.03.2017 : Modification Comment table*/
