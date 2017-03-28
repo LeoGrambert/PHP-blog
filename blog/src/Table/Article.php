@@ -8,6 +8,8 @@
 
 namespace src\Table;
 
+use app\App;
+
 /**
  * Class Article
  * @package src\Table
@@ -111,5 +113,31 @@ class Article
      */
     public function setIsPublished($is_published){
         $this->is_published = $is_published;
+    }
+
+    /**
+     * Query to get all articles
+     * @return array
+     */
+    public static function getArticles(){
+        return App::getDatabase()
+            ->query(
+                'SELECT * FROM Article',
+                __CLASS__
+            );
+    }
+
+    /**
+     * Query to get article by id
+     * @return array|mixed
+     */
+    public static function getArticleById(){
+        return App::getDatabase()
+            ->prepare(
+                'SELECT * FROM Article WHERE id = ?',
+                [$_GET['id']], 
+                __CLASS__, 
+                true
+            );
     }
 }
