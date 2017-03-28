@@ -18,9 +18,9 @@ class Article
 {
     private $id;
     private $date_add;
+    private $content;
     private $title;
     private $summary;
-    private $content;
     private $is_published;
 
     /**
@@ -42,14 +42,6 @@ class Article
      */
     public function getDateAdd(){
         return $this->date_add;
-    }
-
-    /**
-     * 
-     */
-    public function setDateAdd(){
-        $date_add = new \DateTime();
-        $this->date_add = $date_add;
     }
 
     /**
@@ -136,7 +128,7 @@ class Article
             ->prepare(
                 'SELECT * FROM Article WHERE id = ?',
                 [$_GET['id']], 
-                __CLASS__, 
+                get_called_class(),
                 true
             );
     }
