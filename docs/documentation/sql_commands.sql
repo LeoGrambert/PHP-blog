@@ -78,4 +78,10 @@ CHANGE report report INT NOT NULL DEFAULT 0;
 /*28.03.2017 : Modification Comment table*/
 ALTER TABLE Comment
 CHANGE reply parent_comment_id INT UNSIGNED DEFAULT NULL;
-/*28.03.2017 : Modification Comment table*/
+/* ---------------------------- */
+
+
+/*29.03.2017 : Add a picture column in Article table*/
+ALTER TABLE Article
+ADD COLUMN picture VARCHAR(255) DEFAULT NULL;
+/* ---------------------------- */

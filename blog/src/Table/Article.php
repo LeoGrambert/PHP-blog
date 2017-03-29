@@ -21,6 +21,7 @@ class Article
     private $content;
     private $title;
     private $summary;
+    private $picture;
     private $is_published;
 
     /**
@@ -112,6 +113,22 @@ class Article
      */
     public function setIsPublished($is_published){
         $this->is_published = $is_published;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPicture(){
+        return $this->picture;
+    }
+
+    /**
+     * @param $picture
+     * @return $this
+     */
+    public function setPicture($picture){
+        $this->picture = $picture;
         return $this;
     }
 

@@ -9,19 +9,20 @@
 {% block title %}{{ article.title }}{% endblock %}
 
 {% block content %}
-
+    <link rel="stylesheet" href="../../web/css/article.css"/>
     <div class="demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
         <main class="mdl-layout__content">
             <div class="demo-blog__posts mdl-grid">
                 <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
                     <div class="mdl-card__media mdl-color-text--grey-50">
+                        <img class="headerImg" src="{{ article.picture }}"/>
                         <h3>{{ article.title }}</h3>
                     </div>
                     <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
                         <div><i class="material-icons" role="presentation">person_pin</i></div>
                         <div>
                             <strong>Jean Forteroche</strong>
-                            <span>{{ article.dateAdd }}</span>
+                            <span>{{ article.dateAdd|date('d-m-Y') }}</span>
                         </div>
                         <div class="section-spacer"></div>
                         <div>
@@ -49,7 +50,7 @@
                                         <img src="" class="comment__avatar">
                                         <div class="comment__author">
                                             <strong>{{ comment.author }}</strong>
-                                            <span>{{ comment.dateAdd }}</span>
+                                            <span>{{ comment.dateAdd|date('d-m-Y \\à\\ H \\h\\ m') }}</span>
                                         </div>
                                     </header>
                             <div class="comment__text">{{ comment.content }}</div>
