@@ -16,7 +16,7 @@ use app\App;
 class Comment
 {
     private $id;
-    private $article;
+    private $article_id;
     private $date_add;
     private $content;
     private $author;
@@ -33,8 +33,8 @@ class Comment
     /**
      * @return mixed
      */
-    public function getArticle(){
-        return $this->article;
+    public function getArticleId(){
+        return $this->article_id;
     }
 
     /**
@@ -116,7 +116,7 @@ class Comment
                 'SELECT * FROM Comment WHERE article_id = ?',
                 [$_GET['id']],
                 __CLASS__,
-                true
+                false
             );
     }
 }
