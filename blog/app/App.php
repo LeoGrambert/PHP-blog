@@ -17,16 +17,17 @@ class App
     const DB_PASS = 'root';
     const DB_HOST = '127.0.0.1';
 
-    private static $database;
+    private static $_database;
 
     /**
+     * Use Singleton
      * @return Database
      */
     public static function getDatabase(){
-        if (self::$database == null){
-            self::$database = new Database(self::DB_NAME, self::DB_USER, self::DB_PASS, self::DB_HOST);
+        if (is_null(self::$_database)){
+            self::$_database = new Database(self::DB_NAME, self::DB_USER, self::DB_PASS, self::DB_HOST);
         }
-        return self::$database;
+        return self::$_database;
     }
 
 }
