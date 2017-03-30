@@ -139,7 +139,7 @@ class Article
     public static function getArticles(){
         return App::getDatabase()
             ->query(
-                'SELECT * FROM Article',
+                'SELECT * FROM Article ORDER BY date_add DESC',
                 __CLASS__
             );
     }

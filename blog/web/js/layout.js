@@ -14,3 +14,6 @@ Array.prototype.forEach.call(document.querySelectorAll('.mdl-card__media'), func
         location.href = target;
     });
 });
+
+// Initialize collapse button
+$(".button-collapse").sideNav();

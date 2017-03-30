@@ -1,0 +1,9 @@
+.side-nav li>a{
+    line-height: 20px;
+}
+#slide-out{
+    padding-top:2%;
+}
+.demo-blog.mdl-layout .mdl-layout__content{
+    padding-top: 100px;
+}
