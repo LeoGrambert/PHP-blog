@@ -35,6 +35,7 @@
                         </div>
                     </div>
                     <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
+                        <h5>{{ article.title }}</h5>
                         <p>{{ article.content }}</p>
                     </div>
                     <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments">
@@ -102,15 +103,17 @@
                 </div>
 
                 <nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-                    <a href="index.html" class="demo-nav__button">
+                    {% if article.id > 1 %}
+                    <a href="{{ article.urlPreviousArticle }}" class="demo-nav__button">
                         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                             <i class="material-icons">arrow_back</i>
                         </button>
-                        Newer
+                        Chapitre précédent
                     </a>
+                    {% endif %}
                     <div class="section-spacer"></div>
-                    <a href="index.html" class="demo-nav__button">
-                        Older
+                    <a href="{{ article.urlNextArticle }}" class="demo-nav__button">
+                        Chapitre suivant
                         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                             <i class="material-icons">arrow_forward</i>
                         </button>

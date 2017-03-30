@@ -38,9 +38,9 @@ if ('/web/index.php' === $uri || '/web/' === $uri) {
     //query to get article by id
     $article = Article::getArticleById();
 
-//query to get all comments by article id
+    //query to get all comments by article id
     $comments = Comment::getComments();
-    
+
     $children = [];
     foreach($comments as $k => $comment){
         if($comment->getParentCommentId() != 0){
