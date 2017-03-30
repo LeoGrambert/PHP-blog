@@ -53,7 +53,7 @@
                                         <img src="../../web/img/user.png" class="comment__avatar">
                                         <div class="comment__author">
                                             <strong>{{ comment.author }}</strong>
-                                            <span>{{ comment.dateAdd|date('d-m-Y \\à\\ H \\h\\ m') }}</span>
+                                            <span>{{ comment.dateAdd|date('d-m-Y \\à\\ H:i') }}</span>
                                         </div>
                                     </header>
                             <div class="comment__text">{{ comment.content }}</div>
