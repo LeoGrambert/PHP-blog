@@ -1,7 +1,4 @@
-@font-face {
-    font-family: 'GreatVibes';
-    src: url('../fonts/GreatVibes-Regular.otf');
-}
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
 body::before {
     background-size: cover;
     background-attachment: fixed;
@@ -17,23 +14,26 @@ body::before {
 a{
     text-decoration: none;
 }
-
+nav{
+    background-color: inherit;
+    box-shadow: none;
+}
 @media (max-width: 512px)  and (min-resolution: 1.5dppx),
 (max-width: 1024px) and (max-resolution: 1.5dppx) {
     body::before {
-        background-image: url('../img/home.png');
+        background-image: url('../img/home.jpg');
     }
 }
 @media (min-width: 513px)  and (max-width: 1024px) and (min-resolution: 1.5dppx),
 (min-width: 1025px) and (max-width: 2048px) and (max-resolution: 1.5dppx)  {
     body::before {
-        background-image: url('../img/home.png');
+        background-image: url('../img/home.jpg');
     }
 }
 @media (min-width: 1025px) and (min-resolution: 1.5dppx),
 (min-width: 2049px) and (max-resolution: 1.5dppx) {
     body::before {
-        background-image: url('../img/home.png');
+        background-image: url('../img/home.jpg');
     }
 }
 body .demo-blog {
