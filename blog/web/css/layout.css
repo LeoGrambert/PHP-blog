@@ -275,9 +275,9 @@ body .demo-blog {
     margin-bottom: 16px;
 }
 .demo-blog--blogpost .comments .comment > .comment__header > .comment__avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 24px;
+    width: 64px;
+    height: 64px;
+    border-radius: 64px;
     margin-right: 16px;
 }
 .demo-blog--blogpost .comments .comment > .comment__header > .comment__author {

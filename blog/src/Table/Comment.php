@@ -22,6 +22,7 @@ class Comment
     private $author;
     private $report;
     private $parent_comment_id;
+    private $email;
 
     /**
      * @return mixed
@@ -96,6 +97,28 @@ class Comment
      */
     public function getParentCommentId(){
         return $this->parent_comment_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail(){
+        return $this->email;
+    }
+
+    /**
+     * Method to generate Gravatar
+     * @return string
+     */
+    public function getGravatar(){
+        if ($this->email != null){
+            $email = md5($this->getEmail());
+            $email = strtolower($email);
+            $gravatar = 'https://www.gravatar.com/avatar/'.$email;
+        } else {
+            $gravatar = null;
+        }
+        return $gravatar;
     }
 
     /**
