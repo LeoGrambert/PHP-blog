@@ -18,8 +18,9 @@
             <div class="demo-blog__posts mdl-grid">
                 <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
                     <div class="mdl-card__media mdl-color-text--grey-50">
-                        <img class="headerImg" src="{{ article.picture }}"/>
-                        <h3>{{ article.title }}</h3>
+                        {% if article.picture != null %}
+                            <img class="headerImg" src="{{ article.picture }}"/>
+                        {% endif %}
                     </div>
                     <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
                         <div><i class="material-icons" role="presentation">person_pin</i></div>
@@ -56,17 +57,43 @@
                                             <span>{{ comment.dateAdd|date('d-m-Y \\à\\ H:i') }}</span>
                                         </div>
                                     </header>
-                            <div class="comment__text">{{ comment.content }}</div>
-                            <nav class="comment__actions">
-                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-                                    <i class="material-icons" role="presentation">question_answer</i><span class="visuallyhidden">Répondre</span>
-                                </button>
-                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-                                    <i class="material-icons" role="presentation">report_problem</i><span class="visuallyhidden">Signaler</span>
-                                </button>
-                            </nav>
-                        </div>
-                                <hr>
+                                    <div class="comment__text">{{ comment.content }}</div>
+                                    <nav class="comment__actions">
+                                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                                            <i class="material-icons" role="presentation">question_answer</i><span class="visuallyhidden">Répondre</span>
+                                        </button>
+                                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                                            <i class="material-icons" role="presentation">report_problem</i><span class="visuallyhidden">Signaler</span>
+                                        </button>
+                                    </nav>
+                                </div>
+                                {% if children != 0 %}
+                                    {% for child in children %}
+                                        {% if child.parentCommentId == comment.id %}
+                                            <div class="commentReply">
+                                                <div class="comment mdl-color-text--grey-700">
+                                                    <header class="comment__header">
+                                                        <img src="../../web/img/user.png" class="comment__avatar">
+                                                        <div class="comment__author">
+                                                            <strong>{{ child.author }}</strong>
+                                                            <span>{{ child.dateAdd|date('d-m-Y \\à\\ H:i') }}</span>
+                                                        </div>
+                                                    </header>
+                                                    <div class="comment__text">{{ child.content }}</div>
+                                                    <nav class="comment__actions">
+                                                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                                                            <i class="material-icons" role="presentation">question_answer</i><span class="visuallyhidden">Répondre</span>
+                                                        </button>
+                                                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                                                            <i class="material-icons" role="presentation">report_problem</i><span class="visuallyhidden">Signaler</span>
+                                                        </button>
+                                                    </nav>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                                    <hr>
                             {% endfor %}
                         {% else %}
                             <p>Pas de commentaires.</p>

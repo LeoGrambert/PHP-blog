@@ -30,7 +30,9 @@
                 {% for article in articles %}
                 <div class="mdl-card mdl-cell mdl-cell--12-col">
                     <div class="mdl-card__media mdl-color-text--grey-50">
-                        <img class="headerImg" src="{{ article.picture }}"/>
+                        {% if article.picture != null %}
+                            <img class="headerImg" src="{{ article.picture }}"/>
+                        {% endif %}
                         <h4><a href="{{ article.url }}">{{ article.title }}</a></h4>
                     </div>
                     <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
