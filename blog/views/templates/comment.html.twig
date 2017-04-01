@@ -1,6 +1,10 @@
 <div class="comment mdl-color-text--grey-700">
     <header class="comment__header">
-        <img src="../../web/img/user.png" class="comment__avatar">
+        {% if comment.gravatar == null %}
+            <img src="../../web/img/user.png" class="comment__avatar">
+        {% else %}
+            <img src="{{ comment.gravatar }}" class="comment__avatar">
+        {% endif %}
         <div class="comment__author">
             <strong>{{ comment.author }}</strong>
             <span>{{ comment.dateAdd|date('d-m-Y \\à\\ H:i') }}</span>

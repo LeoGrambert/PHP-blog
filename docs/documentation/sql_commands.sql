@@ -5,7 +5,7 @@
 CREATE TABLE Article (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     date_add DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    title VARCHAR(50) NOT NULL,
+    title VARCHAR(100) NOT NULL,
     summary VARCHAR(255) NOT NULL,
     content TEXT NOT NULL,
     is_published BOOLEAN NOT NULL DEFAULT 0,
@@ -77,11 +77,16 @@ CHANGE report report INT NOT NULL DEFAULT 0;
 
 /*28.03.2017 : Modification Comment table*/
 ALTER TABLE Comment
-CHANGE reply parent_comment_id INT UNSIGNED DEFAULT NULL;
+CHANGE reply parent_comment_id INT UNSIGNED DEFAULT 0;
 /* ---------------------------- */
 
 
 /*29.03.2017 : Add a picture column in Article table*/
 ALTER TABLE Article
 ADD COLUMN picture VARCHAR(255) DEFAULT NULL;
+/* ---------------------------- */
+
+/*01.04.2017 : Add a email column in Comment table (for gravatar)*/
+ALTER TABLE Comment
+ADD COLUMN email VARCHAR(255) DEFAULT NULL;
 /* ---------------------------- */

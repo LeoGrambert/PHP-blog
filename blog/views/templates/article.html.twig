@@ -50,28 +50,8 @@
                         </form>
                         {% if comments %}
                             {% for comment in comments %}
-                                <div class="comment mdl-color-text--grey-700">
-                                    <header class="comment__header">
-                                        {% if comment.gravatar == null %}
-                                            <img src="../../web/img/user.png" class="comment__avatar">
-                                        {% else %}
-                                            <img src="{{ comment.gravatar }}" class="comment__avatar">
-                                        {% endif %}
-                                        <div class="comment__author">
-                                            <strong>{{ comment.author }}</strong>
-                                            <span>{{ comment.dateAdd|date('d-m-Y \\à\\ H:i') }}</span>
-                                        </div>
-                                    </header>
-                                    <div class="comment__text">{{ comment.content }}</div>
-                                    <nav class="comment__actions">
-                                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-                                            <i class="material-icons" role="presentation">question_answer</i><span class="visuallyhidden">Répondre</span>
-                                        </button>
-                                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-                                            <i class="material-icons" role="presentation">report_problem</i><span class="visuallyhidden">Signaler</span>
-                                        </button>
-                                    </nav>
-                                </div>
+                                {% include 'comment.html.twig' %}
+                                {#
                                 {% if children != 0 %}
                                     {% for child in children %}
                                         {% if child.parentCommentId == comment.id %}
@@ -98,6 +78,7 @@
                                         {% endif %}
                                     {% endfor %}
                                 {% endif %}
+                                #}
                                     <hr>
                             {% endfor %}
                         {% else %}
@@ -108,20 +89,20 @@
 
                 <nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
                     {% if article.id > 1 %}
-                    <a href="{{ article.urlPreviousArticle }}" class="demo-nav__button">
-                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                            <i class="material-icons">arrow_back</i>
-                        </button>
-                        Chapitre précédent
-                    </a>
+                        <a href="{{ article.urlPreviousArticle }}" class="demo-nav__button">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                                <i class="material-icons">arrow_back</i>
+                            </button>
+                            Chapitre précédent
+                        </a>
                     {% endif %}
-                    <div class="section-spacer"></div>
-                    <a href="{{ article.urlNextArticle }}" class="demo-nav__button">
-                        Chapitre suivant
-                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                            <i class="material-icons">arrow_forward</i>
-                        </button>
-                    </a>
+                        <div class="section-spacer"></div>
+                        <a href="{{ article.urlNextArticle }}" class="demo-nav__button">
+                            Chapitre suivant
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                                <i class="material-icons">arrow_forward</i>
+                            </button>
+                        </a>
                 </nav>
             </div>
         </main>

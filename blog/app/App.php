@@ -13,8 +13,8 @@ use src\Database;
 class App
 {
     const DB_NAME = 'blog_JF';
-    const DB_USER = 'root';
-    const DB_PASS = 'root';
+    const DB_USER = 'obiwan-kenobi';
+    const DB_PASS = 'mayTheForceBeWithYou';
     const DB_HOST = '127.0.0.1';
 
     private static $_database;
