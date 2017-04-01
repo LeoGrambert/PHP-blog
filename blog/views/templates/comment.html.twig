@@ -1,3 +1,4 @@
+{# Template used to display comments #}
 <div class="comment mdl-color-text--grey-700">
     <header class="comment__header">
         {% if comment.gravatar == null %}
@@ -19,4 +20,12 @@
             <i class="material-icons" role="presentation">report_problem</i><span class="visuallyhidden">Signaler</span>
         </button>
     </nav>
+</div>
+{# Principle of Russian dolls :) #}
+<div class="commentReply">
+    {% if comment.children %}
+        {% for comment in comment.children %}
+            {% include 'comment.html.twig' %}
+        {% endfor %}
+    {% endif %}
 </div>

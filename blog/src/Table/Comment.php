@@ -142,4 +142,20 @@ class Comment
                 false
             );
     }
+
+    /*
+    public static function addComment(){
+            return App::getDatabase()
+                ->prepare(
+                    'INSERT INTO Comment SET author = ?, content = ?, parent_comment_id = ?, email = ?',
+                    ([
+                        $_POST['author'],
+                        $_POST['content'],
+                        0,
+                        $_POST['email'],
+                    ]),
+                    __CLASS__,
+                    false
+                );
+    }*/
 }

@@ -38,16 +38,24 @@ elseif ('/web/index.php/article' === $uri && isset($_GET['id'])) {
     $article = Article::getArticleById();
     //query to get all comments by article id
     $comments = Comment::getComments();
-    /*//Get replies
-    $children = [];
-    foreach($comments as $k => $comment){
-        if($comment->getParentCommentId() != 0){
-            $children[] = $comment;
+    //Get comments replies
+    $comments_by_id = [];
+    foreach($comments as $comment){
+        $comments_by_id[$comment->getId()] = $comment;
+    }
+    foreach ($comments as $k => $comment){
+        //If comment has children, we add them in an array, and we call this array in twig view with a margin-left
+        if ($comment->getParentCommentId() != 0){
+            $comments_by_id[$comment->getParentCommentId()]->children[] = $comment;
             unset($comments[$k]);
         }
-    }*/
+    }
 
-    echo $twig->render('article.html.twig', ['article'=>$article, 'comments'=>$comments, 'articles'=>$articles]);
+    echo $twig->render('article.html.twig', [
+        'article'=>$article,
+        'comments'=>$comments,
+        'articles'=>$articles,
+    ]);
 
 } elseif ('/web/index.php/admin' === $uri){
     echo $twig->render('admin.html.twig');

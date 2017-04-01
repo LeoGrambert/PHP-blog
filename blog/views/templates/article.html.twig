@@ -39,47 +39,32 @@
                         <p>{{ article.content }}</p>
                     </div>
                     <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments">
-                        <form>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <textarea rows=1 class="mdl-textfield__input" id="comment"></textarea>
-                                <label for="comment" class="mdl-textfield__label">Rejoignez la discussion...</label>
+                        <h6>Rejoignez la discussion...</h6>
+                        <form action="" id="form-comment" method="post">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input type="text" name="author" id="author" class="validate"/>
+                                    <label for="author">Votre nom</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input type="email" name="email" id="email" class="validate"/>
+                                    <label for="email">Votre e-mail</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <textarea id="content" name="content" class="materialize-textarea"></textarea>
+                                    <label for="content">Votre commentaire*</label>
+                                </div>
+                                <button type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                                    <i class="material-icons" role="presentation">check</i><span class="visuallyhidden">Ajouter un commentaire</span>
+                                </button>
                             </div>
-                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-                                <i class="material-icons" role="presentation">check</i><span class="visuallyhidden">Ajouter un commentaire</span>
-                            </button>
                         </form>
+                        <p>(* Champ obligatoire)</p>
+                        <hr>
                         {% if comments %}
                             {% for comment in comments %}
                                 {% include 'comment.html.twig' %}
-                                {#
-                                {% if children != 0 %}
-                                    {% for child in children %}
-                                        {% if child.parentCommentId == comment.id %}
-                                            <div class="commentReply">
-                                                <div class="comment mdl-color-text--grey-700">
-                                                    <header class="comment__header">
-                                                        <img src="../../web/img/user.png" class="comment__avatar">
-                                                        <div class="comment__author">
-                                                            <strong>{{ child.author }}</strong>
-                                                            <span>{{ child.dateAdd|date('d-m-Y \\à\\ H:i') }}</span>
-                                                        </div>
-                                                    </header>
-                                                    <div class="comment__text">{{ child.content }}</div>
-                                                    <nav class="comment__actions">
-                                                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-                                                            <i class="material-icons" role="presentation">question_answer</i><span class="visuallyhidden">Répondre</span>
-                                                        </button>
-                                                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-                                                            <i class="material-icons" role="presentation">report_problem</i><span class="visuallyhidden">Signaler</span>
-                                                        </button>
-                                                    </nav>
-                                                </div>
-                                            </div>
-                                        {% endif %}
-                                    {% endfor %}
-                                {% endif %}
-                                #}
-                                    <hr>
+                                <hr>
                             {% endfor %}
                         {% else %}
                             <p>Pas de commentaires.</p>
