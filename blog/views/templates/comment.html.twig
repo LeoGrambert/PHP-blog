@@ -24,8 +24,13 @@
 {# Principle of Russian dolls :) #}
 <div class="commentReply">
     {% if comment.children %}
+        {% set number = 0 %}
         {% for comment in comment.children %}
-            {% include 'comment.html.twig' %}
+            {% set number = number + 1 %}
+            {{ number }}
+            {% if number < 3 %}
+                {% include 'comment.html.twig' %}
+            {% endif %}
         {% endfor %}
     {% endif %}
 </div>
