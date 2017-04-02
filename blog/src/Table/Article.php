@@ -30,22 +30,7 @@ class Article
     public function getUrl(){
         return 'index.php/article?id='.$this->id;
     }
-
-    /**
-     * @return string
-     */
-    public function getUrlPreviousArticle(){
-        $previousId = $this->id - 1;
-        return 'article?id='.$previousId;
-    }
-
-    /**
-     * @return string
-     */
-    public function getUrlNextArticle(){
-        $nextId = $this->id+1;
-        return 'article?id='.$nextId;
-    }
+    
 
     /**
      * @return mixed

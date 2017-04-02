@@ -14,21 +14,19 @@
     <div class="comment__text">{{ comment.content }}</div>
     <nav class="comment__actions">
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">question_answer</i><span class="visuallyhidden">Répondre</span>
-        </button>
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
             <i class="material-icons" role="presentation">report_problem</i><span class="visuallyhidden">Signaler</span>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon reply">
+            <i class="material-icons" role="presentation">question_answer</i><span class="visuallyhidden">Répondre</span>
         </button>
     </nav>
 </div>
 {# Principle of Russian dolls :) #}
 <div class="commentReply">
     {% if comment.children %}
-        {% set number = 0 %}
         {% for comment in comment.children %}
             {% set number = number + 1 %}
-            {{ number }}
-            {% if number < 3 %}
+            {% if number <= 3 %}
                 {% include 'comment.html.twig' %}
             {% endif %}
         {% endfor %}

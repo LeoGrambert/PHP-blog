@@ -57,3 +57,6 @@
     right: 0;
     cursor: pointer;
 }
+.commentReply .commentReply .commentReply .reply{
+    display: none;
+}

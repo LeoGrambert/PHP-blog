@@ -34,7 +34,7 @@ if ('/web/index.php' === $uri || '/web/' === $uri) {
 }
 //If article page
 elseif ('/web/index.php/article' === $uri && isset($_GET['id'])) {
-    //query to get article by id
+    //query to get article by    id
     $article = Article::getArticleById();
     //query to get all comments by article id
     $comments = Comment::getComments();
@@ -60,7 +60,7 @@ elseif ('/web/index.php/article' === $uri && isset($_GET['id'])) {
     echo $twig->render('article.html.twig', [
         'article'=>$article,
         'comments'=>$comments,
-        'articles'=>$articles,
+        'articles'=>$articles
     ]);
 
 } elseif ('/web/index.php/admin' === $uri){
