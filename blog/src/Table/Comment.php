@@ -143,19 +143,20 @@ class Comment
             );
     }
 
-    /*
+    /**
+     * @return array|mixed
+     */
     public static function addComment(){
-            return App::getDatabase()
-                ->prepare(
-                    'INSERT INTO Comment SET author = ?, content = ?, parent_comment_id = ?, email = ?',
-                    ([
-                        $_POST['author'],
-                        $_POST['content'],
-                        0,
-                        $_POST['email'],
-                    ]),
-                    __CLASS__,
-                    false
-                );
-    }*/
+        return App::getDatabase()
+            ->prepare(
+                'INSERT INTO Comment SET author = ?, content = ?, email = ?',
+                ([
+                    $_POST['author'],
+                    $_POST['content'],
+                    $_POST['email']
+                ]),
+                __CLASS__,
+                true
+            );
+    }
 }

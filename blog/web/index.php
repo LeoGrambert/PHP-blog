@@ -50,6 +50,12 @@ elseif ('/web/index.php/article' === $uri && isset($_GET['id'])) {
             unset($comments[$k]);
         }
     }
+    /*//Add a comment
+    if(isset($_POST['content'])){
+        Comment::addComment();
+    } else {
+        var_dump(false);
+    }*/
 
     echo $twig->render('article.html.twig', [
         'article'=>$article,
