@@ -36,6 +36,14 @@ if ('/web/index.php' === $uri || '/web/' === $uri) {
 elseif ('/web/index.php/article' === $uri && isset($_GET['id'])) {
     //query to get article by id
     $article = Article::getArticleById();
+
+    //query to add a comment
+    if(isset($_POST['content']) && !empty($_POST['content']))
+    {
+        $addAComment = Comment::addComment();
+    } else {
+    }
+
     //query to get all comments by article id
     $comments = Comment::getComments();
     //Get comments replies
@@ -59,6 +67,8 @@ elseif ('/web/index.php/article' === $uri && isset($_GET['id'])) {
 
 } elseif ('/web/index.php/admin' === $uri){
     echo $twig->render('admin.html.twig');
+
+
 } else {
     header('HTTP/1.1 404 Not Found');
     echo $twig->render('error404.html.twig');
