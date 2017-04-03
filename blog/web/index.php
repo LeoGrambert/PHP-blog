@@ -5,48 +5,54 @@
  * Time: 14:54
  */
 
-use src\Autoloader;
+use app\App;
 use src\Table\Article;
 use src\Table\Comment;
 
-// load and initialize any global libraries
-require_once '../vendor/autoload.php';
-require '../src/Autoloader.php';
+/*
+ * Load what we need
+ *
+ */
+//call load app function -> initialize session and load autoloader
 require '../app/App.php';
+App::load();
+//load twig
+$twig = App::twig();
+//load class
+$articleClass = new Article();
+$commentClass = new Comment();
 
-// load autoloader
-Autoloader::register();
-
-// load twig
-$loader = new Twig_Loader_Filesystem('../views/templates');
-$twig = new Twig_Environment($loader, array(
-    'auto_reload' => true
-));
 
 //query to get all articles
-$articles = Article::getArticles();
+$articles = $articleClass->getArticles();
 
 
+/*
+ * Router
+ *
+ */
 // route the request internally
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
 //If homepage
 if ('/web/index.php' === $uri || '/web/' === $uri) {
     echo $twig->render('home.html.twig', ['articles'=>$articles]);
 }
+
 //If article page
 elseif ('/web/index.php/article' === $uri && isset($_GET['id'])) {
     //query to get article by id
-    $article = Article::getArticleById();
+    $article = $articleClass->getArticleById();
 
     //query to add a comment
     if(isset($_POST['content']) && !empty($_POST['content']))
     {
-        $addAComment = Comment::addComment();
+        $addAComment = $commentClass->addComment();
     } else {
     }
 
     //query to get all comments by article id
-    $comments = Comment::getComments();
+    $comments = $commentClass->getComments();
     //Get comments replies
     $comments_by_id = [];
     foreach($comments as $comment){
@@ -65,10 +71,11 @@ elseif ('/web/index.php/article' === $uri && isset($_GET['id'])) {
         'comments'=>$comments
     ]);
 
+//If admin page
 } elseif ('/web/index.php/admin' === $uri){
     echo $twig->render('admin.html.twig');
 
-
+//If not => 404
 } else {
     header('HTTP/1.1 404 Not Found');
     echo $twig->render('error404.html.twig');

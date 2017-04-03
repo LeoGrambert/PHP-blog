@@ -137,7 +137,7 @@ class Article
      * Query to get all articles
      * @return array
      */
-    public static function getArticles(){
+    public function getArticles(){
         return App::getDatabase()
             ->query(
                 'SELECT * FROM Article ORDER BY date_add DESC',
@@ -149,11 +149,11 @@ class Article
      * Query to get article by id
      * @return array|mixed
      */
-    public static function getArticleById(){
+    public function getArticleById(){
         return App::getDatabase()
             ->prepare(
                 'SELECT * FROM Article WHERE id = ?',
-                [$_GET['id']], 
+                [$_GET['id']],
                 __CLASS__,
                 true
             );

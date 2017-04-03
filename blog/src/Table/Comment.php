@@ -133,7 +133,7 @@ class Comment
     /**
      * @return array|mixed
      */
-    public static function getComments(){
+    public function getComments(){
         return App::getDatabase()
             ->prepare(
                 'SELECT * FROM Comment WHERE article_id = ?',
@@ -143,7 +143,10 @@ class Comment
             );
     }
 
-    public static function addComment(){
+    /**
+     * @return array|mixed
+     */
+    public function addComment(){
         return App::getDatabase()
             ->prepare(
                 'INSERT INTO Comment (article_id, author, content, parent_comment_id, email) VALUES (:article_id, :author, :content, :parent_comment_id, :e)',

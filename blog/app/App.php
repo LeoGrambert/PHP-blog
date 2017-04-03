@@ -7,6 +7,7 @@
 
 namespace app;
 
+use src\Autoloader;
 use src\Database;
 
 
@@ -28,6 +29,30 @@ class App
             self::$_database = new Database(self::DB_NAME, self::DB_USER, self::DB_PASS, self::DB_HOST);
         }
         return self::$_database;
+    }
+
+    /**
+     * Initialize session and load autoloader
+     */
+    public static function load(){
+        session_start();
+        // load and initialize any global libraries
+        require_once '../vendor/autoload.php';
+        require '../src/Autoloader.php';
+        // load autoloader
+        Autoloader::register();
+    }
+
+    /**
+     * Load Twig
+     * @return \Twig_Environment
+     */
+    public static function twig(){
+        $loader = new \Twig_Loader_Filesystem('../views/templates');
+        $twig = new \Twig_Environment($loader, array(
+            'auto_reload' => true
+        ));
+        return $twig;
     }
 
 }

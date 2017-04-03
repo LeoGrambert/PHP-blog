@@ -10,7 +10,7 @@ namespace src;
 
 /**
  * Class Autoloader
- * @package LG\app
+ * @package LG\src
  */
 class Autoloader
 {
