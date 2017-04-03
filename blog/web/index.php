@@ -26,6 +26,7 @@ $twig = new Twig_Environment($loader, array(
 //query to get all articles
 $articles = Article::getArticles();
 
+
 // route the request internally
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 //If homepage
@@ -61,8 +62,7 @@ elseif ('/web/index.php/article' === $uri && isset($_GET['id'])) {
 
     echo $twig->render('article.html.twig', [
         'article'=>$article,
-        'comments'=>$comments,
-        'articles'=>$articles
+        'comments'=>$comments
     ]);
 
 } elseif ('/web/index.php/admin' === $uri){
