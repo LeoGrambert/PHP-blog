@@ -51,7 +51,7 @@ class Controller
         {
             $this->commentClass->addComment();
         }
-
+        
         //query to get all comments by article id
         $comments = $this->commentClass->getComments();
         //Get comments replies

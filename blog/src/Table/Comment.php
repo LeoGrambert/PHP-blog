@@ -152,6 +152,21 @@ class Comment
         } else {
             $author = htmlspecialchars(implode([$_POST['author']]));
         }
+
+        $parent_id = isset($_POST['parent_comment_id']) ? $_POST['parent_comment_id'] : 0;
+        if ($parent_id != 0){
+            $comment = App::getDatabase()
+                ->prepare(
+                    'SELECT id FROM Comment WHERE id = ?',
+                    [$parent_id],
+                    __CLASS__,
+                    true
+                    );
+            if ($comment == false){
+                throw new \Exception('Ce parent n\'existe pas');
+            }
+        }
+
         return App::getDatabase()
             ->prepare(
                 'INSERT INTO Comment (article_id, author, content, parent_comment_id, email) 
@@ -160,7 +175,7 @@ class Comment
                     implode([$_GET['id']]),
                     $author,
                     htmlspecialchars(implode([$_POST['content']])),
-                    0,
+                    $parent_id,
                     htmlspecialchars(implode([$_POST['email']]))
                 ]),
                 __CLASS__

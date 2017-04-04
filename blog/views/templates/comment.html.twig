@@ -1,5 +1,5 @@
 {# Template used to display comments #}
-<div class="comment mdl-color-text--grey-700">
+<div class="comment mdl-color-text--grey-700" id="comment-{{ comment.id }}">
     <header class="comment__header">
         {% if comment.gravatar == null %}
             <img src="../../web/img/user.png" class="comment__avatar">
@@ -16,7 +16,7 @@
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
             <i class="material-icons" role="presentation">report_problem</i><span class="visuallyhidden">Signaler</span>
         </button>
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon reply">
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon reply" data-id="{{ comment.id }}">
             <i class="material-icons" role="presentation">question_answer</i><span class="visuallyhidden">Répondre</span>
         </button>
     </nav>
@@ -25,10 +25,7 @@
 <div class="commentReply">
     {% if comment.children %}
         {% for comment in comment.children %}
-            {% set number = number + 1 %}
-            {% if number <= 3 %}
-                {% include 'comment.html.twig' %}
-            {% endif %}
+            {% include 'comment.html.twig' %}
         {% endfor %}
     {% endif %}
 </div>

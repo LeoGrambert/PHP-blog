@@ -57,6 +57,15 @@
     right: 0;
     cursor: pointer;
 }
-.commentReply .commentReply .commentReply .reply{
-    display: none;
+#successAddAComment{
+    position: absolute;
+    bottom:2%;
+    left: 2%;
+}
+.comment{
+    margin:4%;
+    padding:2%;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #FFAB40;
+    box-shadow: 0 1px 0 0 #FFAB40;
 }
