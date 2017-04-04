@@ -2,6 +2,7 @@
  * Created by leo on 04/04/17.
  */
 $(function () {
+    //Display comment form when you click on reply button
     $('.reply').click(function (e) {
         e.preventDefault();
         var $form = $('#form-comment');
@@ -11,11 +12,5 @@ $(function () {
 
         $('#parent_id').val($parent_id);
         $comment.after($form);
-
-        $('#join').click(function (e) {
-            e.preventDefault();
-            $('#join:hover').css('cursor', 'pointer');
-            $('#join').after($form);
-        })
-    })
+    });
 });

@@ -10,6 +10,7 @@ namespace src;
 use app\App;
 use src\Table\Article;
 use src\Table\Comment;
+use Plasticbrain\FlashMessages\FlashMessages;
 
 
 class Controller
@@ -47,13 +48,20 @@ class Controller
         $article = $this->articleClass->getArticleById();
 
         //query to add a comment
-        if(isset($_POST['content']) && !empty($_POST['content']))
-        {
-            $this->commentClass->addComment();
+        $msg = new FlashMessages();
+        if(isset($_POST['content'])){
+            if(!empty($_POST['content']))
+            {
+                $this->commentClass->addComment();
+            } else {
+                $msg->error('Le commentaire n\'a pas pu être publié. Veuillez réessayer ultérieurement.');
+                $msg->display();
+            }
         }
         
         //query to get all comments by article id
         $comments = $this->commentClass->getComments();
+        
         //Get comments replies
         $comments_by_id = [];
         foreach($comments as $comment){

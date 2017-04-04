@@ -40,6 +40,7 @@
                     </div>
                     <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments">
                         <h6 id="join">Rejoignez la discussion...</h6>
+                        {#Form to add a comment#}
                         <form action="#comment-area" id="form-comment" method="post">
                             <input type="hidden" name="parent_comment_id" value="0" id="parent_id">
                             <div class="row">
@@ -55,7 +56,7 @@
                                     <textarea id="content" name="content" class="materialize-textarea" required></textarea>
                                     <label for="content">Votre commentaire*</label>
                                 </div>
-                                <button type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                                <button type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="submitButton">
                                     <i class="material-icons" role="presentation">check</i><span class="visuallyhidden">Ajouter un commentaire</span>
                                 </button>
                             </div>
@@ -64,9 +65,11 @@
                         <hr id="comment-area">
                         {% if comments %}
                             {% for comment in comments %}
+                                {#We include comment template#}
                                 {% include 'comment.html.twig' %}
                                 <hr>
                             {% endfor %}
+                        {#If there are no comment for an article, we display a simple string#}
                         {% else %}
                             <p>Pas de commentaires.</p>
                         {% endif %}

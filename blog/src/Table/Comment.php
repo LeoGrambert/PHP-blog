@@ -131,6 +131,7 @@ class Comment
     }
 
     /**
+     * Query to get all comments in an article
      * @return array|mixed
      */
     public function getComments(){
@@ -144,20 +145,27 @@ class Comment
     }
 
     /**
+     * Query to add a comment
+     * NB: If author field is empty, we display 'anonyme'
+     * NB: Only if depth is less than 3, we add a comment in DBB
      * @return array|mixed
+     * @throws \Exception
      */
     public function addComment(){
+        //If author field is empty, we display 'anonyme'
         if (empty($_POST['author'])){
             $author = 'Anonyme';
         } else {
             $author = htmlspecialchars(implode([$_POST['author']]));
         }
 
+        //We select parent comment id and we calculate the response depth
         $parent_id = isset($_POST['parent_comment_id']) ? $_POST['parent_comment_id'] : 0;
+        $depth = 0;
         if ($parent_id != 0){
             $comment = App::getDatabase()
                 ->prepare(
-                    'SELECT id FROM Comment WHERE id = ?',
+                    'SELECT id, depth FROM Comment WHERE id = ?',
                     [$parent_id],
                     __CLASS__,
                     true
@@ -165,20 +173,27 @@ class Comment
             if ($comment == false){
                 throw new \Exception('Ce parent n\'existe pas');
             }
+            $depth = $comment->depth + 1;
         }
 
-        return App::getDatabase()
-            ->prepare(
-                'INSERT INTO Comment (article_id, author, content, parent_comment_id, email) 
-                 VALUES (?, ?, ?, ?, ?)',
-                ([
-                    implode([$_GET['id']]),
-                    $author,
-                    htmlspecialchars(implode([$_POST['content']])),
-                    $parent_id,
-                    htmlspecialchars(implode([$_POST['email']]))
-                ]),
-                __CLASS__
-            );
+        //If depth is less than 3, we add a comment in DBB
+        if($depth > 3){
+            throw new \Exception('Impossible d\'avoir plus de 3 sous niveaux de réponse');
+        } else {
+            return App::getDatabase()
+                ->prepare(
+                    'INSERT INTO Comment (article_id, author, content, parent_comment_id, email, depth) 
+                 VALUES (?, ?, ?, ?, ?, ?)',
+                    ([
+                        implode([$_GET['id']]),
+                        $author,
+                        htmlspecialchars(implode([$_POST['content']])),
+                        $parent_id,
+                        htmlspecialchars(implode([$_POST['email']])),
+                        $depth
+                    ]),
+                    __CLASS__
+                );
+        }
     }
 }
