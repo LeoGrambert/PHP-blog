@@ -136,7 +136,7 @@ class Comment
     public function getComments(){
         return App::getDatabase()
             ->prepare(
-                'SELECT * FROM Comment WHERE article_id = ?',
+                'SELECT * FROM Comment WHERE article_id = ? ORDER BY date_add DESC',
                 [$_GET['id']],
                 __CLASS__,
                 false
@@ -147,18 +147,23 @@ class Comment
      * @return array|mixed
      */
     public function addComment(){
+        if (empty($_POST['author'])){
+            $author = 'Anonyme';
+        } else {
+            $author = htmlspecialchars(implode([$_POST['author']]));
+        }
         return App::getDatabase()
             ->prepare(
-                'INSERT INTO Comment (article_id, author, content, parent_comment_id, email) VALUES (:article_id, :author, :content, :parent_comment_id, :e)',
+                'INSERT INTO Comment (article_id, author, content, parent_comment_id, email) 
+                 VALUES (?, ?, ?, ?, ?)',
                 ([
-                    1,
-                    [$_POST['author']],
-                    [$_POST['content']],
+                    implode([$_GET['id']]),
+                    $author,
+                    htmlspecialchars(implode([$_POST['content']])),
                     0,
-                    [$_POST['email']]
+                    htmlspecialchars(implode([$_POST['email']]))
                 ]),
-                __CLASS__,
-                true
+                __CLASS__
             );
     }
 }

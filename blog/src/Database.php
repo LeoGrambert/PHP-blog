@@ -62,15 +62,16 @@ class Database
      * @param bool $one
      * @return array|mixed
      */
-    public function prepare($statement, $attributes, $class_name, $one = false){
+    public function prepare($statement, $attributes, $class_name, $one = null){
         $req = $this->getPDO()->prepare($statement);
         $req->execute($attributes);
         $req->setFetchMode(PDO::FETCH_CLASS, $class_name);
-        if($one){
+        if($one === true){
             $datas = $req->fetch();
-        } else {
+            return $datas;
+        } elseif ($one === false) {
             $datas = $req->fetchAll();
+            return $datas;
         }
-        return $datas;
     }
 }

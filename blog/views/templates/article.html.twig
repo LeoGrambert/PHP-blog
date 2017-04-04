@@ -40,7 +40,7 @@
                     </div>
                     <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments">
                         <h6>Rejoignez la discussion...</h6>
-                        <form action="" id="form-comment" method="post">
+                        <form action="#comment-area" id="form-comment" method="post">
                             <div class="row">
                                 <div class="input-field col s6">
                                     <input type="text" name="author" id="author" class="validate"/>
@@ -60,7 +60,7 @@
                             </div>
                         </form>
                         <p>(* Champ obligatoire)</p>
-                        <hr>
+                        <hr id="comment-area">
                         {% if comments %}
                             {% for comment in comments %}
                                 {% include 'comment.html.twig' %}
