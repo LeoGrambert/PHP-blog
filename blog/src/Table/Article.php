@@ -159,6 +159,7 @@ class Article
     }
 
     /**
+     * This method return an array with the next id.
      * @return array
      */
     public function getNextArticle(){
@@ -171,6 +172,7 @@ class Article
     }
 
     /**
+     * This method return an array with all id to the displayed item
      * @return array
      */
     public function getPreviousArticle(){

@@ -75,13 +75,26 @@ class Controller
             }
         }
 
-        $nextArticles = $this->articleClass->getNextArticle();
-        foreach ($nextArticles as $nextArticle){
-           $nextId = $nextArticle;
+        //Generate newer article.
+        //In the returned array (by getNextArticle), we get id and we send it in view.
+        if($this->articleClass->getNextArticle() != []){
+            $nextArticles = $this->articleClass->getNextArticle();
+            foreach ($nextArticles as $nextArticle){
+                $nextId = $nextArticle;
+            }
+        } else {
+            $nextId = null;
         }
-        
-        $previousArticles = $this->articleClass->getPreviousArticle();
-        $previousId = $previousArticles[count($previousArticles)-2];
+
+        //Generate older article.
+        //In the returned array (by getPreviousArticle), we get the article preceding the current article.
+        //We save this article in $previousId. And we send it in view.
+        if ($_GET['id'] > 1){
+            $previousArticles = $this->articleClass->getPreviousArticle();
+            $previousId = $previousArticles[count($previousArticles)-2];
+        } else {
+            $previousId = null;
+        }
 
         echo $this->twig->render('article.html.twig', [
             'article'=>$article,
