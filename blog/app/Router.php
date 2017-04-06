@@ -40,10 +40,19 @@ class Router
         //If article page
         elseif ('/web/index.php/article' === $this->uri && isset($_GET['id'])) {
             $this->controller->articlePage();
-        //If admin page
+        //If admin page (dashboard)
         } elseif ('/web/index.php/admin' === $this->uri){
-            $this->controller->adminPage();
-        //If not => 404
+            $this->controller->adminDashboardPage();
+        //If admin page (articles)
+        } elseif (('/web/index.php/admin' === $this->uri) && ($_GET['page'] === 'articles')){
+            $this->controller->adminArticlesPage();
+            //If admin page (comments)
+        } elseif (('/web/index.php/admin' === $this->uri) && ($_GET['page'] === 'comments')){
+            $this->controller->adminCommentsPage();
+            //If admin page (report)
+        } elseif (('/web/index.php/admin' === $this->uri) && ($_GET['page'] === 'report')){
+            $this->controller->adminReportPage();
+            //If not => 404
         } else {
             $this->controller->errorPage();
         }

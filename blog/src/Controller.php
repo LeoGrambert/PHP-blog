@@ -105,10 +105,31 @@ class Controller
     }
 
     /**
-     * What we do if we are on admin page
+     * What we do if we are on admin page (dashboard)
      */
-    public function adminPage(){
-        echo $this->twig->render('admin.html.twig');
+    public function adminDashboardPage(){
+        echo $this->twig->render('home_admin.html.twig');
+    }
+
+    /**
+     * What we do if we are on admin page (articles)
+     */
+    public function adminArticlesPage(){
+        echo $this->twig->render('articles_admin.html.twig');
+    }
+
+    /**
+     * What we do if we are on admin page (comments)
+     */
+    public function adminCommentsPage(){
+        echo $this->twig->render('comments_admin.html.twig');
+    }
+
+    /**
+     * What we do if we are on admin page (report)
+     */
+    public function adminReportPage(){
+        echo $this->twig->render('report_admin.html.twig');
     }
 
     /**
