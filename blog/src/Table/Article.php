@@ -30,7 +30,6 @@ class Article
     public function getUrl(){
         return 'index.php/article?id='.$this->id;
     }
-    
 
     /**
      * @return mixed
@@ -157,5 +156,29 @@ class Article
                 __CLASS__,
                 true
             );
+    }
+
+    /**
+     * @return array
+     */
+    public function getNextArticle(){
+        $currentId = $_GET['id'];
+        $nextArticle = App::getDatabase()
+            ->query('SELECT Article.id FROM Article ORDER BY Article.id LIMIT '.$currentId.', 1',
+                __CLASS__
+            );
+        return $nextArticle;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPreviousArticle(){
+        $currentId = $_GET['id'];
+        $previousArticles = App::getDatabase()
+            ->query('SELECT Article.id FROM Article ORDER BY Article.id LIMIT '.$currentId,
+                __CLASS__
+            );
+        return $previousArticles;
     }
 }

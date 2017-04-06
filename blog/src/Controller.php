@@ -75,9 +75,19 @@ class Controller
             }
         }
 
+        $nextArticles = $this->articleClass->getNextArticle();
+        foreach ($nextArticles as $nextArticle){
+           $nextId = $nextArticle;
+        }
+        
+        $previousArticles = $this->articleClass->getPreviousArticle();
+        $previousId = $previousArticles[count($previousArticles)-2];
+
         echo $this->twig->render('article.html.twig', [
             'article'=>$article,
-            'comments'=>$comments
+            'comments'=>$comments,
+            'nextId'=>$nextId,
+            'previousId'=>$previousId
         ]);
     }
 
