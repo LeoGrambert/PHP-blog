@@ -56,7 +56,131 @@
     <favorites_list name="blog" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="Autoloader.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Autoloader.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="621">
+              <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/App.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+              <folding>
+                <element signature="e#671#931#0#PHP" expanded="false" />
+                <element signature="e#1003#1230#0#PHP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Article.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Article.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-54">
+              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+              <folding>
+                <element signature="e#357#438#0#PHP" expanded="false" />
+                <element signature="e#481#537#0#PHP" expanded="false" />
+                <element signature="e#580#647#0#PHP" expanded="false" />
+                <element signature="e#690#752#0#PHP" expanded="false" />
+                <element signature="e#816#908#0#PHP" expanded="false" />
+                <element signature="e#951#1017#0#PHP" expanded="false" />
+                <element signature="e#1083#1183#0#PHP" expanded="false" />
+                <element signature="e#1226#1292#0#PHP" expanded="false" />
+                <element signature="e#1358#1458#0#PHP" expanded="false" />
+                <element signature="e#1502#1749#0#PHP" expanded="false" />
+                <element signature="e#1820#1939#0#PHP" expanded="false" />
+                <element signature="e#1982#2048#0#PHP" expanded="false" />
+                <element signature="e#2114#2214#0#PHP" expanded="false" />
+                <element signature="e#2290#2486#0#PHP" expanded="false" />
+                <element signature="e#2569#2813#0#PHP" expanded="false" />
+                <element signature="e#2909#3192#0#PHP" expanded="false" />
+                <element signature="e#3304#3595#0#PHP" expanded="false" />
+                <marker date="1491568515533" expanded="true" signature="2393:2437" placeholder="SELECT * FRO... Article" />
+                <marker date="1491568515533" expanded="true" signature="2677:2711" placeholder="SELECT * FRO... Article" />
+                <marker date="1491568515533" expanded="true" signature="3040:3090" placeholder="SELECT id FR... Article" />
+                <marker date="1491568515533" expanded="true" signature="3040:3091" placeholder="SELECT id FR... Article" />
+                <marker date="1491568515533" expanded="true" signature="3040:3096" placeholder="SELECT id FR... Article" />
+                <marker date="1491568515533" expanded="true" signature="3040:3097" placeholder="SELECT * FRO... Article" />
+                <marker date="1491568515533" expanded="true" signature="3040:3114" placeholder="SELECT * FRO... Article" />
+                <marker date="1491568515533" expanded="true" signature="3040:3115" placeholder="SELECT id FR... Article" />
+                <marker date="1491568515533" expanded="true" signature="3444:3501" placeholder="SELECT Artic... Article" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controller.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controller.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+              <folding>
+                <element signature="e#77#89#0#PHP" expanded="true" />
+                <element signature="e#351#651#0#PHP" expanded="false" />
+                <element signature="e#714#830#0#PHP" expanded="false" />
+                <element signature="e#896#3155#0#PHP" expanded="false" />
+                <element signature="e#3231#3332#0#PHP" expanded="false" />
+                <element signature="e#3586#3690#0#PHP" expanded="false" />
+                <element signature="e#3927#4064#0#PHP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="blog_JF.Comment" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/a9d83c57/d3878ab8-a342-4f7e-926d-84614ea23857/blog_JF.Comment">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Comment.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Comment.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+              <folding>
+                <element signature="e#383#439#0#PHP" expanded="false" />
+                <element signature="e#482#553#0#PHP" expanded="false" />
+                <element signature="e#596#663#0#PHP" expanded="false" />
+                <element signature="e#706#770#0#PHP" expanded="false" />
+                <element signature="e#835#931#0#PHP" expanded="false" />
+                <element signature="e#974#1040#0#PHP" expanded="false" />
+                <element signature="e#1106#1206#0#PHP" expanded="false" />
+                <element signature="e#1249#1313#0#PHP" expanded="false" />
+                <element signature="e#1356#1453#0#PHP" expanded="false" />
+                <element signature="e#1496#1580#0#PHP" expanded="false" />
+                <element signature="e#1623#1685#0#PHP" expanded="false" />
+                <element signature="e#1764#2071#0#PHP" expanded="false" />
+                <element signature="e#2147#2285#0#PHP" expanded="false" />
+                <element signature="e#2381#2654#0#PHP" expanded="false" />
+                <element signature="e#2882#4575#0#PHP" expanded="false" />
+                <marker date="1491568515441" expanded="true" signature="2486:2528" placeholder="SELECT * FRO... Comment" />
+                <marker date="1491568515441" expanded="true" signature="2486:2551" placeholder="SELECT * FRO... Comment" />
+                <marker date="1491568515441" expanded="true" signature="3442:3484" placeholder="SELECT id, d... Comment" />
+                <marker date="1491568515441" expanded="true" signature="4045:4171" placeholder="INSERT INTO Comment... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -69,10 +193,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/model.php" />
-        <option value="$PROJECT_DIR$/views/templates/home.php" />
-        <option value="$PROJECT_DIR$/views/templates/show.php" />
-        <option value="$PROJECT_DIR$/views/templates/layout.php" />
         <option value="$PROJECT_DIR$/views/templates/show.html.twig" />
         <option value="$PROJECT_DIR$/views/templates/admin/admin.html.twig" />
         <option value="$PROJECT_DIR$/views/templates/blog/home.html.twig" />
@@ -92,7 +212,6 @@
         <option value="$PROJECT_DIR$/web/js/article.js" />
         <option value="$PROJECT_DIR$/src/Repository/addComment.php" />
         <option value="$PROJECT_DIR$/app/Autoloader.php" />
-        <option value="$PROJECT_DIR$/src/Autoloader.php" />
         <option value="$PROJECT_DIR$/app/Database.php" />
         <option value="$PROJECT_DIR$/app/App.php" />
         <option value="$PROJECT_DIR$/src/Repository/CommentRepository.php" />
@@ -109,10 +228,8 @@
         <option value="$PROJECT_DIR$/web/css/article.css" />
         <option value="$PROJECT_DIR$/web/js/comment.js" />
         <option value="$PROJECT_DIR$/src/Table/Article.php" />
-        <option value="$PROJECT_DIR$/views/templates/article.html.twig" />
         <option value="$PROJECT_DIR$/views/templates/layout.admin.html.twig" />
         <option value="$PROJECT_DIR$/views/templates/home.admin.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller.php" />
         <option value="$PROJECT_DIR$/views/templates/home_admin.html.twig" />
         <option value="$PROJECT_DIR$/web/css/layout_admin.css" />
         <option value="$PROJECT_DIR$/views/templates/articles_admin.html.twig" />
@@ -120,6 +237,13 @@
         <option value="$PROJECT_DIR$/views/templates/comments_admin.html.twig" />
         <option value="$PROJECT_DIR$/views/templates/layout_admin.html.twig" />
         <option value="$PROJECT_DIR$/app/Router.php" />
+        <option value="$PROJECT_DIR$/src/Models/Comment.php" />
+        <option value="$PROJECT_DIR$/src/Models/Article.php" />
+        <option value="$PROJECT_DIR$/src/Model/Article.php" />
+        <option value="$PROJECT_DIR$/src/Model/Comment.php" />
+        <option value="$PROJECT_DIR$/src/Autoloader.php" />
+        <option value="$PROJECT_DIR$/src/Controller.php" />
+        <option value="$PROJECT_DIR$/views/templates/article.html.twig" />
       </list>
     </option>
   </component>
@@ -163,6 +287,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -285,6 +410,42 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -302,7 +463,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -390,24 +550,25 @@
       <workItem from="1491296538326" duration="19058000" />
       <workItem from="1491386544911" duration="2167000" />
       <workItem from="1491438986570" duration="4180000" />
-      <workItem from="1491482578388" duration="7722000" />
+      <workItem from="1491482578388" duration="7995000" />
+      <workItem from="1491568346130" duration="511000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136358000" />
+    <option name="totallyTimeSpent" value="137142000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1423" y="24" width="1863" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12300934" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12410764" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12246019" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5674274" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2966805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -548,13 +709,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller.php" />
     <entry file="file://$PROJECT_DIR$/src/Repository/addComment.php" />
-    <entry file="file://$PROJECT_DIR$/src/Autoloader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/CommentRepository.php" />
     <entry file="file://$PROJECT_DIR$/src/Repository/ArticleRepository.php" />
     <entry file="file://$PROJECT_DIR$/web/index.php">
@@ -580,24 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/App.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-          <folding>
-            <element signature="e#671#931#0#PHP" expanded="false" />
-            <element signature="e#1003#1230#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/article.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="65" column="1" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/templates/comment.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -612,22 +748,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/a9d83c57/d3878ab8-a342-4f7e-926d-84614ea23857/blog_JF.Comment">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
+    <entry file="dbDummy://dbtable:/a9d83c57/d3878ab8-a342-4f7e-926d-84614ea23857/blog_JF.Article">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Table/Comment.php">
+    <entry file="file://$PROJECT_DIR$/views/templates/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="153" column="33" selection-start-line="153" selection-start-column="33" selection-end-line="153" selection-end-column="33" />
+        <state relative-caret-position="459">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/layout.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/templates/layout_admin.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/templates/articles_admin.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="7" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/layout_admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="138" column="20" selection-start-line="138" selection-start-column="20" selection-end-line="138" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/templates/report_admin.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/templates/comments_admin.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/templates/home_admin.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/App.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+          <folding>
+            <element signature="e#671#931#0#PHP" expanded="false" />
+            <element signature="e#1003#1230#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Comment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
           <folding>
             <element signature="e#383#439#0#PHP" expanded="false" />
             <element signature="e#482#553#0#PHP" expanded="false" />
@@ -644,18 +854,26 @@
             <element signature="e#2147#2285#0#PHP" expanded="false" />
             <element signature="e#2381#2654#0#PHP" expanded="false" />
             <element signature="e#2882#4575#0#PHP" expanded="false" />
-            <marker date="1491322071297" expanded="true" signature="2486:2528" placeholder="SELECT * FRO... Comment" />
-            <marker date="1491322071297" expanded="true" signature="2486:2551" placeholder="SELECT * FRO... Comment" />
-            <marker date="1491322071297" expanded="true" signature="3442:3484" placeholder="SELECT id, d... Comment" />
-            <marker date="1491322071297" expanded="true" signature="4045:4171" placeholder="INSERT INTO Comment... " />
+            <marker date="1491568515441" expanded="true" signature="2486:2528" placeholder="SELECT * FRO... Comment" />
+            <marker date="1491568515441" expanded="true" signature="2486:2551" placeholder="SELECT * FRO... Comment" />
+            <marker date="1491568515441" expanded="true" signature="3442:3484" placeholder="SELECT id, d... Comment" />
+            <marker date="1491568515441" expanded="true" signature="4045:4171" placeholder="INSERT INTO Comment... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Table/Article.php">
+    <entry file="file://$PROJECT_DIR$/src/Autoloader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="161" column="51" selection-start-line="161" selection-start-column="51" selection-end-line="161" selection-end-column="51" />
+        <state relative-caret-position="621">
+          <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Article.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-54">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
           <folding>
             <element signature="e#357#438#0#PHP" expanded="false" />
             <element signature="e#481#537#0#PHP" expanded="false" />
@@ -674,92 +892,52 @@
             <element signature="e#2569#2813#0#PHP" expanded="false" />
             <element signature="e#2909#3192#0#PHP" expanded="false" />
             <element signature="e#3304#3595#0#PHP" expanded="false" />
-            <marker date="1491483259717" expanded="true" signature="2393:2437" placeholder="SELECT * FRO... Article" />
-            <marker date="1491483259717" expanded="true" signature="2677:2711" placeholder="SELECT * FRO... Article" />
-            <marker date="1491483259717" expanded="true" signature="3040:3090" placeholder="SELECT id FR... Article" />
-            <marker date="1491483259717" expanded="true" signature="3040:3091" placeholder="SELECT id FR... Article" />
-            <marker date="1491483259717" expanded="true" signature="3040:3096" placeholder="SELECT id FR... Article" />
-            <marker date="1491483259717" expanded="true" signature="3040:3097" placeholder="SELECT * FRO... Article" />
-            <marker date="1491483259717" expanded="true" signature="3040:3114" placeholder="SELECT * FRO... Article" />
-            <marker date="1491483259717" expanded="true" signature="3040:3115" placeholder="SELECT id FR... Article" />
-            <marker date="1491483259717" expanded="true" signature="3444:3501" placeholder="SELECT Artic... Article" />
+            <marker date="1491568515533" expanded="true" signature="2393:2437" placeholder="SELECT * FRO... Article" />
+            <marker date="1491568515533" expanded="true" signature="2677:2711" placeholder="SELECT * FRO... Article" />
+            <marker date="1491568515533" expanded="true" signature="3040:3090" placeholder="SELECT id FR... Article" />
+            <marker date="1491568515533" expanded="true" signature="3040:3091" placeholder="SELECT id FR... Article" />
+            <marker date="1491568515533" expanded="true" signature="3040:3096" placeholder="SELECT id FR... Article" />
+            <marker date="1491568515533" expanded="true" signature="3040:3097" placeholder="SELECT * FRO... Article" />
+            <marker date="1491568515533" expanded="true" signature="3040:3114" placeholder="SELECT * FRO... Article" />
+            <marker date="1491568515533" expanded="true" signature="3040:3115" placeholder="SELECT id FR... Article" />
+            <marker date="1491568515533" expanded="true" signature="3444:3501" placeholder="SELECT Artic... Article" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/templates/article.html.twig">
+    <entry file="file://$PROJECT_DIR$/web/css/article.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="83" column="37" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+        <state relative-caret-position="492">
+          <caret line="65" column="1" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/a9d83c57/d3878ab8-a342-4f7e-926d-84614ea23857/blog_JF.Article">
+    <entry file="dbDummy://dbtable:/a9d83c57/d3878ab8-a342-4f7e-926d-84614ea23857/blog_JF.Comment">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/templates/layout.html.twig">
+    <entry file="file://$PROJECT_DIR$/views/templates/article.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/layout.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/templates/layout_admin.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/templates/articles_admin.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="7" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/layout_admin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="138" column="20" selection-start-line="138" selection-start-column="20" selection-end-line="138" selection-end-column="20" />
+        <state relative-caret-position="207">
+          <caret line="43" column="51" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="117" column="34" selection-start-line="117" selection-start-column="34" selection-end-line="117" selection-end-column="34" />
+        <state relative-caret-position="297">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
           <folding>
             <element signature="e#77#89#0#PHP" expanded="true" />
             <element signature="e#351#651#0#PHP" expanded="false" />
@@ -769,30 +947,6 @@
             <element signature="e#3586#3690#0#PHP" expanded="false" />
             <element signature="e#3927#4064#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/templates/report_admin.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/templates/comments_admin.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/templates/home_admin.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>

@@ -5,13 +5,13 @@
  * Time: 11:17
  */
 
-namespace src\Table;
+namespace src\Model;
 
 use app\App;
 
 /**
  * Class Comment
- * @package src\Table
+ * @package src\Model
  */
 class Comment
 {

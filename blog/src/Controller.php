@@ -8,8 +8,8 @@
 namespace src;
 
 use app\App;
-use src\Table\Article;
-use src\Table\Comment;
+use src\Model\Article;
+use src\Model\Comment;
 use Plasticbrain\FlashMessages\FlashMessages;
 
 

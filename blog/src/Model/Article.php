@@ -6,13 +6,13 @@
  * Time: 15:56
  */
 
-namespace src\Table;
+namespace src\Model;
 
 use app\App;
 
 /**
  * Class Article
- * @package src\Table
+ * @package src\Model
  */
 class Article
 {
