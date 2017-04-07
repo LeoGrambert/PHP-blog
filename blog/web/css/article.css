@@ -3,13 +3,13 @@
 }
 
 #back{
-    top:2%;
-    left:2%;
+    top:1%;
+    left:1%;
     position: fixed;
     z-index:50;
 }
 .commentReply{
-    margin-left:5%;
+    margin-left:10%;
 }
 .input-field label, .input-field input[type=text]:focus + label, .input-field input[type=email]:focus + label, .input-field textarea:focus:not([readonly]) + label {
     color: #7E7E7E;
@@ -58,9 +58,12 @@
     cursor: pointer;
 }
 .comment{
-    margin:4%;
+    margin:4% 4% 0 4%;
     padding:2%;
     background-color: #FFFFFF;
     border-bottom: 1px solid #FFAB40;
     box-shadow: 0 1px 0 0 #FFAB40;
+}
+.commentBloc{
+    margin : 10% 0 5% 0;
 }

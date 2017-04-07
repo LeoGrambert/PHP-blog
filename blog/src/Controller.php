@@ -98,6 +98,7 @@ class Controller
 
         echo $this->twig->render('article.html.twig', [
             'article'=>$article,
+            'articles'=>$this->articles,
             'comments'=>$comments,
             'nextId'=>$nextId,
             'previousId'=>$previousId

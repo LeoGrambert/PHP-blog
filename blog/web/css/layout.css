@@ -50,7 +50,7 @@ body .demo-blog {
 }
 
 .demo-blog.mdl-layout .mdl-layout__content {
-    padding-top: 230px;
+    padding-top: 50px;
     position: relative;
     -webkit-overflow-scrolling: touch;
 }
@@ -372,4 +372,10 @@ body .demo-blog {
 
 .mdl-card__media h4{
     z-index: 10;
+}
+.side-nav li>a{
+    line-height: 20px;
+}
+#slide-out{
+    padding-top:2%;
 }
