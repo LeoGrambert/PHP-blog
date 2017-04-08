@@ -127,10 +127,10 @@ class Controller
     }
 
     /**
-     * What we do if we are on admin page (report)
+     * What we do if we are on admin page (my account)
      */
-    public function adminReportPage(){
-        echo $this->twig->render('report_admin.html.twig');
+    public function adminAccountPage(){
+        echo $this->twig->render('account_admin.html.twig');
     }
 
     /**
