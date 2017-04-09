@@ -31,8 +31,10 @@
     <link rel="stylesheet" href="/web/lib/materialize/css/materialize.min.css">
     <link rel="stylesheet" href="/web/css/layout_admin.css">
 
-    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-    <script>tinymce.init({ selector:'textarea' });</script>
+    <script src="/web/lib/tinymce/tinymce.min.js"></script>
+    <script>tinymce.init({
+            selector:'textarea'
+        });</script>
 </head>
 
 <body>
@@ -45,7 +47,7 @@
             </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-            <a class="mdl-navigation__link" href="/web/index.php/admin/dashboard/"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Dashboard</a>
+            <a class="mdl-navigation__link" href="/web/index.php/admin/home/"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Dashboard</a>
             <a class="mdl-navigation__link" href="/web/index.php/admin/articles/add/"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">note_add</i>Ajouter un article</a>
             <a class="mdl-navigation__link" href="/web/index.php/admin/articles/"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">open_in_browser</i>Articles</a>
             <a class="mdl-navigation__link" href="/web/index.php/admin/comments/"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Commentaires</a>

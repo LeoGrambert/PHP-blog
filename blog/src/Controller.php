@@ -106,23 +106,23 @@ class Controller
     }
 
     /**
-     * What we do if we are on admin page (dashboard)
+     * What we do if we are on admin page (home)
      */
-    public function adminDashboardPage(){
-        echo $this->twig->render('home_admin.html.twig', ['articles'=>$this->articles]);
+    public function adminHomePage(){
+        echo $this->twig->render('home_admin.html.twig');
     }
 
     /**
      * What we do if we are on admin page (add an articles)
      */
-    public function adminArticlesAddPage(){
+    public function adminAddArticlePage(){
 
         //Add an article
         if (isset($_POST['title']) && isset($_POST['summary']) && isset($_POST['content'])){
             $this->articleClass->addAnArticle();
         }
         
-        echo $this->twig->render('addAnArticle_admin.html.twig');
+        echo $this->twig->render('addArticle_admin.html.twig');
     }
 
     /**

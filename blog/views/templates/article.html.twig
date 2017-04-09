@@ -80,7 +80,7 @@
                         {% if comments %}
                             {% for comment in comments %}
                                 {#We include comment template#}
-                                {% include 'comment.html.twig' %}
+                                {% include 'reusable/comment.html.twig' %}
                                 <hr class="commentBloc">
                             {% endfor %}
                         {#If there are no comment for an article, we display a simple string#}
