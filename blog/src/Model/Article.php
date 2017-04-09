@@ -184,7 +184,16 @@ class Article
         return $previousArticles;
     }
 
+    /**
+     * Query to add an article
+     * @return array|mixed
+     */
     public function addAnArticle(){
+        if (!isset($_POST['picture'])){
+            $pictures = "";
+        } else {
+            $pictures = $_POST['picture'];
+        }
         return App::getDatabase()
             ->prepare(
                 'INSERT INTO Article (title, summary, content, picture)
@@ -193,9 +202,17 @@ class Article
                     htmlspecialchars($_POST['title']),
                     htmlspecialchars($_POST['summary']),
                     htmlspecialchars($_POST['content']),
-                    htmlspecialchars($_POST['picture'])
+                    $pictures
                 ]),
                 __CLASS__
             );
+    }
+
+    public function deleteAnArticle(){
+        //todo
+    }
+    
+    public function updateAnArticle(){
+        //todo
     }
 }

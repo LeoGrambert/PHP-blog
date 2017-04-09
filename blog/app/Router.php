@@ -44,9 +44,11 @@ class Router
         } elseif ('/web/index.php/admin/dashboard/' === $this->uri){
             $this->controller->adminDashboardPage();
         //If admin page (articles)
-        } elseif ('/web/index.php/admin/articles/' === $this->uri){
+        } elseif ('/web/index.php/admin/articles/' === $this->uri) {
             $this->controller->adminArticlesPage();
-            //If admin page (comments)
+        } elseif ('/web/index.php/admin/articles/add/' === $this->uri) {
+            $this->controller->adminArticlesAddPage();
+        //If admin page (comments)
         } elseif ('/web/index.php/admin/comments/' === $this->uri){
             $this->controller->adminCommentsPage();
             //If admin page (my account)

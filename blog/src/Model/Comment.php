@@ -185,11 +185,11 @@ class Comment
                     'INSERT INTO Comment (article_id, author, content, parent_comment_id, email, depth) 
                      VALUES (?, ?, ?, ?, ?, ?)',
                     ([
-                        implode([$_GET['id']]),
+                        $_GET['id'],
                         $author,
-                        htmlspecialchars(implode([$_POST['content']])),
+                        htmlspecialchars($_POST['content']),
                         $parent_id,
-                        htmlspecialchars(implode([$_POST['email']])),
+                        htmlspecialchars($_POST['email']),
                         $depth
                     ]),
                     __CLASS__
