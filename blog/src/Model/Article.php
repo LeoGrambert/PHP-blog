@@ -183,4 +183,19 @@ class Article
             );
         return $previousArticles;
     }
+
+    public function addAnArticle(){
+        return App::getDatabase()
+            ->prepare(
+                'INSERT INTO Article (title, summary, content, picture)
+                 VALUES (?, ?, ?, ?)',
+                ([
+                    htmlspecialchars($_POST['title']),
+                    htmlspecialchars($_POST['summary']),
+                    htmlspecialchars($_POST['content']),
+                    htmlspecialchars($_POST['picture'])
+                ]),
+                __CLASS__
+            );
+    }
 }

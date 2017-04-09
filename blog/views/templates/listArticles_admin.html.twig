@@ -1,0 +1,13 @@
+<div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
+    <h5>Liste des articles publiés</h5>
+    <table>
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.id }}</td>
+                <td>{{ article.title }}</td>
+                <td><button>Modifier</button></td>
+                <td><button>Supprimer</button></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>

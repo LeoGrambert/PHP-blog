@@ -59,15 +59,15 @@
                             <input type="hidden" name="parent_comment_id" value="0" id="parent_id">
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input type="text" name="author" id="author" class="validate"/>
+                                    <input type="text" name="author" id="author" data-error="wrong" data-success="right" class="validate"/>
                                     <label for="author">Votre nom</label>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input type="email" name="email" id="email" class="validate"/>
+                                    <input type="email" name="email" id="email" data-error="wrong" data-success="right" class="validate"/>
                                     <label for="email">Votre e-mail</label>
                                 </div>
                                 <div class="input-field col s12">
-                                    <textarea id="content" name="content" class="materialize-textarea" required></textarea>
+                                    <textarea id="content" name="content" data-error="wrong" data-success="right" class="materialize-textarea" required></textarea>
                                     <label for="content">Votre commentaire*</label>
                                 </div>
                                 <button type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="submitButton">

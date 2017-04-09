@@ -1,0 +1,23 @@
+<form action="" id="form-article" method="post">
+    <div class="row">
+        <div class="input-field col s12">
+            <input type="text" name="title" id="title" class="validate" data-error="wrong" data-success="right" required/>
+            <label for="title">Titre de l'article</label>
+        </div>
+        <div class="input-field col s12">
+            <textarea id="summary" name="summary" class="materialize-textarea" data-error="wrong" data-success="right" required></textarea>
+            <label for="summary">Résumé de l'article</label>
+        </div>
+        <div class="file-path-wrapper">
+                <label for="img">Image d'en-tête</label><br>
+                <input class="file-path validate" type="file" id="img">
+            </div>
+        <div class="input-field col s12">
+            <textarea id="content" name="content" rows="20" class="materialize-textarea" data-error="wrong" data-success="right" required></textarea>
+            <label for="content">Article</label>
+        </div>
+        <button type="submit">
+            Publier
+        </button>
+    </div>
+</form>

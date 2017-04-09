@@ -3,7 +3,10 @@
 {% block title %}Articles{% endblock %}
 
 {% block content %}
-    <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
-
+    <link rel="stylesheet" href="/web/css/article_admin.css">
+    <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+        <h5>Ajouter un article</h5>
+        {% include 'addAnArticle_admin.html.twig' %}
     </div>
+    {% include 'listArticles_admin.html.twig' %}
 {% endblock %}

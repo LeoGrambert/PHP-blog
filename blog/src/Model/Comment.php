@@ -183,7 +183,7 @@ class Comment
             return App::getDatabase()
                 ->prepare(
                     'INSERT INTO Comment (article_id, author, content, parent_comment_id, email, depth) 
-                 VALUES (?, ?, ?, ?, ?, ?)',
+                     VALUES (?, ?, ?, ?, ?, ?)',
                     ([
                         implode([$_GET['id']]),
                         $author,
