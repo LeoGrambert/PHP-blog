@@ -31,6 +31,11 @@ class App
         return self::$_database;
     }
 
+    public function forbidden(){
+        header('HTTP/1.0 403 Forbidden');
+        die('Accès interdit');
+    }
+
     /**
      * Initialize session and load autoloader
      */

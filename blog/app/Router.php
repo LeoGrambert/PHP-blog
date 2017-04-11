@@ -40,6 +40,9 @@ class Router
         //If article page
         elseif ('/web/index.php/article' === $this->uri && isset($_GET['id'])) {
             $this->controller->articlePage();
+        //If login page
+        } elseif ('/web/index.php/login/' === $this->uri){
+            $this->controller->loginPage();
         //If admin page (dashboard)
         } elseif ('/web/index.php/admin/home/' === $this->uri){
             $this->controller->adminHomePage();

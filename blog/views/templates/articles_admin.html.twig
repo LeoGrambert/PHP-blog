@@ -3,14 +3,21 @@
 {% block title %}Articles{% endblock %}
 
 {% block content %}
-    <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
+    <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
         <h5>Liste des articles publiés</h5>
         <table>
+            <tr>
+                <td>Date d'ajout</td>
+                <td>Titre</td>
+                <td>Modification</td>
+                <td>Suppression</td>
+            </tr>
             {% for article in articles %}
                 <tr>
+                    <td>{{ article.dateAdd|date('d-m-Y') }}</td>
                     <td>{{ article.title }}</td>
-                    <td><button>Modifier</button></td>
-                    <td><button>Supprimer</button></td>
+                    <td><button class="waves-effect waves-light btn orange accent-2">Modifier</button></td>
+                    <td><button class="waves-effect waves-light btn orange accent-2">Supprimer</button></td>
                 </tr>
             {% endfor %}
         </table>

@@ -1,0 +1,26 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="/web/css/login.css">
+    <div class="row" id="loginForm">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="first_name" type="text" class="validate" required>
+                    <label for="first_name">Username</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="password" type="password" class="validate" required>
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit" class="waves-effect waves-light btn orange accent-2">Connexion</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

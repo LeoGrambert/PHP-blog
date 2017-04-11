@@ -49,9 +49,20 @@ class Database
      * @param $class_name
      * @return array
      */
-    public function query($statement, $class_name){
+    public function query($statement, $class_name = null, $one = false){
         $req = $this->getPDO()->query($statement);
-        $data = $req->fetchAll(PDO::FETCH_CLASS, $class_name);
+        if($class_name === null)
+        {
+            $req->setFetchMode(PDO::FETCH_OBJ);
+        } else {
+            $req->setFetchMode(PDO::FETCH_CLASS, $class_name);
+        }
+        if ($one)
+        {
+            $data = $req->fetch();
+        } else {
+            $data = $req->fetchAll();
+        }
         return $data;
     }
 
@@ -62,10 +73,15 @@ class Database
      * @param bool $one
      * @return array|mixed
      */
-    public function prepare($statement, $attributes, $class_name, $one = null){
+    public function prepare($statement, $attributes, $class_name = null, $one = null){
         $req = $this->getPDO()->prepare($statement);
         $req->execute($attributes);
-        $req->setFetchMode(PDO::FETCH_CLASS, $class_name);
+        if($class_name === null)
+        {
+            $req->setFetchMode(PDO::FETCH_OBJ);
+        } else {
+            $req->setFetchMode(PDO::FETCH_CLASS, $class_name);
+        }
         if($one === true){
             $datas = $req->fetch();
             return $datas;

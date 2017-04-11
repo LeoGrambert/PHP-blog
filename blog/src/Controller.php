@@ -9,6 +9,7 @@ namespace src;
 
 use app\App;
 use src\Model\Article;
+use src\Model\AuthDb;
 use src\Model\Comment;
 use Plasticbrain\FlashMessages\FlashMessages;
 
@@ -106,10 +107,23 @@ class Controller
     }
 
     /**
+     * What we do if we are on login page
+     */
+    public function loginPage(){
+        echo $this->twig->render('login.html.twig');
+    }
+
+    /**
      * What we do if we are on admin page (home)
      */
     public function adminHomePage(){
-        echo $this->twig->render('home_admin.html.twig');
+        $app = new App();
+        $auth = new AuthDb(App::getDatabase());
+        if ($auth->logged()){
+            echo $this->twig->render('home_admin.html.twig');
+        } else {
+            $app->forbidden();
+        }
     }
 
     /**

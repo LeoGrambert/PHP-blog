@@ -1,0 +1,24 @@
+body{
+    min-height: calc(100vh - 400px);
+}
+#loginForm{
+    margin:15% 0 15% 0;
+    padding: 3%;
+    background-color: #FFFFFF;
+    border-radius: 1%;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+}
+.input-field label, .input-field input[type=text]:focus + label, .input-field input[type=password]:focus + label{
+    color: #7E7E7E;
+}
+.input-field input[type=text]:focus + label, .input-field input[type=password]:focus + label{
+    color: #FFAB40;
+}
+.input-field input[type=text]:focus, .input-field input[type=text].valid, .input-field input[type=password]:focus, .input-field input[type=password].valid {
+    border-bottom: 1px solid #FFAB40;
+    box-shadow: 0 1px 0 0 #FFAB40;
+}
+.input-field input[type=text].invalid, .input-field input[type=password].invalid {
+    border-bottom: 1px solid #EB7077;
+    box-shadow: 0 1px 0 0 #EB7077;
+}
