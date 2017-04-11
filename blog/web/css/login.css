@@ -22,3 +22,9 @@ body{
     border-bottom: 1px solid #EB7077;
     box-shadow: 0 1px 0 0 #EB7077;
 }
+#badCredentials{
+    position: absolute;
+    color: red;
+    margin:20% 0 15% 43%;
+    padding: 1%;
+}

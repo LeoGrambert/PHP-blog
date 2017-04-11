@@ -33,7 +33,7 @@ class App
 
     public function forbidden(){
         header('HTTP/1.0 403 Forbidden');
-        die('Accès interdit');
+        die('Accès interdit, <a href="/web/index.php/login/">veuillez vous authentifier</a>');
     }
 
     /**

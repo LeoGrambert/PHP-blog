@@ -19,6 +19,8 @@ class Controller
     private $twig;
     private $articleClass;
     private $commentClass;
+    private $appClass;
+    private $authClass;
     private $articles;
 
     /**
@@ -30,6 +32,8 @@ class Controller
         //load class
         $this->articleClass = new Article();
         $this->commentClass = new Comment();
+        $this->appClass = new App();
+        $this->authClass = new AuthDb(App::getDatabase());
         //query to get all articles
         $this->articles = $this->articleClass->getArticles();
     }
@@ -110,6 +114,13 @@ class Controller
      * What we do if we are on login page
      */
     public function loginPage(){
+        if(!empty($_POST)){
+            if($this->authClass->login($_POST['username'], $_POST['password']) === true){
+                header('Location: /web/index.php/admin/home/');
+            } else {
+                echo '<h6 id="badCredentials">Bad Credentials</h6>';
+            }
+        }
         echo $this->twig->render('login.html.twig');
     }
 
@@ -117,12 +128,10 @@ class Controller
      * What we do if we are on admin page (home)
      */
     public function adminHomePage(){
-        $app = new App();
-        $auth = new AuthDb(App::getDatabase());
-        if ($auth->logged()){
+        if ($this->authClass->logged()){
             echo $this->twig->render('home_admin.html.twig');
         } else {
-            $app->forbidden();
+            $this->appClass->forbidden();
         }
     }
 
@@ -130,36 +139,51 @@ class Controller
      * What we do if we are on admin page (add an articles)
      */
     public function adminAddArticlePage(){
-
         //Add an article
         if (isset($_POST['title']) && isset($_POST['summary']) && isset($_POST['content'])){
             $this->articleClass->addAnArticle();
         }
-        
-        echo $this->twig->render('addArticle_admin.html.twig');
+
+        if ($this->authClass->logged()){
+            echo $this->twig->render('addArticle_admin.html.twig');
+        } else {
+            $this->appClass->forbidden();
+        }
     }
 
     /**
      * What we do if we are on admin page (add an articles)
      */
     public function adminArticlesPage(){
-        echo $this->twig->render('articles_admin.html.twig', [
-            'articles'=>$this->articles
-        ]);
+        if ($this->authClass->logged()){
+            echo $this->twig->render('articles_admin.html.twig', [
+                'articles'=>$this->articles
+            ]);
+        } else {
+            $this->appClass->forbidden();
+        }
     }
 
     /**
      * What we do if we are on admin page (comments)
      */
     public function adminCommentsPage(){
-        echo $this->twig->render('comments_admin.html.twig');
+        if ($this->authClass->logged()){
+            echo $this->twig->render('comments_admin.html.twig');
+        } else {
+            $this->appClass->forbidden();
+        }
     }
 
     /**
      * What we do if we are on admin page (my account)
      */
     public function adminAccountPage(){
-        echo $this->twig->render('account_admin.html.twig');
+        if ($this->authClass->logged()){
+            echo $this->twig->render('account_admin.html.twig');
+        } else {
+            $this->appClass->forbidden();
+        }
     }
 
     /**

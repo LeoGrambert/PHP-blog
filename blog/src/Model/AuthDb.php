@@ -18,6 +18,13 @@ class AuthDb
         $this->db = $db;
     }
 
+    public function getUserId(){
+        if ($this->logged()) {
+            return $_SESSION['auth'];
+        }
+        return false;
+    }
+
     /**
      * @param $username
      * @param $password
@@ -26,7 +33,12 @@ class AuthDb
     public function login($username, $password)
     {
         $user = $this->db->prepare('SELECT * FROM User WHERE username = ?', [$username], null, true);
-        var_dump($user);
+        if($user){
+            if($user->password === md5($password));
+            $_SESSION['auth'] = $user->id;
+            return true;
+        }
+        return false;
     }
 
     public function logged(){
