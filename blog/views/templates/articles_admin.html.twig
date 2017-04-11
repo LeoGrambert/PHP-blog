@@ -6,18 +6,27 @@
     <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
         <h5>Liste des articles publiés</h5>
         <table>
-            <tr>
-                <td>Date d'ajout</td>
-                <td>Titre</td>
-                <td>Modification</td>
-                <td>Suppression</td>
-            </tr>
+            <thead>
+                <tr>
+                    <td>Date d'ajout</td>
+                    <td>Titre</td>
+                    <td>Lecture</td>
+                    <td>Modification</td>
+                    <td>Suppression</td>
+                </tr>
+            </thead>
             {% for article in articles %}
                 <tr>
                     <td>{{ article.dateAdd|date('d-m-Y') }}</td>
                     <td>{{ article.title }}</td>
-                    <td><button class="waves-effect waves-light btn orange accent-2">Modifier</button></td>
-                    <td><button class="waves-effect waves-light btn orange accent-2">Supprimer</button></td>
+                    <td><a class="waves-effect waves-light btn orange accent-2" href="/web/index.php/article?id={{ article.id }}">Lecture</a></td>
+                    <td><a class="waves-effect waves-light btn orange accent-2" href="/web/index.php/admin/articles?p=edit&id={{ article.id }}">Modifier</a></td>
+                    <td>
+                        <form action="/web/index.php/admin/articles?p=delete&id={{ article.id }}" method="post">
+                            <input type="hidden" name="id" value="{{ article.id }}">
+                            <button type="submit" class="waves-effect waves-light btn red accent-2" href="/web/index.php/admin/articles?p=delete&id={{ article.id }}">Supprimer</button>
+                        </form>
+                    </td>
                 </tr>
             {% endfor %}
         </table>

@@ -7,23 +7,23 @@
         <form action="" id="form-article" method="post">
         <div class="row">
             <div class="input-field col s12">
-                <input type="text" name="title" id="title" class="validate" data-error="wrong" data-success="right" required/>
+                <input value ="{{ article.title }}" type="text" name="title" id="title" class="validate" data-error="wrong" data-success="right" required/>
                 <label for="title">Titre de l'article</label>
             </div>
             <div class="input-field col s12">
                 <label for="img">Image d'en-tête</label><br>
-                <input class="validate" type="text" name="picture" data-error="wrong" data-success="right" id="img">
+                <input value="{{ article.picture }}" class="validate" type="text" name="picture" data-error="wrong" data-success="right" id="img">
             </div>
             <div class="input-field col s12">
                 <label for="summary">Résumé de l'article</label>
-                <textarea id="summary" name="summary" class="materialize-textarea" data-error="wrong" data-success="right" required></textarea>
+                <textarea id="summary" name="summary" class="materialize-textarea" data-error="wrong" data-success="right" required>{{ article.summary }}</textarea>
             </div>
             <div class="input-field col s12">
                 <label for="content">Article</label>
-                <textarea id="content" name="content" rows="20" class="materialize-textarea" data-error="wrong" data-success="right" required></textarea>
+                <textarea id="content" name="content" rows="20" class="materialize-textarea" data-error="wrong" data-success="right" required>{{ article.content }}</textarea>
             </div>
             <button type="submit" class="waves-effect waves-light btn orange accent-2">
-                Publier
+                Modifier
             </button>
         </div>
     </form>

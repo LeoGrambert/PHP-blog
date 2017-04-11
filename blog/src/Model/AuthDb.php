@@ -9,15 +9,26 @@ namespace src\Model;
 
 use src\Database;
 
+/**
+ * Class AuthDb
+ * @package src\Model
+ */
 class AuthDb
 {
     private $db;
 
+    /**
+     * AuthDb constructor.
+     * @param Database $db
+     */
     public function __construct(Database $db)
     {
         $this->db = $db;
     }
 
+    /**
+     * @return bool
+     */
     public function getUserId(){
         if ($this->logged()) {
             return $_SESSION['auth'];
@@ -41,6 +52,9 @@ class AuthDb
         return false;
     }
 
+    /**
+     * @return bool
+     */
     public function logged(){
         return isset($_SESSION['auth']);
     }

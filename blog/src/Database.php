@@ -90,4 +90,11 @@ class Database
             return $datas;
         }
     }
+
+    /**
+     * @return string
+     */
+    public function lastInsertId(){
+        return $this->getPDO()->lastInsertId();
+    }
 }

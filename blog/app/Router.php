@@ -32,26 +32,31 @@ class Router
     /**
      * Router
      */
-    public function routerRequete(){
+    public function routerRequete()
+    {
         //If homepage
         if ('/web/index.php' === $this->uri || '/web/' === $this->uri) {
             $this->controller->homePage();
-        }
         //If article page
-        elseif ('/web/index.php/article' === $this->uri && isset($_GET['id'])) {
+        } elseif ('/web/index.php/article' === $this->uri && isset($_GET['id'])) {
             $this->controller->articlePage();
-        //If login page
-        } elseif ('/web/index.php/login/' === $this->uri){
+         //If login page
+        } elseif ('/web/index.php/login/' === $this->uri) {
             $this->controller->loginPage();
         //If admin page (dashboard)
-        } elseif ('/web/index.php/admin/home/' === $this->uri){
+        } elseif ('/web/index.php/admin/home/' === $this->uri) {
             $this->controller->adminHomePage();
         //If admin page (articles)
         } elseif ('/web/index.php/admin/articles/' === $this->uri) {
             $this->controller->adminArticlesPage();
+        //If admin page (update an article)
+        } elseif (('/web/index.php/admin/articles' === $this->uri) && ($_GET['p'] === 'edit') && (isset($_GET['id']))){
+            $this->controller->adminEditArticlePage();
         //If admin page (add an article)
         } elseif ('/web/index.php/admin/articles/add/' === $this->uri) {
             $this->controller->adminAddArticlePage();
+        } elseif (('/web/index.php/admin/articles' === $this->uri) && ($_GET['p'] === 'delete') && (isset($_GET['id']))){
+            $this->controller->adminDeleteArticlePage();
         //If admin page (comments)
         } elseif ('/web/index.php/admin/comments/' === $this->uri){
             $this->controller->adminCommentsPage();

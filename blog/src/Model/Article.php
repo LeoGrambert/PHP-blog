@@ -22,7 +22,6 @@ class Article
     private $title;
     private $summary;
     private $picture;
-    private $is_published;
 
     /**
      * @return string
@@ -90,29 +89,6 @@ class Article
      */
     public function setContent($content){
         $this->content = $content;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function isPublished(){
-        $state = $this->is_published;
-        if($state == 0){
-            return "Brouillon";
-        } elseif ($state == 1){
-            return "Publié";
-        } else{
-            return "Erreur";
-        }
-    }
-
-    /**
-     * @param $is_published
-     * @return $this
-     */
-    public function setIsPublished($is_published){
-        $this->is_published = $is_published;
         return $this;
     }
 
@@ -190,9 +166,9 @@ class Article
      */
     public function addAnArticle(){
         if (!isset($_POST['picture'])){
-            $pictures = "";
+            $this->picture = "";
         } else {
-            $pictures = $_POST['picture'];
+            $this->picture = $_POST['picture'];
         }
         return App::getDatabase()
             ->prepare(
@@ -202,17 +178,46 @@ class Article
                     htmlspecialchars($_POST['title']),
                     htmlspecialchars($_POST['summary']),
                     htmlspecialchars($_POST['content']),
-                    $pictures
+                    $this->picture
                 ]),
                 __CLASS__
             );
     }
 
+    /**
+     * Query to delete an article
+     * @return array|mixed
+     */
     public function deleteAnArticle(){
-        //todo
+        return App::getDatabase()
+            ->prepare(
+                'DELETE FROM Article WHERE id = ?',
+                [$_POST['id']],
+                __CLASS__
+            );
     }
-    
+
+    /**
+     * Query to update an article
+     * @return array|mixed
+     */
     public function updateAnArticle(){
-        //todo
+        if (!isset($_POST['picture'])){
+            $this->picture = "";
+        } else {
+            $this->picture = $_POST['picture'];
+        }
+        return App::getDatabase()
+            ->prepare(
+                'UPDATE Article SET title = ?, summary = ?, content = ?, picture = ? WHERE id = ?',
+                ([
+                    htmlspecialchars($_POST['title']),
+                    htmlspecialchars($_POST['summary']),
+                    htmlspecialchars($_POST['content']),
+                    $this->picture,
+                    $_GET['id']
+                ]),
+                __CLASS__
+            );
     }
 }

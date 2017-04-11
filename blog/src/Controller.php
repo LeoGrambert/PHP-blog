@@ -114,14 +114,20 @@ class Controller
      * What we do if we are on login page
      */
     public function loginPage(){
-        if(!empty($_POST)){
-            if($this->authClass->login($_POST['username'], $_POST['password']) === true){
-                header('Location: /web/index.php/admin/home/');
-            } else {
-                echo '<h6 id="badCredentials">Bad Credentials</h6>';
+        //If user is log -> he's redirected to admin
+        if($this->authClass->logged()){
+            echo $this->adminHomePage();
+        } else {
+            //If he's not log, he need to log in
+            if(!empty($_POST)){
+                if($this->authClass->login(htmlspecialchars($_POST['username']), htmlspecialchars($_POST['password'])) === true){
+                    header('Location: /web/index.php/admin/home/');
+                } else {
+                    echo '<h6 id="badCredentials">Bad Credentials</h6>';
+                }
             }
+            echo $this->twig->render('login.html.twig');
         }
-        echo $this->twig->render('login.html.twig');
     }
 
     /**
@@ -136,7 +142,7 @@ class Controller
     }
 
     /**
-     * What we do if we are on admin page (add an articles)
+     * What we do if we are on admin page (add an article)
      */
     public function adminAddArticlePage(){
         //Add an article
@@ -152,7 +158,37 @@ class Controller
     }
 
     /**
-     * What we do if we are on admin page (add an articles)
+     * What we do if we are on admin page (edit an article)
+     */
+    public function adminEditArticlePage(){
+        // Display article to prefill form
+        $article = $this->articleClass->getArticleById();
+
+        // Update an article
+        if (isset($_POST['title']) && isset($_POST['summary']) && isset($_POST['content'])){
+            $this->articleClass->updateAnArticle();
+        }
+
+        if ($this->authClass->logged()){
+            echo $this->twig->render('editArticle_admin.html.twig', ['article'=>$article]);
+        } else {
+            $this->appClass->forbidden();
+        }
+    }
+
+    /**
+     * Whate we do if we are on admin page (delete an article)
+     */
+    public function adminDeleteArticlePage(){
+        if ($this->authClass->logged()){
+            $this->articleClass->deleteAnArticle();
+        } else {
+            $this->appClass->forbidden();
+        }
+    }
+
+    /**
+     * What we do if we are on admin page (add an article)
      */
     public function adminArticlesPage(){
         if ($this->authClass->logged()){
