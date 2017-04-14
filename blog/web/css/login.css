@@ -2,7 +2,7 @@ body{
     min-height: calc(100vh - 400px);
 }
 #loginForm{
-    margin:15% 0 15% 0;
+    margin:15% 0 15% 25%;
     padding: 3%;
     background-color: #FFFFFF;
     border-radius: 1%;

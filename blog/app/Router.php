@@ -58,8 +58,11 @@ class Router
         } elseif (('/web/index.php/admin/articles' === $this->uri) && ($_GET['p'] === 'delete') && (isset($_GET['id']))){
             $this->controller->adminDeleteArticlePage();
         //If admin page (comments)
-        } elseif ('/web/index.php/admin/comments/' === $this->uri){
+        } elseif ('/web/index.php/admin/comments/' === $this->uri) {
             $this->controller->adminCommentsPage();
+        //If admin page (pictures)
+        } elseif ('/web/index.php/admin/pictures/' === $this->uri){
+            $this->controller->adminPicturesPage();
         //If admin page (my account)
         } elseif ('/web/index.php/admin/account/' === $this->uri){
             $this->controller->adminAccountPage();

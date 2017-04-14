@@ -19,7 +19,7 @@
             </li>
             <hr>
             {% for article in articles|reverse %}
-                <li><a href="{{ article.url }}">{{ article.title }}</a></li><br/>
+                <li><a href="/web/{{ article.url }}">{{ article.title }}</a></li><br/>
             {% endfor %}
         </ul>
     </nav>

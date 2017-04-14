@@ -1,0 +1,28 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block title %}Multimédia{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="/web/css/pictures.css">
+    <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--10-col">
+        <form action="" id="form-pictures" method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="file-field col s8">
+                    <div class="btn waves-effect waves-light btn orange accent-2">
+                        <span>Image</span>
+                        <input type="file" name="picture" id="picture" class="validate" data-error="wrong" data-success="right" required/>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" id="send-picture" class="waves-effect waves-light btn orange accent-2">
+                Envoyer
+            </button>
+        </form>
+    </div>
+    <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
+
+    </div>
+{% endblock %}

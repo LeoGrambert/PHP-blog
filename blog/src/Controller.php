@@ -223,6 +223,25 @@ class Controller
     }
 
     /**
+     * What we do if we are on admin page (pictures)
+     */
+    public function adminPicturesPage(){
+        if(!empty($_FILES)){
+            $picture = $_FILES['picture'];
+            $format = strtolower(substr($picture['name'],-3,3));
+            $allow_format = ['jpg', 'png', 'gif'];
+            if (in_array($format, $allow_format)){
+                $tmp_namp = $picture['tmp_name'];
+                $destination_file = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/".$picture['name'];
+                move_uploaded_file($tmp_namp, $destination_file);
+            } else {
+                echo '<div>Le fichier que vous essayez d\'envoyer n\'est pas une image.</div>';
+            }
+        }
+        echo $this->twig->render('pictures_admin.html.twig');
+    }
+
+    /**
      * What we do if we are on error page
      */
     public function errorPage()
