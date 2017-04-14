@@ -5,3 +5,20 @@
 form{
     margin-top: 2%;
 }
+img{
+    width:auto;
+    height: 100px;
+    margin: 1%;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+}
+.delete{
+    position: absolute;
+    margin-left: -4%;
+    margin-top: 2%;
+    background-color: #F5F5F5;
+    border-radius: 36%;
+    color:#37474F;
+}
+#gallery{
+    text-align:center;
+}

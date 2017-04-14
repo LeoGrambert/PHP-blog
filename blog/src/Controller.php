@@ -226,19 +226,44 @@ class Controller
      * What we do if we are on admin page (pictures)
      */
     public function adminPicturesPage(){
+        //To delete a picture
+        if (isset($_GET['n'])){
+            $img = $_GET['n'];
+            if (in_array($img, scandir('/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/'))){
+                unlink('/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/'.$img);
+            }
+        }
+
+        //We add a picture in gallery if file field isn't empty
         if(!empty($_FILES)){
             $picture = $_FILES['picture'];
-            $format = strtolower(substr($picture['name'],-3,3));
-            $allow_format = ['jpg', 'png', 'gif'];
+            $format = strtolower(substr($picture['name'],-4,4));
+            $allow_format = ['.jpg', '.png', '.gif', 'jpeg'];
             if (in_array($format, $allow_format)){
                 $tmp_namp = $picture['tmp_name'];
                 $destination_file = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/".$picture['name'];
                 move_uploaded_file($tmp_namp, $destination_file);
+
             } else {
                 echo '<div>Le fichier que vous essayez d\'envoyer n\'est pas une image.</div>';
             }
         }
-        echo $this->twig->render('pictures_admin.html.twig');
+
+        //We store images in an array in order to send and display them in view
+        $allImg = [];
+        $allImgDirectory = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img";
+        $dir = opendir($allImgDirectory);
+        while($file = readdir($dir)){
+            $format = strtolower(substr($file,-3,3));
+            $allow_format = ['jpg', 'png', 'gif', 'jpeg'];
+            if (in_array($format, $allow_format)){
+                $allImg [] = $file;
+            }
+        }
+
+        echo $this->twig->render('pictures_admin.html.twig', [
+            "allImg"=>$allImg
+        ]);
     }
 
     /**
