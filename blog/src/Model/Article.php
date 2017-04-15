@@ -165,7 +165,7 @@ class Article
      * @return array|mixed
      */
     public function addAnArticle(){
-        if (!isset($_POST['picture'])){
+        if (empty($_POST['picture'])){
             $this->picture = "";
         } else {
             $this->picture = $_POST['picture'];

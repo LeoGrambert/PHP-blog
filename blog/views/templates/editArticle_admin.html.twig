@@ -10,9 +10,16 @@
                 <input value ="{{ article.title }}" type="text" name="title" id="title" class="validate" data-error="wrong" data-success="right" required/>
                 <label for="title">Titre de l'article</label>
             </div>
-            <div class="input-field col s12">
-                <label for="img">Image d'en-tête</label><br>
-                <input value="{{ article.picture }}" class="validate" type="text" name="picture" data-error="wrong" data-success="right" id="img">
+            <div class="row">
+                <div class="input-field col s12">
+                    <select name="picture" id="choose-picture" class="icons">
+                        <option value="" disabled selected>Choisissez votre photo...</option>
+                        {% for img in allImg %}
+                            <option value="/web/img/{{ img }}" data-icon="/web/img/{{ img }}" class="left circle">{{ img }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="choose-picture">Images</label>
+                </div>
             </div>
             <div class="input-field col s12">
                 <label for="summary">Résumé de l'article</label>

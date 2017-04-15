@@ -145,13 +145,27 @@ class Controller
      * What we do if we are on admin page (add an article)
      */
     public function adminAddArticlePage(){
+        //Get pictures from gallery
+        $allImg = [];
+        $allImgDirectory = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload";
+        $dir = opendir($allImgDirectory);
+        while($file = readdir($dir)){
+            $format = strtolower(substr($file,-3,3));
+            $allow_format = ['jpg', 'png', 'gif', 'jpeg'];
+            if (in_array($format, $allow_format)){
+                $allImg [] = $file;
+            }
+        }
+        
         //Add an article
-        if (isset($_POST['title']) && isset($_POST['summary']) && isset($_POST['content'])){
+        if (!empty($_POST['title']) && !empty($_POST['summary']) && !empty($_POST['content'])){
             $this->articleClass->addAnArticle();
         }
 
         if ($this->authClass->logged()){
-            echo $this->twig->render('addArticle_admin.html.twig');
+            echo $this->twig->render('addArticle_admin.html.twig', [
+                'allImg'=>$allImg
+            ]);
         } else {
             $this->appClass->forbidden();
         }
@@ -164,13 +178,25 @@ class Controller
         // Display article to prefill form
         $article = $this->articleClass->getArticleById();
 
+        //Get pictures from gallery
+        $allImg = [];
+        $allImgDirectory = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img";
+        $dir = opendir($allImgDirectory);
+        while($file = readdir($dir)){
+            $format = strtolower(substr($file,-3,3));
+            $allow_format = ['jpg', 'png', 'gif', 'jpeg'];
+            if (in_array($format, $allow_format)){
+                $allImg [] = $file;
+            }
+        }
+
         // Update an article
         if (isset($_POST['title']) && isset($_POST['summary']) && isset($_POST['content'])){
             $this->articleClass->updateAnArticle();
         }
 
         if ($this->authClass->logged()){
-            echo $this->twig->render('editArticle_admin.html.twig', ['article'=>$article]);
+            echo $this->twig->render('editArticle_admin.html.twig', ['article'=>$article, 'allImg'=>$allImg]);
         } else {
             $this->appClass->forbidden();
         }
@@ -229,8 +255,8 @@ class Controller
         //To delete a picture
         if (isset($_GET['n'])){
             $img = $_GET['n'];
-            if (in_array($img, scandir('/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/'))){
-                unlink('/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/'.$img);
+            if (in_array($img, scandir('/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload/'))){
+                unlink('/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload/'.$img);
             }
         }
 
@@ -241,7 +267,7 @@ class Controller
             $allow_format = ['.jpg', '.png', '.gif', 'jpeg'];
             if (in_array($format, $allow_format)){
                 $tmp_namp = $picture['tmp_name'];
-                $destination_file = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/".$picture['name'];
+                $destination_file = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload/".$picture['name'];
                 move_uploaded_file($tmp_namp, $destination_file);
 
             } else {
@@ -257,14 +283,14 @@ class Controller
             if (in_array($format, $allow_format)){
                 $urlExplode = explode("/", $pictureUrl);
                 $name = $urlExplode[sizeof($urlExplode)-1];
-                $destination_file = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/".$name;
+                $destination_file = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload/".$name;
                 copy($pictureUrl, $destination_file);
             }
         }
 
         //We store images in an array in order to send and display them in view
         $allImg = [];
-        $allImgDirectory = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img";
+        $allImgDirectory = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload";
         $dir = opendir($allImgDirectory);
         while($file = readdir($dir)){
             $format = strtolower(substr($file,-3,3));

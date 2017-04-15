@@ -5,27 +5,40 @@
 {% block content %}
     <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
         <form action="" id="form-article" method="post">
-        <div class="row">
-            <div class="input-field col s12">
-                <input type="text" name="title" id="title" class="validate" data-error="wrong" data-success="right" required/>
-                <label for="title">Titre de l'article</label>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" name="title" id="title" class="validate" data-error="wrong" data-success="right" required/>
+                    <label for="title">Titre de l'article</label>
+                </div>
             </div>
-            <div class="input-field col s12">
-                <label for="img">Image d'en-tête</label><br>
-                <input class="validate" type="text" name="picture" data-error="wrong" data-success="right" id="img">
+            <div class="row">
+                <div class="input-field col s12">
+                    <select name="picture" id="choose-picture" class="icons">
+                        <option value="" disabled selected>Choisissez votre photo...</option>
+                        {% for img in allImg %}
+                        <option value="/web/img/upload/{{ img }}" data-icon="/web/img/upload/{{ img }}" class="left circle">{{ img }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="choose-picture">Images</label>
+                </div>
             </div>
-            <div class="input-field col s12">
-                <label for="summary">Résumé de l'article</label>
-                <textarea id="summary" name="summary" class="materialize-textarea" data-error="wrong" data-success="right" required></textarea>
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="summary">Résumé de l'article</label>
+                    <textarea id="summary" name="summary" class="materialize-textarea" data-error="wrong" data-success="right" required></textarea>
+                </div>
             </div>
-            <div class="input-field col s12">
-                <label for="content">Article</label>
-                <textarea id="content" name="content" rows="20" class="materialize-textarea" data-error="wrong" data-success="right" required></textarea>
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="content">Article</label>
+                    <textarea id="content" name="content" rows="20" class="materialize-textarea" data-error="wrong" data-success="right" required></textarea>
+                </div>
             </div>
-            <button type="submit" class="waves-effect waves-light btn orange accent-2">
-                Publier
-            </button>
-        </div>
-    </form>
-        </div>
+            <div class="row">
+                <button type="submit" class="waves-effect waves-light btn orange accent-2">
+                    Publier
+                </button>
+            </div>
+        </form>
+    </div>
 {% endblock %}
