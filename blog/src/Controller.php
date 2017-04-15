@@ -249,6 +249,19 @@ class Controller
             }
         }
 
+        //We add a picture in gallery if text field isn't empty
+        if(!empty($_POST)){
+            $pictureUrl = $_POST['picture-url'];
+            $format = strtolower(substr($pictureUrl,-4,4));
+            $allow_format = ['.jpg', '.png', '.gif', 'jpeg'];
+            if (in_array($format, $allow_format)){
+                $urlExplode = explode("/", $pictureUrl);
+                $name = $urlExplode[sizeof($urlExplode)-1];
+                $destination_file = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/".$name;
+                copy($pictureUrl, $destination_file);
+            }
+        }
+
         //We store images in an array in order to send and display them in view
         $allImg = [];
         $allImgDirectory = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img";
