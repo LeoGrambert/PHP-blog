@@ -171,3 +171,9 @@ form{
 .select-wrapper{
     width:40%;
 }
+#return-update{
+    width: auto;
+    background-color: #FFAB40;
+    color: white;
+    padding: 1%;
+}
