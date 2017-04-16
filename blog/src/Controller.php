@@ -160,6 +160,7 @@ class Controller
         //Add an article
         if (!empty($_POST['title']) && !empty($_POST['summary']) && !empty($_POST['content'])){
             $this->articleClass->addAnArticle();
+            header('Location: /web/index.php');
         }
 
         if ($this->authClass->logged()){
@@ -193,6 +194,7 @@ class Controller
         // Update an article
         if (isset($_POST['title']) && isset($_POST['summary']) && isset($_POST['content'])){
             $this->articleClass->updateAnArticle();
+            header('Location: /web/index.php/admin/articles/');
         }
 
         if ($this->authClass->logged()){
