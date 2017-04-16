@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <input value ="{{ article.title }}" type="text" name="title" id="title" class="validate" data-error="wrong" data-success="right" required/>
-                    <label for="title">Titre de l'article</label>
+                    <label for="title">Titre</label>
                 </div>
             </div>
             <div class="row">
@@ -19,18 +19,18 @@
                             <option value="/web/img/upload/{{ img }}" data-icon="/web/img/upload/{{ img }}" class="left circle">{{ img }}</option>
                         {% endfor %}
                     </select>
-                    <label for="choose-picture">Images</label>
+                    <label for="choose-picture">Image d'en-tête</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <label for="summary">Résumé du chapitre</label>
+                    <label for="summary">Résumé</label>
                     <textarea id="summary" name="summary" class="materialize-textarea wysiwyg">{{ article.summary }}</textarea>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <label for="content">Contenu du chapitre</label>
+                    <label for="content">Contenu</label>
                     <textarea id="content" name="content" rows="20" class="materialize-textarea wysiwyg">{{ article.content }}</textarea>
                 </div>
             </div>
