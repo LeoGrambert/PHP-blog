@@ -30,11 +30,7 @@
     <link rel="stylesheet" href="/web/lib/materialize/css/material.grey-orange.min.css">
     <link rel="stylesheet" href="/web/lib/materialize/css/materialize.min.css">
     <link rel="stylesheet" href="/web/css/layout_admin.css">
-<!--
-    <script src="/web/lib/tinymce/tinymce.min.js"></script>
-    <script>tinymce.init({
-            selector:'textarea'
-        });</script>-->
+
 </head>
 
 <body>
@@ -68,5 +64,12 @@
     <script src="/web/lib/jquery/jquery.min.js"></script>
     <script src="/web/lib/materialize/js/materialize.min.js"></script>
     <script src="/web/js/select_form_materialize.js"></script>
+    <script src="/web/lib/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script>tinymce.init({
+            mode:'specific_textareas',
+            editor_selector:'wysiwyg',
+            language: 'fr_FR',
+            plugins : 'advlist autolink link lists charmap print preview autoresize autosave searchreplace wordcount'
+        });</script>
 </body>
 </html>

@@ -175,9 +175,9 @@ class Article
                 'INSERT INTO Article (title, summary, content, picture)
                  VALUES (?, ?, ?, ?)',
                 ([
-                    htmlspecialchars($_POST['title']),
-                    htmlspecialchars($_POST['summary']),
-                    htmlspecialchars($_POST['content']),
+                    $_POST['title'],
+                    $_POST['summary'],
+                   $_POST['content'],
                     $this->picture
                 ]),
                 __CLASS__
@@ -211,9 +211,9 @@ class Article
             ->prepare(
                 'UPDATE Article SET title = ?, summary = ?, content = ?, picture = ? WHERE id = ?',
                 ([
-                    htmlspecialchars($_POST['title']),
-                    htmlspecialchars($_POST['summary']),
-                    htmlspecialchars($_POST['content']),
+                    $_POST['title'],
+                    $_POST['summary'],
+                    $_POST['content'],
                     $this->picture,
                     $_GET['id']
                 ]),

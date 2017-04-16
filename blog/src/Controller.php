@@ -180,7 +180,7 @@ class Controller
 
         //Get pictures from gallery
         $allImg = [];
-        $allImgDirectory = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img";
+        $allImgDirectory = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload";
         $dir = opendir($allImgDirectory);
         while($file = readdir($dir)){
             $format = strtolower(substr($file,-3,3));

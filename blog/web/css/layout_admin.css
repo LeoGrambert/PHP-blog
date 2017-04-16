@@ -138,3 +138,10 @@ html, body {
 .demo-avatar-dropdown{
     margin-left: 20%;
 }
+form .wysiwyg_label{
+    margin-top:-3.5%;
+    color:#263238;
+}
+textarea#content{
+    height: 500px;
+}

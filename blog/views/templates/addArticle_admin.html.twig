@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <select name="picture" id="choose-picture" class="icons">
-                        <option value="" disabled selected>Choisissez votre photo...</option>
+                        <option value="" disabled selected>Sans photo</option>
                         {% for img in allImg %}
                         <option value="/web/img/upload/{{ img }}" data-icon="/web/img/upload/{{ img }}" class="left circle">{{ img }}</option>
                         {% endfor %}
@@ -24,14 +24,14 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <label for="summary">Résumé de l'article</label>
-                    <textarea id="summary" name="summary" class="materialize-textarea" data-error="wrong" data-success="right" required></textarea>
+                    <label for="summary" class="wysiwyg_label">Résumé du chapitre</label>
+                    <textarea id="summary" name="summary" class="materialize-textarea wysiwyg"></textarea>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <label for="content">Article</label>
-                    <textarea id="content" name="content" rows="20" class="materialize-textarea" data-error="wrong" data-success="right" required></textarea>
+                    <label for="content" class="wysiwyg_label">Contenu du chapitre</label>
+                    <textarea id="content" name="content" rows="20" class="materialize-textarea wysiwyg"></textarea>
                 </div>
             </div>
             <div class="row">
