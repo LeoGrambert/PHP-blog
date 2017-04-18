@@ -168,16 +168,16 @@ class Article
         if (empty($_POST['picture'])){
             $this->picture = "";
         } else {
-            $this->picture = $_POST['picture'];
+            $this->picture = htmlspecialchars($_POST['picture']);
         }
         return App::getDatabase()
             ->prepare(
                 'INSERT INTO Article (title, summary, content, picture)
                  VALUES (?, ?, ?, ?)',
                 ([
-                    $_POST['title'],
-                    $_POST['summary'],
-                   $_POST['content'],
+                    htmlspecialchars($_POST['title']),
+                    htmlspecialchars_decode($_POST['summary']),
+                    htmlspecialchars_decode($_POST['content']),
                     $this->picture
                 ]),
                 __CLASS__
@@ -205,15 +205,15 @@ class Article
         if (!isset($_POST['picture'])){
             $this->picture = "";
         } else {
-            $this->picture = $_POST['picture'];
+            $this->picture = htmlspecialchars($_POST['picture']);
         }
         return App::getDatabase()
             ->prepare(
                 'UPDATE Article SET title = ?, summary = ?, content = ?, picture = ? WHERE id = ?',
                 ([
-                    $_POST['title'],
-                    $_POST['summary'],
-                    $_POST['content'],
+                    htmlspecialchars($_POST['title']),
+                    htmlspecialchars_decode($_POST['summary']),
+                    htmlspecialchars_decode($_POST['content']),
                     $this->picture,
                     $_GET['id']
                 ]),

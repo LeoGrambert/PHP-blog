@@ -36,7 +36,7 @@
                         <h4><a href="{{ article.url }}">{{ article.title }}</a></h4>
                     </div>
                     <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
-                        {{ article.summary }}
+                        {{ article.summary|raw }}
                     </div>
                     <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
                         <div><i class="material-icons" role="presentation">person_pin</i></div>

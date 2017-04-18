@@ -69,7 +69,9 @@
             mode:'specific_textareas',
             editor_selector:'wysiwyg',
             language: 'fr_FR',
-            plugins : 'advlist autolink link lists charmap print preview autoresize autosave searchreplace wordcount'
-        });</script>
+            plugins : 'advlist autolink link lists charmap print preview autoresize autosave searchreplace wordcount',
+            entity_encoding : "raw"
+        });
+    console.log(tinymce.html.Entities.encodeAllRaw('test<br/>test'));</script>
 </body>
 </html>
