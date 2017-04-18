@@ -49,13 +49,24 @@ class Controller
      * What we do if we are on home page
      */
     public function homePage(){
-        echo $this->twig->render('home.html.twig', ['articles'=>$this->articles]);
+        if ($this->authClass->logged()){
+            $navAdmin = '<div id="navAdmin"><a href="/web/index.php/admin/articles/add/">Ajouter un article</a><a href="/web/index.php/admin/articles/">Articles</a><a href="/web/index.php/admin/comments/">Commentaires</a><a href="/web/index.php/admin/pictures/">Multimédia</a><a href="/web/index.php/admin/account/">Mon compte</a></div>';
+        } else {
+            $navAdmin = "";
+        }
+        echo $this->twig->render('home.html.twig', ['articles'=>$this->articles, 'navAdmin'=>$navAdmin]);
     }
 
     /**
      * What we do if we are on article page
      */
     public function articlePage(){
+        if ($this->authClass->logged()){
+            $navAdmin = '<div id="navAdmin"><a href="/web/index.php/admin/articles/add/">Ajouter un article</a><a href="/web/index.php/admin/articles/">Articles</a><a href="/web/index.php/admin/comments/">Commentaires</a><a href="/web/index.php/admin/pictures/">Multimédia</a><a href="/web/index.php/admin/account/">Mon compte</a></div>';
+        } else {
+            $navAdmin = "";
+        }
+        
         //query to get article by id
         $article = $this->articleClass->getArticleById();
 
@@ -111,7 +122,8 @@ class Controller
             'articles'=>$this->articles,
             'comments'=>$comments,
             'nextId'=>$nextId,
-            'previousId'=>$previousId
+            'previousId'=>$previousId,
+            'navAdmin'=>$navAdmin
         ]);
     }
 
@@ -177,6 +189,9 @@ class Controller
                 $this->flash->setFlash('Le titre de l\'article est trop long.', 'red lighten-2');
                 $this->flash->getFlash();
             }
+        } else {
+            $this->flash->setFlash('Le formulaire n\'est pas correctement renseigné.', 'red lighten-2');
+            $this->flash->getFlash();
         }
 
 
@@ -223,6 +238,9 @@ class Controller
                 $this->flash->setFlash('Le titre de l\'article est trop long.', 'red lighten-2');
                 $this->flash->getFlash();
             }
+        } else {
+            $this->flash->setFlash('Le formulaire n\'est pas correctement renseigné.', 'red lighten-2');
+            $this->flash->getFlash();
         }
 
         if ($this->authClass->logged()){

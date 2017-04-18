@@ -386,3 +386,18 @@ body .demo-blog {
     padding: 0.5%;
     color:white;
 }
+#navAdmin{
+    background-color: #FFAB40;
+    padding:8px;
+    top:0;
+    left:0;
+    width:100%;
+    font-weight: bold;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+    z-index: 50;
+    text-align: center;
+}
+#navAdmin a{
+    margin:0 3% 0 3%;
+    color:white;
+}
