@@ -379,3 +379,10 @@ body .demo-blog {
 #slide-out{
     padding-top:2%;
 }
+#flash-message{
+    display:none;
+    text-align: center;
+    font-size: 1.1em;
+    padding: 0.5%;
+    color:white;
+}

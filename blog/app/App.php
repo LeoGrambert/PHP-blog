@@ -9,6 +9,7 @@ namespace app;
 
 use src\Autoloader;
 use src\Database;
+use src\Session;
 
 
 class App

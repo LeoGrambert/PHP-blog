@@ -143,7 +143,7 @@ form .wysiwyg_label{
     color:#263238;
 }
 textarea#content{
-    height: 500px;
+    height: 300px;
 }
 .input-field label, .input-field input[type=text]:focus + label, .input-field textarea:focus:not([readonly]) + label {
     color: #7E7E7E;
@@ -176,4 +176,11 @@ form{
     background-color: #FFAB40;
     color: white;
     padding: 1%;
+}
+#flash-message{
+    display:none;
+    text-align: center;
+    font-size: 1.1em;
+    padding: 0.5%;
+    color:white;
 }

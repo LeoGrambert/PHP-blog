@@ -22,6 +22,8 @@ class Article
     private $title;
     private $summary;
     private $picture;
+    private $addAnArticle = false;
+    private $updateAnArticle = false;
 
     /**
      * @return string
@@ -170,7 +172,7 @@ class Article
         } else {
             $this->picture = htmlspecialchars($_POST['picture']);
         }
-        return App::getDatabase()
+        $add = App::getDatabase()
             ->prepare(
                 'INSERT INTO Article (title, summary, content, picture)
                  VALUES (?, ?, ?, ?)',
@@ -182,6 +184,15 @@ class Article
                 ]),
                 __CLASS__
             );
+        $this->addAnArticle = true;
+        return $add;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getAddAnArticle(){
+        return $this->addAnArticle;
     }
 
     /**
@@ -207,7 +218,7 @@ class Article
         } else {
             $this->picture = htmlspecialchars($_POST['picture']);
         }
-        return App::getDatabase()
+        $update = App::getDatabase()
             ->prepare(
                 'UPDATE Article SET title = ?, summary = ?, content = ?, picture = ? WHERE id = ?',
                 ([
@@ -219,5 +230,14 @@ class Article
                 ]),
                 __CLASS__
             );
+        $this->updateAnArticle = true;
+        return $update;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getUpdateAnArticle(){
+        return $this->updateAnArticle;
     }
 }

@@ -11,9 +11,13 @@ use app\App;
 use src\Model\Article;
 use src\Model\AuthDb;
 use src\Model\Comment;
-use Plasticbrain\FlashMessages\FlashMessages;
+use src\Model\FlashMsg;
 
 
+/**
+ * Class Controller
+ * @package src
+ */
 class Controller
 {
     private $twig;
@@ -22,6 +26,7 @@ class Controller
     private $appClass;
     private $authClass;
     private $articles;
+    private $flash;
 
     /**
      * Controller constructor.
@@ -36,6 +41,8 @@ class Controller
         $this->authClass = new AuthDb(App::getDatabase());
         //query to get all articles
         $this->articles = $this->articleClass->getArticles();
+        //FlashMsg
+        $this->flash = new FlashMsg();
     }
 
     /**
@@ -53,14 +60,12 @@ class Controller
         $article = $this->articleClass->getArticleById();
 
         //query to add a comment
-        $msg = new FlashMessages();
         if(isset($_POST['content'])){
             if(!empty($_POST['content']))
             {
                 $this->commentClass->addComment();
             } else {
-                $msg->error('Le commentaire n\'a pas pu être publié. Veuillez réessayer ultérieurement.');
-                $msg->display();
+
             }
         }
         
@@ -158,10 +163,22 @@ class Controller
         }
         
         //Add an article
-        if (!empty($_POST['title']) && !empty($_POST['summary']) && !empty($_POST['content'])){
-            $this->articleClass->addAnArticle();
-            header('Location: /web/index.php/admin/articles/');
+        if (!empty($_POST['title']) && !empty($_POST['summary']) && !empty($_POST['content'])) {
+            if (strlen($_POST['title']) < 100){
+                $this->articleClass->addAnArticle();
+                if ($this->articleClass->getAddAnArticle() === true) {
+                    $this->flash->setFlash('Votre article a bien été ajouté.', 'green lighten-2');
+                    header('Location: /web/index.php/admin/articles/');
+                } else {
+                    $this->flash->setFlash('Une erreur est survenue lors de l\'envoi. Veuillez réessayer.', 'red lighten-2');
+                    $this->flash->getFlash();
+                }
+            } else {
+                $this->flash->setFlash('Le titre de l\'article est trop long.', 'red lighten-2');
+                $this->flash->getFlash();
+            }
         }
+
 
         if ($this->authClass->logged()){
             echo $this->twig->render('addArticle_admin.html.twig', [
@@ -193,8 +210,19 @@ class Controller
 
         // Update an article
         if (isset($_POST['title']) && isset($_POST['summary']) && isset($_POST['content'])){
-            $this->articleClass->updateAnArticle();
-            header('Location: /web/index.php/admin/articles/');
+            if (strlen($_POST['title']) < 100) {
+                $this->articleClass->updateAnArticle();
+                if ($this->articleClass->getUpdateAnArticle() === true) {
+                    $this->flash->setFlash('Votre article a bien été modifié.', 'green lighten-2');
+                    header('Location: /web/index.php/admin/articles/');
+                } else {
+                    $this->flash->setFlash('Une erreur est survenue. Votre article n\'a pas été modifié. Veuillez réessayer', 'red lighten-2');
+                    $this->flash->getFlash();
+                }
+            } else {
+                $this->flash->setFlash('Le titre de l\'article est trop long.', 'red lighten-2');
+                $this->flash->getFlash();
+            }
         }
 
         if ($this->authClass->logged()){
@@ -210,6 +238,7 @@ class Controller
     public function adminDeleteArticlePage(){
         if ($this->authClass->logged()){
             $this->articleClass->deleteAnArticle();
+            header('Location: /web/index.php/admin/articles/');
         } else {
             $this->appClass->forbidden();
         }
@@ -219,6 +248,7 @@ class Controller
      * What we do if we are on admin page (add an article)
      */
     public function adminArticlesPage(){
+        $this->flash->getFlash();
         if ($this->authClass->logged()){
             echo $this->twig->render('articles_admin.html.twig', [
                 'articles'=>$this->articles
