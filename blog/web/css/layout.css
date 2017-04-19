@@ -385,9 +385,14 @@ body .demo-blog {
     font-size: 1.1em;
     padding: 0.5%;
     color:white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
 }
 #navAdmin{
-    background-color: #FFAB40;
+    background-color: #FFFFFF;
     padding:8px;
     top:0;
     left:0;
@@ -398,6 +403,6 @@ body .demo-blog {
     text-align: center;
 }
 #navAdmin a{
-    margin:0 3% 0 3%;
-    color:white;
+    margin:0 5% 0 5%;
+    color:#37474F;
 }

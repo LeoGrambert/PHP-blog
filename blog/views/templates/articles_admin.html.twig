@@ -4,31 +4,40 @@
 
 {% block content %}
     <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
-        <h5>Liste des articles publiés</h5>
-        <table>
+        <h6 id="table-article-title">Liste des articles publiés</h6>
+        <table id="articles">
             <thead>
                 <tr>
                     <td>Date d'ajout</td>
                     <td>Titre</td>
-                    <td>Lecture</td>
-                    <td>Modification</td>
-                    <td>Suppression</td>
+                    <td class="actions">Lecture</td>
+                    <td class="actions">Modification</td>
+                    <td class="actions">Suppression</td>
                 </tr>
             </thead>
-            {% for article in articles %}
-                <tr>
-                    <td>{{ article.dateAdd|date('d-m-Y') }}</td>
-                    <td>{{ article.title }}</td>
-                    <td><a class="waves-effect waves-light btn orange accent-2" href="/web/index.php/article?id={{ article.id }}">Lecture</a></td>
-                    <td><a class="waves-effect waves-light btn orange accent-2" href="/web/index.php/admin/articles?p=edit&id={{ article.id }}">Modifier</a></td>
-                    <td>
-                        <form action="/web/index.php/admin/articles?p=delete&id={{ article.id }}" method="post">
-                            <input type="hidden" name="id" value="{{ article.id }}">
-                            <button type="submit" class="waves-effect waves-light btn red accent-2" href="/web/index.php/admin/articles?p=delete&id={{ article.id }}">Supprimer</button>
-                        </form>
-                    </td>
-                </tr>
-            {% endfor %}
+            <tbody>
+                {% for article in articles %}
+                    <tr>
+                        <td>{{ article.dateAdd|date('d-m-Y') }}</td>
+                        <td>{{ article.title }}</td>
+                        <td class="actions"><a class="waves-effect waves-light btn-floating orange accent-2" href="/web/index.php/article?id={{ article.id }}"><i class="material-icons">visibility</i></a></td>
+                        <td class="actions"><a class="waves-effect waves-light btn-floating orange accent-2" href="/web/index.php/admin/articles?p=edit&id={{ article.id }}"><i class="material-icons">mode_edit</i></a></td>
+                        <td class="actions">
+                            <div id="background"></div>
+                            <a class="waves-effect waves-light btn-floating red accent-2 showButton" id="showButton-{{ article.id }}"><i class="material-icons">delete</i></a>
+                            <div id="modal-{{ article.id }}" class="popup modal">
+                                <form action="/web/index.php/admin/articles?p=delete&id={{ article.id }}" method="post" id="deleteForm-{{ article.id }}" class="deleteForm">
+                                    <p>Voulez-vous vraiment supprimer cet article ?</p>
+                                    <p><em>{{ article.title }}</em></p>
+                                    <input type="hidden" name="id" id="articleId" value="{{ article.id }}">
+                                    <button type="submit" class="btn waves-effect waves-light red accent-2">Confirmation</button>
+                                    <button class="btn waves-effect waves-light grey lighten-1 cancel">Retour</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
         </table>
     </div>
 {% endblock %}
