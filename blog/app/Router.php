@@ -46,9 +46,6 @@ class Router
         //If admin page (dashboard)
         } elseif ('/web/index.php/admin/home/' === $this->uri) {
             $this->controller->adminHomePage();
-        //If admin page (articles)
-        } elseif ('/web/index.php/admin/articles/' === $this->uri) {
-            $this->controller->adminArticlesPage();
         //If admin page (update an article)
         } elseif (('/web/index.php/admin/articles' === $this->uri) && ($_GET['p'] === 'edit') && (isset($_GET['id']))){
             $this->controller->adminEditArticlePage();
@@ -57,6 +54,9 @@ class Router
             $this->controller->adminAddArticlePage();
         } elseif (('/web/index.php/admin/articles' === $this->uri) && ($_GET['p'] === 'delete') && (isset($_GET['id']))){
             $this->controller->adminDeleteArticlePage();
+            //If admin page (articles)
+        } elseif (('/web/index.php/admin/articles' === $this->uri)) {
+            $this->controller->adminArticlesPage();
         //If admin page (comments)
         } elseif ('/web/index.php/admin/comments/' === $this->uri) {
             $this->controller->adminCommentsPage();

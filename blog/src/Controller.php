@@ -50,7 +50,7 @@ class Controller
      */
     public function homePage(){
         if ($this->authClass->logged()){
-            $navAdmin = '<div id="navAdmin"><a href="/web/index.php/admin/articles/add/">Ajouter un article</a><a href="/web/index.php/admin/articles/">Articles</a><a href="/web/index.php/admin/comments/">Commentaires</a><a href="/web/index.php/admin/pictures/">Multimédia</a><a href="/web/index.php/admin/account/">Mon compte</a></div>';
+            $navAdmin = '<div id="navAdmin"><a href="/web/index.php/admin/articles/add/">Ajouter un article</a><a href="/web/index.php/admin/articles?p=1">Articles</a><a href="/web/index.php/admin/comments/">Commentaires</a><a href="/web/index.php/admin/pictures/">Multimédia</a><a href="/web/index.php/admin/account/">Mon compte</a></div>';
         } else {
             $navAdmin = "";
         }
@@ -62,7 +62,7 @@ class Controller
      */
     public function articlePage(){
         if ($this->authClass->logged()){
-            $navAdmin = '<div id="navAdmin"><a href="/web/index.php/admin/articles/add/">Ajouter un article</a><a href="/web/index.php/admin/articles/">Articles</a><a href="/web/index.php/admin/comments/">Commentaires</a><a href="/web/index.php/admin/pictures/">Multimédia</a><a href="/web/index.php/admin/account/">Mon compte</a></div>';
+            $navAdmin = '<div id="navAdmin"><a href="/web/index.php/admin/articles/add/">Ajouter un article</a><a href="/web/index.php/admin/articles?p=1">Articles</a><a href="/web/index.php/admin/comments/">Commentaires</a><a href="/web/index.php/admin/pictures/">Multimédia</a><a href="/web/index.php/admin/account/">Mon compte</a></div>';
         } else {
             $navAdmin = "";
         }
@@ -180,7 +180,7 @@ class Controller
                 $this->articleClass->addAnArticle();
                 if ($this->articleClass->getAddAnArticle() === true) {
                     $this->flash->setFlash('Votre article a bien été ajouté.', 'green lighten-2');
-                    header('Location: /web/index.php/admin/articles/');
+                    header('Location: /web/index.php/admin/articles?p=1');
                 } else {
                     $this->flash->setFlash('Une erreur est survenue lors de l\'envoi. Veuillez réessayer.', 'red lighten-2');
                     $this->flash->getFlash();
@@ -229,7 +229,7 @@ class Controller
                 $this->articleClass->updateAnArticle();
                 if ($this->articleClass->getUpdateAnArticle() === true) {
                     $this->flash->setFlash('Votre article a bien été modifié.', 'green lighten-2');
-                    header('Location: /web/index.php/admin/articles/');
+                    header('Location: /web/index.php/admin/articles?p=1');
                 } else {
                     $this->flash->setFlash('Une erreur est survenue. Votre article n\'a pas été modifié. Veuillez réessayer', 'red lighten-2');
                     $this->flash->getFlash();
@@ -256,7 +256,7 @@ class Controller
     public function adminDeleteArticlePage(){
         if ($this->authClass->logged()){
             $this->articleClass->deleteAnArticle();
-            header('Location: /web/index.php/admin/articles/');
+            header('Location: /web/index.php/admin/articles?p=1');
         } else {
             $this->appClass->forbidden();
         }
@@ -267,9 +267,21 @@ class Controller
      */
     public function adminArticlesPage(){
         $this->flash->getFlash();
+
+        //How many articles are there in BDD ?
+        $nbArt = count($this->articles);
+        //How many pages are we displaying ?
+        $nbPages = ceil($nbArt/10);
+        $curPage = $_GET['p'];
+
+        $articlesWhithPagination = $this->articleClass->getArticlesWhithPagination();
+
         if ($this->authClass->logged()){
             echo $this->twig->render('articles_admin.html.twig', [
-                'articles'=>$this->articles
+                //'articles'=>$this->articles,
+                'articlesWhitPagination'=>$articlesWhithPagination,
+                'nbPages'=>$nbPages,
+                'curPage'=>$curPage
             ]);
         } else {
             $this->appClass->forbidden();

@@ -1,15 +1,16 @@
 /**
  * Created by leo on 18/04/17.
+ * Used to display a modal in order to ask confirmation before deleting an article.
  */
 $(function () {
 
+    //We get article id
     $('.showButton').hover(function(e){
         e.preventDefault();
         var articleId = $(this).attr('id');
         articleId = articleId.split('-');
 
-        console.log(articleId[1]);
-
+        //Function which open modal
         function showModal(){
             var id = '#modal-'+articleId[1];
             resizeModal();
@@ -21,11 +22,13 @@ $(function () {
             });
         }
 
+        //Function which close modal
         function hideModal(){
             $('#background').hide(200);
             $('.popup').hide(200);
         }
 
+        //Function which resize modal
         function resizeModal(){
             var modal = $('#modal-'+articleId[1]);
             var winH = $(document).height();
@@ -36,6 +39,7 @@ $(function () {
             modal.css('marginBottom', '15%');
         }
 
+        //The different actions (functions) when clicking on the elements
         $('#showButton-'+articleId[1]).click(function (e) {
             e.preventDefault();
             showModal();

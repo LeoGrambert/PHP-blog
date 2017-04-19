@@ -16,7 +16,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for article in articles %}
+                {% for article in articlesWhitPagination %}
                     <tr>
                         <td>{{ article.dateAdd|date('d-m-Y') }}</td>
                         <td>{{ article.title }}</td>
@@ -39,5 +39,16 @@
                 {% endfor %}
             </tbody>
         </table>
+        <div class="pagination">
+            <ul class="pagination">
+                {% for i in 1..nbPages %}
+                    {% if curPage == i %}
+                        <li class="active"><a href="/web/index.php/admin/articles?p={{ i }}">{{ i }}</a></li>
+                    {% else %}
+                        <li class="waves-effect"><a href="/web/index.php/admin/articles?p={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                </ul>
+        </div>
     </div>
 {% endblock %}

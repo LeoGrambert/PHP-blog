@@ -250,3 +250,10 @@ menu{
 .deleteForm p{
     text-align:center;
 }
+.pagination{
+    text-align: center;
+    margin-top: 2%;
+}
+.pagination li.active{
+    background-color: #FFAB40;
+}
