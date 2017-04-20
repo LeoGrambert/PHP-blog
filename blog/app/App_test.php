@@ -11,13 +11,21 @@ use src\Autoloader;
 use src\Database;
 use src\Session;
 
-
+/**
+ * Class App
+ * @package app
+ * *********************************************************
+ * This file is the configuration file of this site. 
+ * Use it by adapting the login credentials to your database.
+ * If you need, contact me here : leo@grambert.fr
+ * *********************************************************
+ */
 class App
 {
     const DB_NAME = 'blog_JF';
-    const DB_USER = 'obiwan-kenobi';
-    const DB_PASS = 'mayTheForceBeWithYou';
-    const DB_HOST = '127.0.0.1';
+    const DB_USER = 'your_username';
+    const DB_PASS = 'your_password';
+    const DB_HOST = 'your_host';
 
     private static $_database;
 
