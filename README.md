@@ -1,12 +1,16 @@
 # Projet3_CPMDev
 
-Create a blog to a writter without framework or CMS
-
-If you want to import the BDD with some data, go here : docs/blog_JF_Article.sqf && docs/blog_JF_Comment.sql
+<h4>Create a blog to a writter without framework or CMS</h4>
 
 <hr>
 
-Architecture logic :
+<strong>Import database:</strong>
+
+If you want to import the BDD with some data, go here :<br> docs/blog_JF_Article.sql<br> &&<br> docs/blog_JF_Comment.sql
+
+<hr>
+
+<strong>Architecture logic :</strong>
 
 ![diagram](http://leogrambert.fr/front/projets/blogEcrivain/docs/logique_mvc.png)
 

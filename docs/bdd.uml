@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>d3878ab8-a342-4f7e-926d-84614ea23857</OriginalElement>
+  <nodes>
+    <node x="258.0" y="236.0">d3878ab8-a342-4f7e-926d-84614ea23857.TABLE:blog_JF.User</node>
+    <node x="-162.0" y="226.0">d3878ab8-a342-4f7e-926d-84614ea23857.TABLE:blog_JF.Comment</node>
+    <node x="31.0" y="-28.0">d3878ab8-a342-4f7e-926d-84614ea23857.TABLE:blog_JF.Article</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="d3878ab8-a342-4f7e-926d-84614ea23857.TABLE:blog_JF.Comment" target="d3878ab8-a342-4f7e-926d-84614ea23857.TABLE:blog_JF.Article">
+      <point x="0.0" y="-109.0" />
+      <point x="0.0" y="77.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="254.5" y="211.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+  </Categories>
+</Diagram>
+
