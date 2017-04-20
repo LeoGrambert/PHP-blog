@@ -97,9 +97,11 @@ class Controller
         }
 
         //Report a comment
+        //todo Faire une vérification en session. L'utilisateur ne doit pas pouvoir signaler deux fois le même article. S'il essaie, message flash rouge
         if (isset($_POST['comment-id']) && !empty($_POST['comment-id'])){
-            $this->flash->setFlash('Le signalement a bien été envoyé à l\'administrateur', 'green lighten-2');
             $this->commentClass->reportComment();
+            $this->flash->setFlash('Le signalement a bien été envoyé à l\'administrateur', 'green lighten-2');
+            $this->flash->getFlash();
         }
 
         //Generate newer article.

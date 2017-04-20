@@ -48,7 +48,9 @@ body .demo-blog {
     margin: 0 auto;
     flex-shrink: 0;
 }
-
+.mdl-layout, nav form{
+    height:auto;
+}
 .demo-blog.mdl-layout .mdl-layout__content {
     padding-top: 50px;
     position: relative;
