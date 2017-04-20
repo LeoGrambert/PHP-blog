@@ -311,13 +311,21 @@ class Controller
      * What we do if we are on admin page (comments)
      */
     public function adminCommentsPage(){
+        
+        //How many articles are there in BDD ?
+        $nbComments = count($this->commentClass->getNumberReportedComments());
+        //How many pages are we displaying ?
+        $nbPages = ceil($nbComments/10);
+        $curPage = $_GET['p'];
         //Get all comments with report
         $commentsWithReport = $this->commentClass->getCommentsWithReport();
         
         if ($this->authClass->logged()){
             echo $this->twig->render('comments_admin.html.twig',
                 [
-                    'commentsWithReport'=>$commentsWithReport
+                    'commentsWithReport'=>$commentsWithReport,
+                    'nbPages'=>$nbPages,
+                    'curPage'=>$curPage
                 ]);
         } else {
             $this->appClass->forbidden();

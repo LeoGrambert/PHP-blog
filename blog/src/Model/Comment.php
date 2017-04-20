@@ -213,14 +213,30 @@ class Comment
     }
 
     /**
-     * Query to get comments with report
+     * Query to get all comments with report
      * @return array
      */
     public function getCommentsWithReport(){
+        if(isset($_GET['p']) && $_GET['p'] > 0 && $_GET['p'] <= count($this->getNumberReportedComments())){
+            $curPage = $_GET['p'];
+        } else {
+            $curPage = 1;
+        }
+        $perPage = 10;
+        
         return App::getDatabase()
             ->query(
-                'SELECT * FROM Comment WHERE report != 0 ORDER BY report DESC LIMIT 0,20',
+                'SELECT * FROM Comment WHERE report != 0 ORDER BY report DESC LIMIT '.(($curPage-1)*$perPage).','.$perPage,
                 __CLASS__
             );
+    }
+
+    /**
+     * Get number of reported comments
+     * @return array
+     */
+    public function getNumberReportedComments(){
+        return App::getDatabase()
+            ->query('SELECT id FROM Comment WHERE report != 0', __CLASS__);
     }
 }

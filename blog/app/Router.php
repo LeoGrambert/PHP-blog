@@ -58,7 +58,7 @@ class Router
         } elseif (('/web/index.php/admin/articles' === $this->uri)) {
             $this->controller->adminArticlesPage();
         //If admin page (comments)
-        } elseif ('/web/index.php/admin/comments/' === $this->uri) {
+        } elseif ('/web/index.php/admin/comments' === $this->uri) {
             $this->controller->adminCommentsPage();
         //If admin page (pictures)
         } elseif ('/web/index.php/admin/pictures/' === $this->uri) {
