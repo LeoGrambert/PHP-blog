@@ -3,7 +3,30 @@
 {% block title %}Commentaires{% endblock %}
 
 {% block content %}
-    <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
-
+    <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
+        <h6 id="table-article-title">Liste des commentaires signalés</h6>
+        <table>
+            <thead>
+            <tr>
+                <td>Date d'ajout</td>
+                <td>Auteur</td>
+                <td>Contenu</td>
+                <td>Nombre de signalement</td>
+                <td>Modération</td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for commentWithReport in commentsWithReport %}
+                <tr>
+                    <td>{{ commentWithReport.dateAdd }}</td>
+                    <td>{{ commentWithReport.author }}<br>
+                    E-mail : {% if commentWithReport.email %}{{ commentWithReport.email }}{% else %}Non renseigné{% endif %}</td>
+                    <td>{{ commentWithReport.content }}</td>
+                    <td>{{ commentWithReport.report }}</td>
+                    <td><i class="material-icons">delete</i></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </div>
 {% endblock %}

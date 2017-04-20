@@ -311,8 +311,14 @@ class Controller
      * What we do if we are on admin page (comments)
      */
     public function adminCommentsPage(){
+        //Get all comments with report
+        $commentsWithReport = $this->commentClass->getCommentsWithReport();
+        
         if ($this->authClass->logged()){
-            echo $this->twig->render('comments_admin.html.twig');
+            echo $this->twig->render('comments_admin.html.twig',
+                [
+                    'commentsWithReport'=>$commentsWithReport
+                ]);
         } else {
             $this->appClass->forbidden();
         }

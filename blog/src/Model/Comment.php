@@ -198,6 +198,7 @@ class Comment
     }
 
     /**
+     * Query to report a comment
      * @return array|mixed
      */
     public function reportComment(){
@@ -208,6 +209,18 @@ class Comment
                 'UPDATE Comment SET report = report+1 WHERE id='.$id,
                 [$_POST['comment-id']],
                 __CLASS__                
+            );
+    }
+
+    /**
+     * Query to get comments with report
+     * @return array
+     */
+    public function getCommentsWithReport(){
+        return App::getDatabase()
+            ->query(
+                'SELECT * FROM Comment WHERE report != 0 ORDER BY report DESC LIMIT 0,20',
+                __CLASS__
             );
     }
 }
