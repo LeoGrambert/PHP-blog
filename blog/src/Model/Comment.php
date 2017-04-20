@@ -196,4 +196,17 @@ class Comment
                 );
         }
     }
+
+    /**
+     * @return array|mixed
+     */
+    public function reportComment(){
+        $id = $_POST['comment-id'];
+        return App::getDatabase()
+            ->prepare(
+                'UPDATE Comment SET report = report+1 WHERE id='.$id,
+                [$_POST['comment-id']],
+                __CLASS__                
+            );
+    }
 }

@@ -224,7 +224,7 @@ body .demo-blog {
     flex-direction: column;
 }
 .demo-blog--blogpost .meta + .mdl-card__supporting-text p {
-    max-width: 512px;
+    max-width: 625px;
     margin: 16px auto;
     font-size: 16px;
     line-height: 28px;
@@ -405,4 +405,15 @@ body .demo-blog {
 #navAdmin a{
     margin:0 5% 0 5%;
     color:#37474F;
+}
+#scroll {
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+    cursor: pointer;
+    display: none;
+}
+#scroll i{
+    color: #FFAB40;
+    font-size: 55px;
 }

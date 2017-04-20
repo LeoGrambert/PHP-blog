@@ -13,9 +13,12 @@
     </header>
     <div class="comment__text">{{ comment.content }}</div>
     <nav class="comment__actions">
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">report_problem</i><span class="visuallyhidden">Signaler</span>
-        </button>
+        <form method="post" action="#comment-{{ comment.id }}">
+            <input name="comment-id" id="comment-id" type="hidden" value="{{ comment.id }}">
+            <button type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="material-icons" role="presentation">report_problem</i><span class="visuallyhidden">Signaler</span>
+            </button>
+        </form>
         {#The response button is displayed only if the depth is less than 3#}
         {% if comment.depth < 3 %}
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon reply" data-id="{{ comment.id }}">

@@ -25,11 +25,15 @@
 
         <div class="container">
             {{ navAdmin|raw }}
+
             {% block content %}
             {% endblock %}
 
-
-
+        </div>
+        <div class="scroll" id="scroll">
+            <a href="#">
+                <i class="material-icons">navigation</i>
+            </a>
         </div>
         <footer class="mdl-mini-footer">
             <div class="mdl-mini-footer--left-section">

@@ -66,7 +66,7 @@ class Controller
         } else {
             $navAdmin = "";
         }
-        
+
         //query to get article by id
         $article = $this->articleClass->getArticleById();
 
@@ -94,6 +94,12 @@ class Controller
                 $comments_by_id[$comment->getParentCommentId()]->children[] = $comment;
                 unset($comments[$k]);
             }
+        }
+
+        //Report a comment
+        if (isset($_POST['comment-id']) && !empty($_POST['comment-id'])){
+            $this->flash->setFlash('Le signalement a bien été envoyé à l\'administrateur', 'green lighten-2');
+            $this->commentClass->reportComment();
         }
 
         //Generate newer article.
