@@ -409,7 +409,7 @@ body .demo-blog {
 #scroll {
     position: fixed;
     right: 20px;
-    bottom: 10px;
+    bottom: 70px;
     cursor: pointer;
     display: none;
 }
