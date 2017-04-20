@@ -97,11 +97,22 @@ class Controller
         }
 
         //Report a comment
-        //todo Faire une vérification en session. L'utilisateur ne doit pas pouvoir signaler deux fois le même article. S'il essaie, message flash rouge
+        //We check if 'report' session exists. If not, we create it (an empty array)
+        if(!isset($_SESSION['report'])){
+            $_SESSION['report'] = [];
+        }
         if (isset($_POST['comment-id']) && !empty($_POST['comment-id'])){
-            $this->commentClass->reportComment();
-            $this->flash->setFlash('Le signalement a bien été envoyé à l\'administrateur', 'green lighten-2');
-            $this->flash->getFlash();
+            //If comment id is in array ($_SESSION['report']), we displaying an error message
+            if(in_array($_POST['comment-id'], $_SESSION['report'])){
+                $this->flash->setFlash('Vous avez déjà signalé ce commentaire.', 'red lighten-2');
+                $this->flash->getFlash();
+            }
+            //If comment id isn't in array, we report it and we displaying a success message
+            else {
+                $this->commentClass->reportComment();
+                $this->flash->setFlash('Le signalement a bien été envoyé à l\'administrateur', 'green lighten-2');
+                $this->flash->getFlash();
+            }
         }
 
         //Generate newer article.

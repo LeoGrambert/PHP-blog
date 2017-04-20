@@ -202,6 +202,7 @@ class Comment
      */
     public function reportComment(){
         $id = $_POST['comment-id'];
+        $_SESSION['report'] [] = $id;
         return App::getDatabase()
             ->prepare(
                 'UPDATE Comment SET report = report+1 WHERE id='.$id,
