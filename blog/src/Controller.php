@@ -50,7 +50,7 @@ class Controller
      */
     public function homePage(){
         if ($this->authClass->logged()){
-            $navAdmin = '<div id="navAdmin"><a href="/web/index.php/admin/articles/add/">Ajouter un article</a><a href="/web/index.php/admin/articles?p=1">Articles</a><a href="/web/index.php/admin/comments/">Commentaires</a><a href="/web/index.php/admin/pictures/">Multimédia</a><a href="/web/index.php/admin/account/">Mon compte</a></div>';
+            $navAdmin = '<div id="navAdmin"><a href="/web/index.php/admin/articles/add/">Ajouter un article</a><a href="/web/index.php/admin/articles?p=1">Articles</a><a href="/web/index.php/admin/comments?p=1">Signalements</a><a href="/web/index.php/admin/pictures/">Multimédia</a><a href="/web/index.php/admin/account/">Mon compte</a></div>';
         } else {
             $navAdmin = "";
         }
@@ -62,7 +62,7 @@ class Controller
      */
     public function articlePage(){
         if ($this->authClass->logged()){
-            $navAdmin = '<div id="navAdmin"><a href="/web/index.php/admin/articles/add/">Ajouter un article</a><a href="/web/index.php/admin/articles?p=1">Articles</a><a href="/web/index.php/admin/comments/">Commentaires</a><a href="/web/index.php/admin/pictures/">Multimédia</a><a href="/web/index.php/admin/account/">Mon compte</a></div>';
+            $navAdmin = '<div id="navAdmin"><a href="/web/index.php/admin/articles/add/">Ajouter un article</a><a href="/web/index.php/admin/articles?p=1">Articles</a><a href="/web/index.php/admin/comments?p=1">Signalements</a><a href="/web/index.php/admin/pictures/">Multimédia</a><a href="/web/index.php/admin/account/">Mon compte</a></div>';
         } else {
             $navAdmin = "";
         }
@@ -270,12 +270,24 @@ class Controller
     }
 
     /**
-     * Whate we do if we are on admin page (delete an article)
+     * What we do if we are on admin page (delete an article)
      */
     public function adminDeleteArticlePage(){
         if ($this->authClass->logged()){
             $this->articleClass->deleteAnArticle();
             header('Location: /web/index.php/admin/articles?p=1');
+        } else {
+            $this->appClass->forbidden();
+        }
+    }
+
+    /**
+     * What do we do if we are on admin page (delete a comment)
+     */
+    public function adminDeleteCommentPage(){
+        if ($this->authClass->logged()){
+            $this->commentClass->deleteComment();
+            header('Location: /web/index.php/admin/comments?p=1');
         } else {
             $this->appClass->forbidden();
         }

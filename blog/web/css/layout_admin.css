@@ -189,7 +189,7 @@ form{
     z-index: 100;
     width: 100%;
 }
-#articles td{
+#articles td, #comments td{
     text-align:center;
 }
 table td{
@@ -201,10 +201,10 @@ thead{
 tbody tr:hover{
     background-color: #eceff1;
 }
-table #articles tr{
+table #articles tr, table #comments tr{
     padding:12%;
 }
-#table-article-title{
+#table-article-title, #table-comments-title{
     padding:3%;
     margin: -1% 0 2% 0;
     font-weight: bold;

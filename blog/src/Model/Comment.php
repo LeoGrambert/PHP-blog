@@ -213,6 +213,19 @@ class Comment
     }
 
     /**
+     * Query to delete a comment
+     * @return array|mixed
+     */
+    public function deleteComment(){
+        return App::getDatabase()
+            ->prepare(
+                'DELETE FROM Comment WHERE id = ?',
+                [$_POST['id']],
+                __CLASS__
+            );
+    }
+
+    /**
      * Query to get all comments with report
      * @return array
      */

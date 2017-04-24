@@ -394,7 +394,7 @@ body .demo-blog {
     width: 100%;
 }
 #navAdmin{
-    background-color: #FFFFFF;
+    background-color: #FFAB40;
     padding:8px;
     top:0;
     left:0;
@@ -406,16 +406,16 @@ body .demo-blog {
 }
 #navAdmin a{
     margin:0 5% 0 5%;
-    color:#37474F;
+    color:white;
 }
 #scroll {
     position: fixed;
     right: 20px;
-    bottom: 70px;
+    bottom: 1px;
     cursor: pointer;
     display: none;
 }
 #scroll i{
     color: #FFAB40;
-    font-size: 55px;
+    font-size: 45px;
 }

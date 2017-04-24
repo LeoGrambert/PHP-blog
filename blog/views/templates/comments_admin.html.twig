@@ -4,14 +4,14 @@
 
 {% block content %}
     <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
-        <h6 id="table-article-title">Liste des commentaires signalés</h6>
-        <table>
+        <h6 id="table-comments-title">Liste des commentaires signalés</h6>
+        <table id="comments">
             <thead>
             <tr>
                 <td>Date d'ajout</td>
                 <td>Auteur</td>
                 <td>Contenu</td>
-                <td>Nombre de signalement</td>
+                <td>Nombre de signalements</td>
                 <td>Modération</td>
             </tr>
             </thead>
@@ -19,11 +19,22 @@
             {% for commentWithReport in commentsWithReport %}
                 <tr>
                     <td>{{ commentWithReport.dateAdd }}</td>
-                    <td>{{ commentWithReport.author }}<br>
-                    E-mail : {% if commentWithReport.email %}{{ commentWithReport.email }}{% else %}Non renseigné{% endif %}</td>
+                    <td>{{ commentWithReport.author }}<br><br>
+                    <em>E-mail : {% if commentWithReport.email %}{{ commentWithReport.email }}{% else %}Non renseigné{% endif %}</em></td>
                     <td>{{ commentWithReport.content }}</td>
                     <td>{{ commentWithReport.report }}</td>
-                    <td><i class="material-icons">delete</i></td>
+                    <td>
+                        <div id="background"></div>
+                        <a class="waves-effect waves-light btn-floating red accent-2 showButton" id="showButton-{{ commentWithReport.id }}"><i class="material-icons">delete</i></a>
+                        <div id="modal-{{ commentWithReport.id }}" class="popup modal">
+                            <form action="/web/index.php/admin/comments?p=delete&id={{ commentWithReport.id }}" method="post" id="deleteForm-{{ commentWithReport.id }}" class="deleteForm">
+                                <p>Voulez-vous vraiment supprimer ce commentaire ?</p>
+                                <input type="hidden" name="id" id="articleId" value="{{ commentWithReport.id }}">
+                                <button type="submit" class="btn waves-effect waves-light red accent-2">Confirmation</button>
+                                <button class="btn waves-effect waves-light grey lighten-1 cancel">Retour</button>
+                            </form>
+                        </div>
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>

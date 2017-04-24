@@ -52,11 +52,15 @@ class Router
         //If admin page (add an article)
         } elseif ('/web/index.php/admin/articles/add/' === $this->uri) {
             $this->controller->adminAddArticlePage();
+        //If admin page (delete an article)
         } elseif (('/web/index.php/admin/articles' === $this->uri) && ($_GET['p'] === 'delete') && (isset($_GET['id']))){
             $this->controller->adminDeleteArticlePage();
-            //If admin page (articles)
+        //If admin page (articles)
         } elseif (('/web/index.php/admin/articles' === $this->uri)) {
             $this->controller->adminArticlesPage();
+        //If admin page (delete a comment)
+        } elseif (('/web/index.php/admin/comments' === $this->uri) && ($_GET['p'] === 'delete') && (isset($_GET['id']))){
+            $this->controller->adminDeleteCommentPage();
         //If admin page (comments)
         } elseif ('/web/index.php/admin/comments' === $this->uri) {
             $this->controller->adminCommentsPage();
