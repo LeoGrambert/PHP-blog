@@ -34,10 +34,15 @@ class Router
      */
     public function routerRequete()
     {
-        //If homepage
+        //If admin page (disconnect)
         if ('/web/index.php' === $this->uri || '/web/' === $this->uri) {
-            $this->controller->homePage();
+            if(isset($_GET['p']) && $_GET['p'] === 'deconnexion'){
+                $this->controller->adminDisconnectPage();
+            } else {
+        //If homepage
+                $this->controller->homePage();
         //If article page
+            }
         } elseif ('/web/index.php/article' === $this->uri && isset($_GET['id'])) {
             $this->controller->articlePage();
          //If login page
@@ -68,7 +73,7 @@ class Router
         } elseif ('/web/index.php/admin/pictures/' === $this->uri) {
             $this->controller->adminPicturesPage();
         //If admin page (my account)
-        } elseif ('/web/index.php/admin/account/' === $this->uri){
+        } elseif ('/web/index.php/admin/account/' === $this->uri) {
             $this->controller->adminAccountPage();
         //If not => 404
         } else {

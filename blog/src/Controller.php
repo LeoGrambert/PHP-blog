@@ -49,7 +49,7 @@ class Controller
     }
 
     /**
-     * What we do if we are on home page
+     * What do we do if we are on home page
      */
     public function homePage(){
         if ($this->authClass->logged()){
@@ -61,7 +61,7 @@ class Controller
     }
 
     /**
-     * What we do if we are on article page
+     * What do we do if we are on article page
      */
     public function articlePage(){
         if ($this->authClass->logged()){
@@ -150,7 +150,7 @@ class Controller
     }
 
     /**
-     * What we do if we are on login page
+     * What do we do if we are on login page
      */
     public function loginPage(){
         //If user is log -> he's redirected to admin
@@ -170,11 +170,19 @@ class Controller
     }
     
     /**
-     * What we do if we are on admin page (home)
+     * What do we do if we are on admin page (home)
      */
     public function adminHomePage(){
         if ($this->authClass->logged()){
-            echo $this->twig->render('home_admin.html.twig');
+            //Get username & picture
+            $username = $this->userClass->displayUsername();
+            $picture = $this->userClass->displayPicture();
+            $username = $username[0];
+            $picture = $picture[0];
+            echo $this->twig->render('home_admin.html.twig', [
+                "username"=>$username,
+                "picture"=>$picture
+            ]);
         } else {
             $this->appClass->forbidden();
         }
@@ -182,7 +190,7 @@ class Controller
     }
 
     /**
-     * What we do if we are on admin page (add an article)
+     * What do we do if we are on admin page (add an article)
      */
     public function adminAddArticlePage(){
         //Get pictures from gallery
@@ -217,10 +225,18 @@ class Controller
             $this->flash->getFlash();
         }
 
+        //Get username & picture
+        $username = $this->userClass->displayUsername();
+        $picture = $this->userClass->displayPicture();
+        $username = $username[0];
+        $picture = $picture[0];
+
 
         if ($this->authClass->logged()){
             echo $this->twig->render('addArticle_admin.html.twig', [
-                'allImg'=>$allImg
+                'allImg'=>$allImg,
+                'username'=>$username,
+                'picture'=>$picture
             ]);
         } else {
             $this->appClass->forbidden();
@@ -228,7 +244,7 @@ class Controller
     }
 
     /**
-     * What we do if we are on admin page (edit an article)
+     * What do we do if we are on admin page (edit an article)
      */
     public function adminEditArticlePage(){
         // Display article to prefill form
@@ -266,15 +282,26 @@ class Controller
             $this->flash->getFlash();
         }
 
+        //Get username & picture
+        $username = $this->userClass->displayUsername();
+        $picture = $this->userClass->displayPicture();
+        $username = $username[0];
+        $picture = $picture[0];
+
         if ($this->authClass->logged()){
-            echo $this->twig->render('editArticle_admin.html.twig', ['article'=>$article, 'allImg'=>$allImg]);
+            echo $this->twig->render('editArticle_admin.html.twig', [
+                'article'=>$article, 
+                'allImg'=>$allImg,
+                'username'=>$username,
+                'picture'=>$picture
+            ]);
         } else {
             $this->appClass->forbidden();
         }
     }
 
     /**
-     * What we do if we are on admin page (delete an article)
+     * What do we do if we are on admin page (delete an article)
      */
     public function adminDeleteArticlePage(){
         if ($this->authClass->logged()){
@@ -298,7 +325,7 @@ class Controller
     }
 
     /**
-     * What we do if we are on admin page (add an article)
+     * What do we do if we are on admin page (add an article)
      */
     public function adminArticlesPage(){
         $this->flash->getFlash();
@@ -311,12 +338,20 @@ class Controller
 
         $articlesWhithPagination = $this->articleClass->getArticlesWhithPagination();
 
+        //Get username & picture
+        $username = $this->userClass->displayUsername();
+        $picture = $this->userClass->displayPicture();
+        $username = $username[0];
+        $picture = $picture[0];
+
         if ($this->authClass->logged()){
             echo $this->twig->render('articles_admin.html.twig', [
                 //'articles'=>$this->articles,
                 'articlesWhitPagination'=>$articlesWhithPagination,
                 'nbPages'=>$nbPages,
-                'curPage'=>$curPage
+                'curPage'=>$curPage,
+                'username'=>$username,
+                'picture'=>$picture
             ]);
         } else {
             $this->appClass->forbidden();
@@ -324,7 +359,7 @@ class Controller
     }
 
     /**
-     * What we do if we are on admin page (comments)
+     * What do we do if we are on admin page (comments)
      */
     public function adminCommentsPage(){
         
@@ -335,13 +370,21 @@ class Controller
         $curPage = $_GET['p'];
         //Get all comments with report
         $commentsWithReport = $this->commentClass->getCommentsWithReport();
+
+        //Get username & picture
+        $username = $this->userClass->displayUsername();
+        $picture = $this->userClass->displayPicture();
+        $username = $username[0];
+        $picture = $picture[0];
         
         if ($this->authClass->logged()){
             echo $this->twig->render('comments_admin.html.twig',
                 [
                     'commentsWithReport'=>$commentsWithReport,
                     'nbPages'=>$nbPages,
-                    'curPage'=>$curPage
+                    'curPage'=>$curPage,
+                    'username'=>$username,
+                    'picture'=>$picture
                 ]);
         } else {
             $this->appClass->forbidden();
@@ -349,18 +392,65 @@ class Controller
     }
 
     /**
-     * What we do if we are on admin page (my account)
+     * What do we do if we are on admin page (my account)
      */
     public function adminAccountPage(){
         if ($this->authClass->logged()){
-            echo $this->twig->render('account_admin.html.twig');
+
+            //Get pictures from gallery
+            $allImg = [];
+            $allImgDirectory = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload";
+            $dir = opendir($allImgDirectory);
+            while($file = readdir($dir)){
+                $format = strtolower(substr($file,-3,3));
+                $allow_format = ['jpg', 'png', 'gif', 'jpeg'];
+                if (in_array($format, $allow_format)){
+                    $allImg [] = $file;
+                }
+            }
+
+            //Get username & picture
+            $username = $this->userClass->displayUsername();
+            $picture = $this->userClass->displayPicture();
+            $username = $username[0];
+            $picture = $picture[0];
+
+            //Change username
+            if(isset($_POST['username']) && !empty($_POST['username']) && $_POST['username'] != " "){
+                $this->userClass->setUsername();
+                header('Location: /web/index.php/admin/account/');
+            }
+
+            //Change password
+            if(isset($_POST['password']) && !empty($_POST['password']) && isset($_POST['password-confirmation']) && !empty($_POST['password-confirmation'])){
+                if (md5($_POST['password']) != md5($_POST['password-confirmation'])){
+                    $this->flash->setFlash('Les mots de passe ne coincident pas', 'red lighten-2');
+                    $this->flash->getFlash();
+                } elseif (md5($_POST['password']) == md5($_POST['password-confirmation'])) {
+                    $this->userClass->setPassword();
+                    $this->flash->setFlash('Votre mot de passe a été actualisé.', 'green lighten-2');
+                    $this->flash->getFlash();
+                }
+            }
+
+            //Change picture
+            if(isset($_POST['picture'])){
+                $this->userClass->setPicture();
+                header('Location: /web/index.php/admin/account/');
+            }
+
+            echo $this->twig->render('account_admin.html.twig', [
+                'allImg'=>$allImg,
+                'username'=>$username,
+                'picture'=>$picture
+            ]);
         } else {
             $this->appClass->forbidden();
         }
     }
 
     /**
-     * What we do if we are on admin page (pictures)
+     * What do we do if we are on admin page (pictures)
      */
     public function adminPicturesPage(){
         //To delete a picture
@@ -411,13 +501,29 @@ class Controller
             }
         }
 
+        //Get username & picture
+        $username = $this->userClass->displayUsername();
+        $picture = $this->userClass->displayPicture();
+        $username = $username[0];
+        $picture = $picture[0];
+
         echo $this->twig->render('pictures_admin.html.twig', [
-            "allImg"=>$allImg
+            "allImg"=>$allImg,
+            'username'=>$username,
+            'picture'=>$picture
         ]);
     }
 
     /**
-     * What we do if we are on error page
+     * What do we do if we want to disconnect us
+     */
+    public function adminDisconnectPage(){
+        session_destroy();
+        header('Location: /web/index.php');
+    }
+
+    /**
+     * What do we do if we are on error page
      */
     public function errorPage()
     {

@@ -132,11 +132,21 @@ html, body {
     align-items: center;
 }
 .demo-avatar{
-    margin-left:35%;
+    margin-left:38%;
     margin-bottom:4%;
+    height:auto;
+    width: 54px;
 }
 .demo-avatar-dropdown{
-    margin-left: 20%;
+    text-align:center;
+}
+.demo-drawer-header button a{
+    color:#F5F5F5;
+}
+.demo-drawer-header button{
+    top:0;
+    left: 17%;
+    position: fixed;
 }
 form .wysiwyg_label{
     margin-top:-3.5%;
@@ -204,7 +214,7 @@ tbody tr:hover{
 table #articles tr, table #comments tr{
     padding:12%;
 }
-#table-article-title, #table-comments-title{
+#table-article-title, #table-comments-title, #account-title{
     padding:3%;
     margin: -1% 0 2% 0;
     font-weight: bold;

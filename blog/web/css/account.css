@@ -1,0 +1,22 @@
+#password-form p{
+    margin:-2% 0 5% 0;
+}
+#username-button, #picture-button, #password-button {
+    margin: 3% 0 3% 2%;
+    background-color: #546e7a !important;
+    color:white !important;
+}
+.input-field label, .input-field input[type=text]:focus + label, .input-field input[type=password]:focus + label{
+    color: #7E7E7E;
+}
+.input-field input[type=text]:focus + label, .input-field input[type=password]:focus + label{
+    color: #FFAB40;
+}
+.input-field input[type=text]:focus, .input-field input[type=text].valid, .input-field input[type=password]:focus, .input-field input[type=password].valid {
+    border-bottom: 1px solid #FFAB40;
+    box-shadow: 0 1px 0 0 #FFAB40;
+}
+.input-field input[type=text].invalid, .input-field input[type=password].invalid {
+    border-bottom: 1px solid #EB7077;
+    box-shadow: 0 1px 0 0 #EB7077;
+}

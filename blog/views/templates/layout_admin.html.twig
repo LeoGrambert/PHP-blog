@@ -38,9 +38,10 @@
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
     <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
         <header class="demo-drawer-header">
-            <img src="/web/img/user.png" class="demo-avatar">
+            <button class="btn waves-effect blue-grey darken-2"><a href="/web/index.php?p=deconnexion">Déconnexion</a></button>
+            <img src="{% if picture.picture == "" %}/web/img/user.png{% else %}{{ picture.picture }}{% endif %}" class="demo-avatar">
             <div class="demo-avatar-dropdown">
-                <div>Jean Forteroche</div>
+                <div>{{ username.username }}</div>
             </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">

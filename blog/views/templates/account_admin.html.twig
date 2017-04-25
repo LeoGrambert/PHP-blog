@@ -3,7 +3,53 @@
 {% block title %}Signalement de commentaires{% endblock %}
 
 {% block content %}
-    <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
+    <link rel="stylesheet" href="/web/css/account.css"/>
+    <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
+        <h6 id="account-title">
+            Bonjour {{ username.username }}
+        </h6>
 
+        <button id="username-button" class="btn waves-effect waves-light blue-grey darken-1" disabled>Changez votre nom d'utilisateur</button><br>
+        <form id="username-form" method="post" action="">
+            <div class="row">
+                <div class="input-field col s5">
+                    <label for="username">Changez votre nom d'utilisateur</label>
+                    <input type="text" name="username" id="username" placeholder="{{ username.username }}" required>
+                </div>
+            </div>
+            <button type="submit" class="btn waves-effect waves-light orange accent-2">Valider</button>
+        </form>
+
+        <button id="password-button" class="btn waves-effect waves-light blue-grey darken-1" disabled>Changez votre mot de passe</button><br>
+        <form id="password-form" method="post" action="">
+            <p><em>Attention : Pour plus de sécurité, veillez à utiliser un mot de passe fort (comprenant des chiffres, lettres et caractères spéciaux).</em></p>
+            <div class="row">
+                <div class="input-field col s5">
+                    <label for="password">Votre nouveau mot de passe</label>
+                    <input type="password" name="password" id="password" placeholder="*******" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s5">
+                    <label for="password-confirmation">Confirmez le mot de passe</label>
+                    <input type="password" name="password-confirmation" id="password-confirmation" placeholder="*******" required>
+                </div>
+            </div>
+            <button type="submit" class="btn waves-effect waves-light orange accent-2">Valider</button>
+        </form>
+
+        <button id="picture-button" class="btn waves-effect waves-light blue-grey darken-1" disabled>Changez votre photo de profil</button><br>
+        <form id="picture-form" method="post" action="">
+            <div class="input-field col s12">
+                <select name="picture" id="choose-picture" class="icons">
+                    <option value="" selected>Sans photo</option>
+                    {% for img in allImg %}
+                        <option value="/web/img/upload/{{ img }}" data-icon="/web/img/upload/{{ img }}" class="left circle">{{ img }}</option>
+                    {% endfor %}
+                </select>
+                <label for="choose-picture">Choisissez votre photo</label>
+            </div>
+            <button type="submit" class="btn waves-effect waves-light orange accent-2">Valider</button>
+        </form>
     </div>
 {% endblock %}
