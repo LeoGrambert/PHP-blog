@@ -12,6 +12,7 @@ use src\Model\Article;
 use src\Model\AuthDb;
 use src\Model\Comment;
 use src\Model\FlashMsg;
+use src\Model\User;
 
 
 /**
@@ -23,6 +24,7 @@ class Controller
     private $twig;
     private $articleClass;
     private $commentClass;
+    private $userClass;
     private $appClass;
     private $authClass;
     private $articles;
@@ -37,6 +39,7 @@ class Controller
         //load class
         $this->articleClass = new Article();
         $this->commentClass = new Comment();
+        $this->userClass = new User();
         $this->appClass = new App();
         $this->authClass = new AuthDb(App::getDatabase());
         //query to get all articles
@@ -165,7 +168,7 @@ class Controller
             echo $this->twig->render('login.html.twig');
         }
     }
-
+    
     /**
      * What we do if we are on admin page (home)
      */
@@ -175,6 +178,7 @@ class Controller
         } else {
             $this->appClass->forbidden();
         }
+
     }
 
     /**

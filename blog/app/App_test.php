@@ -11,7 +11,7 @@ use src\Autoloader;
 use src\Database;
 
 /**
- * Class App
+ * Class App_test
  * @package app
  * *********************************************************
  * This file is the configuration file of this site. 
@@ -19,7 +19,7 @@ use src\Database;
  * If you need, contact me here : leo@grambert.fr
  * *********************************************************
  */
-class App
+class App_test
 {
     const DB_NAME = 'blog_JF';
     const DB_USER = 'your_username';

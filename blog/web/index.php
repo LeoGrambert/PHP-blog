@@ -14,8 +14,13 @@ use app\Router;
  *
  */
 //call load app function -> initialize session and load autoloader
-require '../app/App.php';
-App::load();
+if(file_exists('../app/App.php')){
+    require '../app/App.php';
+    App::load();
+} else {
+    require '../app/App_test.php';
+    \app\App_test::load();
+}
 
 
 /*
