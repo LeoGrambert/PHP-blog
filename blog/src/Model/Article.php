@@ -123,10 +123,29 @@ class Article
     }
 
     /**
-     * Query to get articles with pagination
+     * Query to get articles on front
      * @return array
      */
-    public function getArticlesWhithPagination(){
+    public function getArticlesFront(){
+        if(isset($_GET['p']) && $_GET['p'] > 0 && $_GET['p'] <= count($this->getArticles())){
+            $curPage = $_GET['p'];
+        } else {
+            $curPage = 1;
+        }
+        $perPage = 5;
+        
+        return App::getDatabase()
+            ->query(
+                'SELECT * FROM Article ORDER BY date_add DESC LIMIT '.(($curPage-1)*$perPage).','.$perPage,
+                __CLASS__
+            );
+    }
+
+    /**
+     * Query to get articles in admin
+     * @return array
+     */
+    public function getArticlesAdmin(){
         if(isset($_GET['p']) && $_GET['p'] > 0 && $_GET['p'] <= count($this->getArticles())){
             $curPage = $_GET['p'];
         } else {

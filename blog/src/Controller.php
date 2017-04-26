@@ -27,7 +27,6 @@ class Controller
     private $userClass;
     private $appClass;
     private $authClass;
-    private $articles;
     private $flash;
 
     /**
@@ -42,8 +41,6 @@ class Controller
         $this->userClass = new User();
         $this->appClass = new App();
         $this->authClass = new AuthDb(App::getDatabase());
-        //query to get all articles
-        $this->articles = $this->articleClass->getArticles();
         //FlashMsg
         $this->flash = new FlashMsg();
     }
@@ -57,7 +54,21 @@ class Controller
         } else {
             $navAdmin = "";
         }
-        echo $this->twig->render('home.html.twig', ['articles'=>$this->articles, 'navAdmin'=>$navAdmin]);
+        //How many articles are there in BDD ?
+        $articles = $this->articleClass->getArticles();
+        $nbArt = count($articles);
+        //How many pages are we displaying ?
+        $nbPages = ceil($nbArt/5);
+        $curPage = $_GET['p'];
+
+        $articlesWhithPagination = $this->articleClass->getArticlesFront();
+        echo $this->twig->render('home.html.twig', [
+            'articlesWithPagination'=>$articlesWhithPagination,
+            'articles'=>$articles,
+            'navAdmin'=>$navAdmin,
+            'nbPages'=>$nbPages,
+            'curPage'=>$curPage
+        ]);
     }
 
     /**
@@ -72,6 +83,9 @@ class Controller
 
         //query to get article by id
         $article = $this->articleClass->getArticleById();
+
+        //query to get all articles
+        $articles = $this->articleClass->getArticles();
 
         //query to add a comment
         if(isset($_POST['content'])){
@@ -141,7 +155,7 @@ class Controller
 
         echo $this->twig->render('article.html.twig', [
             'article'=>$article,
-            'articles'=>$this->articles,
+            'articles'=>$articles,
             'comments'=>$comments,
             'nextId'=>$nextId,
             'previousId'=>$previousId,
@@ -331,12 +345,13 @@ class Controller
         $this->flash->getFlash();
 
         //How many articles are there in BDD ?
-        $nbArt = count($this->articles);
+        $articles = $this->articleClass->getArticles();
+        $nbArt = count($articles);
         //How many pages are we displaying ?
         $nbPages = ceil($nbArt/10);
         $curPage = $_GET['p'];
 
-        $articlesWhithPagination = $this->articleClass->getArticlesWhithPagination();
+        $articlesWhithPagination = $this->articleClass->getArticlesAdmin();
 
         //Get username & picture
         $username = $this->userClass->displayUsername();
@@ -346,8 +361,7 @@ class Controller
 
         if ($this->authClass->logged()){
             echo $this->twig->render('articles_admin.html.twig', [
-                //'articles'=>$this->articles,
-                'articlesWhitPagination'=>$articlesWhithPagination,
+                'articles'=>$articlesWhithPagination,
                 'nbPages'=>$nbPages,
                 'curPage'=>$curPage,
                 'username'=>$username,

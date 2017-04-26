@@ -27,7 +27,7 @@
     <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
         <main class="mdl-layout__content">
             <div class="demo-blog__posts mdl-grid">
-                {% for article in articles %}
+                {% for article in articlesWithPagination %}
                 <div class="mdl-card mdl-cell mdl-cell--12-col">
                     <div class="mdl-card__media mdl-color-text--grey-50">
                         {% if article.picture != null %}
@@ -47,15 +47,19 @@
                     </div>
                 </div>
                 {% endfor %}
-                <nav class="demo-nav mdl-cell mdl-cell--12-col">
-                    <div class="section-spacer"></div>
-                    <a href="entry.html" class="demo-nav__button" title="show more">
-                        More
-                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-                            <i class="material-icons" role="presentation">arrow_forward</i>
-                        </button>
-                    </a>
-                </nav>
+                <div class="row" id="row-pagination">
+                    <div class="pagination col offset-s5 s2">
+                        <ul class="pagination">
+                            {% for i in 1..nbPages %}
+                                {% if curPage == i %}
+                                    <li class="active"><a href="/web/index.php?p={{ i }}">{{ i }}</a></li>
+                                {% else %}
+                                    <li class="waves-effect"><a href="/web/index.php?p={{ i }}">{{ i }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
             </div>
         </main>
         <div class="mdl-layout__obfuscator"></div>

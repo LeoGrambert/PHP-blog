@@ -419,3 +419,16 @@ body .demo-blog {
     color: #FFAB40;
     font-size: 45px;
 }
+.pagination{
+    text-align: center;
+    margin-top: 2%;
+}
+#row-pagination{
+    width:100%;
+}
+.pagination li.active{
+    background-color: #FFAB40;
+}
+.pagination li a{
+    color:white;
+}
