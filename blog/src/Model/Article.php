@@ -181,7 +181,7 @@ class Article
     public function getNextArticle(){
         $currentId = $_GET['id'];
         $nextArticle = App::getDatabase()
-            ->query('SELECT Article.id FROM Article ORDER BY Article.id LIMIT '.$currentId.', 1',
+            ->query('SELECT Article.id FROM Article WHERE Article.id >'.$currentId,
                 __CLASS__
             );
         return $nextArticle;
@@ -194,7 +194,7 @@ class Article
     public function getPreviousArticle(){
         $currentId = $_GET['id'];
         $previousArticles = App::getDatabase()
-            ->query('SELECT Article.id FROM Article ORDER BY Article.id LIMIT '.$currentId,
+            ->query('SELECT Article.id FROM Article WHERE Article.id <'.$currentId,
                 __CLASS__
             );
         return $previousArticles;

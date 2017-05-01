@@ -135,10 +135,8 @@ class Controller
         //Generate newer article.
         //In the returned array (by getNextArticle), we get id and we send it in view.
         if($this->articleClass->getNextArticle() != []){
-            $nextArticles = $this->articleClass->getNextArticle();
-            foreach ($nextArticles as $nextArticle){
-                $nextId = $nextArticle;
-            }
+            $nextArticle = $this->articleClass->getNextArticle()[0];
+            $nextId = $nextArticle->getId();
         } else {
             $nextId = null;
         }
@@ -148,7 +146,7 @@ class Controller
         //We save this article in $previousId. And we send it in view.
         if ($_GET['id'] > 1){
             $previousArticles = $this->articleClass->getPreviousArticle();
-            $previousId = $previousArticles[count($previousArticles)-2];
+            $previousId = $previousArticles[count($previousArticles)-1];
         } else {
             $previousId = null;
         }
@@ -533,7 +531,7 @@ class Controller
      */
     public function adminDisconnectPage(){
         session_destroy();
-        header('Location: /web/index.php');
+        header('Location: /web/index.php?p=1');
     }
 
     /**
