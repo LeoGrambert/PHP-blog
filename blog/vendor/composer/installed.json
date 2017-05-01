@@ -1,17 +1,17 @@
 [
     {
         "name": "twig/twig",
-        "version": "v1.33.0",
-        "version_normalized": "1.33.0.0",
+        "version": "v1.33.2",
+        "version_normalized": "1.33.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/twigphp/Twig.git",
-            "reference": "05cf49921b13f6f01d3cfdf9018cfa7a8086fd5a"
+            "reference": "dd6ca96227917e1e85b41c7c3cc6507b411e0927"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/twigphp/Twig/zipball/05cf49921b13f6f01d3cfdf9018cfa7a8086fd5a",
-            "reference": "05cf49921b13f6f01d3cfdf9018cfa7a8086fd5a",
+            "url": "https://api.github.com/repos/twigphp/Twig/zipball/dd6ca96227917e1e85b41c7c3cc6507b411e0927",
+            "reference": "dd6ca96227917e1e85b41c7c3cc6507b411e0927",
             "shasum": ""
         },
         "require": {
@@ -22,7 +22,7 @@
             "symfony/debug": "~2.7",
             "symfony/phpunit-bridge": "~3.3@dev"
         },
-        "time": "2017-03-22 15:40:09",
+        "time": "2017-04-20 17:39:48",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -61,50 +61,6 @@
         "homepage": "http://twig.sensiolabs.org",
         "keywords": [
             "templating"
-        ]
-    },
-    {
-        "name": "plasticbrain/php-flash-messages",
-        "version": "v1.0.1",
-        "version_normalized": "1.0.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/plasticbrain/PhpFlashMessages.git",
-            "reference": "b565762619342057ce561de20d0f2f6e14f9aa77"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/plasticbrain/PhpFlashMessages/zipball/b565762619342057ce561de20d0f2f6e14f9aa77",
-            "reference": "b565762619342057ce561de20d0f2f6e14f9aa77",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.4.0"
-        },
-        "time": "2016-04-01 08:39:38",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Plasticbrain\\FlashMessages\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Mike Everhart",
-                "email": "mike@plasticbrain.net"
-            }
-        ],
-        "description": "A modern take on PHP session-based flash messages",
-        "keywords": [
-            "bootstrap",
-            "flash",
-            "messages",
-            "session"
         ]
     }
 ]

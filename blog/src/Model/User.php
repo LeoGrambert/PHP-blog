@@ -35,6 +35,17 @@ class User
         return $this->picture;
     }
 
+    public function getPassword(){
+        $queryToGetPasswords = App::getDatabase()
+            ->query('SELECT password FROM User WHERE id=1',
+            __CLASS__
+        );
+        foreach ($queryToGetPasswords as $queryToGetPassword){
+            $password = $queryToGetPassword->password;
+            return $password;
+        }
+    }
+
     /**
      * Query to get username
      * @return mixed

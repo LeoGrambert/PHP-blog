@@ -435,13 +435,18 @@ class Controller
 
             //Change password
             if(isset($_POST['password']) && !empty($_POST['password']) && isset($_POST['password-confirmation']) && !empty($_POST['password-confirmation'])){
-                if (md5($_POST['password']) != md5($_POST['password-confirmation'])){
-                    $this->flash->setFlash('Les mots de passe ne coincident pas', 'red lighten-2');
+                if (isset($_POST['old-password']) && $this->userClass->getPassword() != md5($_POST['old-password'])){
+                    $this->flash->setFlash('Votre mot de passe actuel n\'est pas correct.', 'red lighten-2');
                     $this->flash->getFlash();
-                } elseif (md5($_POST['password']) == md5($_POST['password-confirmation'])) {
-                    $this->userClass->setPassword();
-                    $this->flash->setFlash('Votre mot de passe a été actualisé.', 'green lighten-2');
-                    $this->flash->getFlash();
+                } else {
+                    if (md5($_POST['password']) != md5($_POST['password-confirmation'])){
+                        $this->flash->setFlash('Les mots de passe ne coincident pas', 'red lighten-2');
+                        $this->flash->getFlash();
+                    } elseif (md5($_POST['password']) == md5($_POST['password-confirmation'])) {
+                        $this->userClass->setPassword();
+                        $this->flash->setFlash('Votre mot de passe a été actualisé.', 'green lighten-2');
+                        $this->flash->getFlash();
+                    }
                 }
             }
 

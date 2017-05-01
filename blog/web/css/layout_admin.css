@@ -78,7 +78,7 @@ html, body {
     font-weight: 500;
 }
 .demo-layout .demo-navigation .mdl-navigation__link:hover {
-    background-color: #00BCD4;
+    background-color: #FFAB40;
     color: #37474F;
 }
 .demo-navigation .mdl-navigation__link .material-icons {
@@ -132,10 +132,16 @@ html, body {
     align-items: center;
 }
 .demo-avatar{
-    margin-left:38%;
+    margin-left:36%;
     margin-bottom:4%;
-    height:auto;
-    width: 54px;
+    width: 64px;
+}
+.demo-avatar img{
+    max-width:100%;
+    height:inherit;
+    border-radius:50%;
+    display:block;
+    margin:auto;
 }
 .demo-avatar-dropdown{
     text-align:center;
