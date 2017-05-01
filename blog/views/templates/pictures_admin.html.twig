@@ -41,8 +41,9 @@
         {% for img in allImg %}
             <a class="img" href="/web/img/upload/{{ img }}">
                 <img src="/web/img/upload/{{ img }}">
-                <a href="/web/index.php/admin/pictures/?n={{ img }}"><i class="material-icons delete">delete</i></a>
             </a>
+            <a class="delete" href="/web/index.php/admin/pictures/?n={{ img }}"><i class="material-icons">delete</i></a>
+
         {% endfor %}
     </div>
 {% endblock %}
