@@ -220,13 +220,16 @@ tbody tr:hover{
 table #articles tr, table #comments tr{
     padding:12%;
 }
-#table-article-title, #table-comments-title, #account-title, #home-title{
+#table-article-title, #table-comments-title, #account-title, #home-title, #add-article-title, #gallery-title{
     padding:3%;
     margin: -1% 0 2% 0;
     font-weight: bold;
     text-align: center;
     background-color: #37474F;
     color: white;
+}
+#gallery-title{
+    margin:0;
 }
 #datetime{
     font-weight: 100;

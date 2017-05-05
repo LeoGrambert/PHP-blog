@@ -23,12 +23,20 @@ class Comment
     private $report;
     private $parent_comment_id;
     private $email;
+    private $isAdministrator;
 
     /**
      * @return mixed
      */
     public function getId(){
         return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function isAdministrator(){
+        return $this->isAdministrator;
     }
 
     /**
@@ -110,15 +118,22 @@ class Comment
      * Method to generate Gravatar
      * @return string
      */
-    public function getGravatar(){
-        if ($this->email != null){
-            $email = md5($this->getEmail());
-            $email = strtolower($email);
-            $gravatar = 'https://www.gravatar.com/avatar/'.$email;
+    public function getPicture(){
+        $user = new User();
+        $picture = $user->displayPicture();
+
+        if ($this->isAdministrator == 1){
+            return $picture[0]->getPicture();
         } else {
-            $gravatar = null;
+            if ($this->email != null) {
+                $email = md5($this->getEmail());
+                $email = strtolower($email);
+                $gravatar = 'https://www.gravatar.com/avatar/' . $email;
+            } else {
+                $gravatar = null;
+            }
+            return $gravatar;
         }
-        return $gravatar;
     }
 
     /**
@@ -152,6 +167,10 @@ class Comment
      * @throws \Exception
      */
     public function addComment(){
+        $authDb = new AuthDb(App::getDatabase());
+        $user = new User();
+        $username = $user->displayUsername();
+
         //If author field is empty, we display 'anonyme'
         if (empty($_POST['author'])){
             $author = 'Anonyme';
@@ -180,6 +199,25 @@ class Comment
         if($depth > 3){
             throw new \Exception('Impossible d\'avoir plus de 3 sous niveaux de réponse');
         } else {
+            //If administrator is logged, we use his profile
+            if ($authDb->logged()){
+                return App::getDatabase()
+                    ->prepare(
+                        'INSERT INTO Comment (article_id, author, content, parent_comment_id, email, depth, isAdministrator) 
+                         VALUES (?, ?, ?, ?, ?, ?, ?)',
+                        ([
+                            $_GET['id'],
+                            $username[0]->getUsername(),
+                            htmlspecialchars($_POST['content']),
+                            $parent_id,
+                            htmlspecialchars($_POST['email']),
+                            $depth,
+                            true
+                        ]),
+                        __CLASS__
+                    );
+            //If he's not logged, we use visitors informations (from forms)
+            } else {
             return App::getDatabase()
                 ->prepare(
                     'INSERT INTO Comment (article_id, author, content, parent_comment_id, email, depth) 
@@ -194,6 +232,7 @@ class Comment
                     ]),
                     __CLASS__
                 );
+            }
         }
     }
 

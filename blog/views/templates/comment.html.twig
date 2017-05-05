@@ -1,10 +1,10 @@
 {# Template used to display comments #}
-<div class="comment mdl-color-text--grey-700" id="comment-{{ comment.id }}">
+<div class="comment mdl-color-text--grey-700 {% if comment.isAdministrator == true %}administrator{% endif %}" id="comment-{{ comment.id }}">
     <header class="comment__header">
-        {% if comment.gravatar == null %}
+        {% if comment.picture == null %}
             <img src="../../web/img/user.png" class="comment__avatar">
         {% else %}
-            <img src="{{ comment.gravatar }}" class="comment__avatar">
+            <img src="{{ comment.picture }}" class="comment__avatar">
         {% endif %}
         <div class="comment__author">
             <strong>{{ comment.author }}</strong>

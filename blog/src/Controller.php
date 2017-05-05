@@ -174,7 +174,8 @@ class Controller
                 if($this->authClass->login(htmlspecialchars($_POST['username']), htmlspecialchars($_POST['password'])) === true){
                     header('Location: /web/index.php/admin/home/');
                 } else {
-                    echo '<h6 id="badCredentials">Bad Credentials</h6>';
+                    $this->flash->setFlash('Les identifiants sont incorrects', 'red lighten-2');
+                    $this->flash->getFlash();
                 }
             }
             echo $this->twig->render('login.html.twig');
