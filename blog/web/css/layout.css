@@ -260,7 +260,7 @@ body .demo-blog {
 .demo-blog--blogpost .comments > form .mdl-textfield textarea {
     resize: none;
 }
-.demo-blog--blogpost .comments > form button {
+#form-comment button {
     margin-top: 20px;
     background-color: rgba(0, 0, 0, 0.24);
     color: white;
@@ -394,7 +394,7 @@ body .demo-blog {
     width: 100%;
 }
 #navAdmin{
-    background-color: #FFAB40;
+    background-color: #263238;
     padding:8px;
     top:0;
     left:0;

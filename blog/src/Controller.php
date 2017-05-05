@@ -77,8 +77,10 @@ class Controller
     public function articlePage(){
         if ($this->authClass->logged()){
             $navAdmin = '<div id="navAdmin"><a href="/web/index.php/admin/articles/add/">Ajouter un article</a><a href="/web/index.php/admin/articles?p=1">Articles</a><a href="/web/index.php/admin/comments?p=1">Signalements</a><a href="/web/index.php/admin/pictures/">Multimédia</a><a href="/web/index.php/admin/account/">Mon compte</a></div>';
+            $adminIsLogged = true;
         } else {
             $navAdmin = "";
+            $adminIsLogged = false;
         }
 
         //query to get article by id
@@ -92,8 +94,11 @@ class Controller
             if(!empty($_POST['content']))
             {
                 $this->commentClass->addComment();
+                $this->flash->setFlash('Votre commentaire a été publié.', 'green lighten-2');
+                $this->flash->getFlash();
             } else {
-
+                $this->flash->setFlash('Une erreur est survenue. Votre commentaire n\'a pas été publié', 'red lighten-2');
+                $this->flash->getFlash();
             }
         }
         
@@ -157,7 +162,8 @@ class Controller
             'comments'=>$comments,
             'nextId'=>$nextId,
             'previousId'=>$previousId,
-            'navAdmin'=>$navAdmin
+            'navAdmin'=>$navAdmin,
+            'adminIsLogged'=>$adminIsLogged
         ]);
     }
 

@@ -68,5 +68,18 @@
     margin : 10% 0 5% 0;
 }
 .administrator{
-    background-color: #cfd8dc;
+    background-color: #263238;
+}
+.administrator button{
+    color:#6F8591 !important;
+}
+.administrator div{
+    color:white;
+
+}
+.field-to-hide-administrator{
+    display: none;
+}
+#form-comment .row{
+    width: 80%;
 }
