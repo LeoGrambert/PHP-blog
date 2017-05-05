@@ -205,53 +205,52 @@ class Controller
         } else {
             $this->appClass->forbidden();
         }
-
     }
 
     /**
      * What do we do if we are on admin page (add an article)
      */
     public function adminAddArticlePage(){
-        //Get pictures from gallery
-        $allImg = [];
-        $allImgDirectory = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload";
-        $dir = opendir($allImgDirectory);
-        while($file = readdir($dir)){
-            $format = strtolower(substr($file,-3,3));
-            $allow_format = ['jpg', 'png', 'gif', 'jpeg'];
-            if (in_array($format, $allow_format)){
-                $allImg [] = $file;
+
+        if ($this->authClass->logged()){
+            //Get pictures from gallery
+            $allImg = [];
+            $allImgDirectory = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload";
+            $dir = opendir($allImgDirectory);
+            while($file = readdir($dir)){
+                $format = strtolower(substr($file,-3,3));
+                $allow_format = ['jpg', 'png', 'gif', 'jpeg'];
+                if (in_array($format, $allow_format)){
+                    $allImg [] = $file;
+                }
             }
-        }
-        
-        //Add an article
-        if (!empty($_POST['title']) && !empty($_POST['summary']) && !empty($_POST['content'])) {
-            if (strlen($_POST['title']) < 100){
-                $this->articleClass->addAnArticle();
-                if ($this->articleClass->getAddAnArticle() === true) {
-                    $this->flash->setFlash('Votre article a bien été ajouté.', 'green lighten-2');
-                    header('Location: /web/index.php/admin/articles?p=1');
+
+            //Add an article
+            if (!empty($_POST['title']) && !empty($_POST['summary']) && !empty($_POST['content'])) {
+                if (strlen($_POST['title']) < 100){
+                    $this->articleClass->addAnArticle();
+                    if ($this->articleClass->getAddAnArticle() === true) {
+                        $this->flash->setFlash('Votre article a bien été ajouté.', 'green lighten-2');
+                        header('Location: /web/index.php/admin/articles?p=1');
+                    } else {
+                        $this->flash->setFlash('Une erreur est survenue lors de l\'envoi. Veuillez réessayer.', 'red lighten-2');
+                        $this->flash->getFlash();
+                    }
                 } else {
-                    $this->flash->setFlash('Une erreur est survenue lors de l\'envoi. Veuillez réessayer.', 'red lighten-2');
+                    $this->flash->setFlash('Le titre de l\'article est trop long.', 'red lighten-2');
                     $this->flash->getFlash();
                 }
             } else {
-                $this->flash->setFlash('Le titre de l\'article est trop long.', 'red lighten-2');
+                $this->flash->setFlash('Le formulaire n\'est pas correctement renseigné.', 'red lighten-2');
                 $this->flash->getFlash();
             }
-        } else {
-            $this->flash->setFlash('Le formulaire n\'est pas correctement renseigné.', 'red lighten-2');
-            $this->flash->getFlash();
-        }
 
-        //Get username & picture
-        $username = $this->userClass->displayUsername();
-        $picture = $this->userClass->displayPicture();
-        $username = $username[0];
-        $picture = $picture[0];
+            //Get username & picture
+            $username = $this->userClass->displayUsername();
+            $picture = $this->userClass->displayPicture();
+            $username = $username[0];
+            $picture = $picture[0];
 
-
-        if ($this->authClass->logged()){
             echo $this->twig->render('addArticle_admin.html.twig', [
                 'allImg'=>$allImg,
                 'username'=>$username,
@@ -266,48 +265,49 @@ class Controller
      * What do we do if we are on admin page (edit an article)
      */
     public function adminEditArticlePage(){
-        // Display article to prefill form
-        $article = $this->articleClass->getArticleById();
 
-        //Get pictures from gallery
-        $allImg = [];
-        $allImgDirectory = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload";
-        $dir = opendir($allImgDirectory);
-        while($file = readdir($dir)){
-            $format = strtolower(substr($file,-3,3));
-            $allow_format = ['jpg', 'png', 'gif', 'jpeg'];
-            if (in_array($format, $allow_format)){
-                $allImg [] = $file;
+        if ($this->authClass->logged()){
+            // Display article to prefill form
+            $article = $this->articleClass->getArticleById();
+
+            //Get pictures from gallery
+            $allImg = [];
+            $allImgDirectory = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload";
+            $dir = opendir($allImgDirectory);
+            while($file = readdir($dir)){
+                $format = strtolower(substr($file,-3,3));
+                $allow_format = ['jpg', 'png', 'gif', 'jpeg'];
+                if (in_array($format, $allow_format)){
+                    $allImg [] = $file;
+                }
             }
-        }
 
-        // Update an article
-        if (isset($_POST['title']) && isset($_POST['summary']) && isset($_POST['content'])){
-            if (strlen($_POST['title']) < 100) {
-                $this->articleClass->updateAnArticle();
-                if ($this->articleClass->getUpdateAnArticle() === true) {
-                    $this->flash->setFlash('Votre article a bien été modifié.', 'green lighten-2');
-                    header('Location: /web/index.php/admin/articles?p=1');
+            // Update an article
+            if (isset($_POST['title']) && isset($_POST['summary']) && isset($_POST['content'])){
+                if (strlen($_POST['title']) < 100) {
+                    $this->articleClass->updateAnArticle();
+                    if ($this->articleClass->getUpdateAnArticle() === true) {
+                        $this->flash->setFlash('Votre article a bien été modifié.', 'green lighten-2');
+                        header('Location: /web/index.php/admin/articles?p=1');
+                    } else {
+                        $this->flash->setFlash('Une erreur est survenue. Votre article n\'a pas été modifié. Veuillez réessayer', 'red lighten-2');
+                        $this->flash->getFlash();
+                    }
                 } else {
-                    $this->flash->setFlash('Une erreur est survenue. Votre article n\'a pas été modifié. Veuillez réessayer', 'red lighten-2');
+                    $this->flash->setFlash('Le titre de l\'article est trop long.', 'red lighten-2');
                     $this->flash->getFlash();
                 }
             } else {
-                $this->flash->setFlash('Le titre de l\'article est trop long.', 'red lighten-2');
+                $this->flash->setFlash('Le formulaire n\'est pas correctement renseigné.', 'red lighten-2');
                 $this->flash->getFlash();
             }
-        } else {
-            $this->flash->setFlash('Le formulaire n\'est pas correctement renseigné.', 'red lighten-2');
-            $this->flash->getFlash();
-        }
 
-        //Get username & picture
-        $username = $this->userClass->displayUsername();
-        $picture = $this->userClass->displayPicture();
-        $username = $username[0];
-        $picture = $picture[0];
+            //Get username & picture
+            $username = $this->userClass->displayUsername();
+            $picture = $this->userClass->displayPicture();
+            $username = $username[0];
+            $picture = $picture[0];
 
-        if ($this->authClass->logged()){
             echo $this->twig->render('editArticle_admin.html.twig', [
                 'article'=>$article, 
                 'allImg'=>$allImg,
@@ -347,24 +347,25 @@ class Controller
      * What do we do if we are on admin page (add an article)
      */
     public function adminArticlesPage(){
-        $this->flash->getFlash();
-
-        //How many articles are there in BDD ?
-        $articles = $this->articleClass->getArticles();
-        $nbArt = count($articles);
-        //How many pages are we displaying ?
-        $nbPages = ceil($nbArt/10);
-        $curPage = $_GET['p'];
-
-        $articlesWhithPagination = $this->articleClass->getArticlesAdmin();
-
-        //Get username & picture
-        $username = $this->userClass->displayUsername();
-        $picture = $this->userClass->displayPicture();
-        $username = $username[0];
-        $picture = $picture[0];
 
         if ($this->authClass->logged()){
+            $this->flash->getFlash();
+
+            //How many articles are there in BDD ?
+            $articles = $this->articleClass->getArticles();
+            $nbArt = count($articles);
+            //How many pages are we displaying ?
+            $nbPages = ceil($nbArt/10);
+            $curPage = $_GET['p'];
+
+            $articlesWhithPagination = $this->articleClass->getArticlesAdmin();
+
+            //Get username & picture
+            $username = $this->userClass->displayUsername();
+            $picture = $this->userClass->displayPicture();
+            $username = $username[0];
+            $picture = $picture[0];
+
             echo $this->twig->render('articles_admin.html.twig', [
                 'articles'=>$articlesWhithPagination,
                 'nbPages'=>$nbPages,
@@ -382,21 +383,21 @@ class Controller
      */
     public function adminCommentsPage(){
         
-        //How many articles are there in BDD ?
-        $nbComments = count($this->commentClass->getNumberReportedComments());
-        //How many pages are we displaying ?
-        $nbPages = ceil($nbComments/10);
-        $curPage = $_GET['p'];
-        //Get all comments with report
-        $commentsWithReport = $this->commentClass->getCommentsWithReport();
-
-        //Get username & picture
-        $username = $this->userClass->displayUsername();
-        $picture = $this->userClass->displayPicture();
-        $username = $username[0];
-        $picture = $picture[0];
-        
         if ($this->authClass->logged()){
+            //How many articles are there in BDD ?
+            $nbComments = count($this->commentClass->getNumberReportedComments());
+            //How many pages are we displaying ?
+            $nbPages = ceil($nbComments/10);
+            $curPage = $_GET['p'];
+            //Get all comments with report
+            $commentsWithReport = $this->commentClass->getCommentsWithReport();
+
+            //Get username & picture
+            $username = $this->userClass->displayUsername();
+            $picture = $this->userClass->displayPicture();
+            $username = $username[0];
+            $picture = $picture[0];
+
             echo $this->twig->render('comments_admin.html.twig',
                 [
                     'commentsWithReport'=>$commentsWithReport,
@@ -477,65 +478,69 @@ class Controller
      * What do we do if we are on admin page (pictures)
      */
     public function adminPicturesPage(){
-        //To delete a picture
-        if (isset($_GET['n'])){
-            $img = $_GET['n'];
-            if (in_array($img, scandir('/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload/'))){
-                unlink('/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload/'.$img);
+        if ($this->authClass->logged()) {
+            //To delete a picture
+            if (isset($_GET['n'])) {
+                $img = $_GET['n'];
+                if (in_array($img, scandir('/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload/'))) {
+                    unlink('/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload/' . $img);
+                }
             }
-        }
 
-        //We add a picture in gallery if file field isn't empty
-        if(!empty($_FILES)){
-            $picture = $_FILES['picture'];
-            $format = strtolower(substr($picture['name'],-4,4));
-            $allow_format = ['.jpg', '.png', '.gif', 'jpeg'];
-            if (in_array($format, $allow_format)){
-                $tmp_namp = $picture['tmp_name'];
-                $destination_file = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload/".$picture['name'];
-                move_uploaded_file($tmp_namp, $destination_file);
+            //We add a picture in gallery if file field isn't empty
+            if (!empty($_FILES)) {
+                $picture = $_FILES['picture'];
+                $format = strtolower(substr($picture['name'], -4, 4));
+                $allow_format = ['.jpg', '.png', '.gif', 'jpeg'];
+                if (in_array($format, $allow_format)) {
+                    $tmp_namp = $picture['tmp_name'];
+                    $destination_file = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload/" . $picture['name'];
+                    move_uploaded_file($tmp_namp, $destination_file);
 
-            } else {
-                echo '<div>Le fichier que vous essayez d\'envoyer n\'est pas une image.</div>';
+                } else {
+                    echo '<div>Le fichier que vous essayez d\'envoyer n\'est pas une image.</div>';
+                }
             }
-        }
 
-        //We add a picture in gallery if text field isn't empty
-        if(!empty($_POST)){
-            $pictureUrl = $_POST['picture-url'];
-            $format = strtolower(substr($pictureUrl,-4,4));
-            $allow_format = ['.jpg', '.png', '.gif', 'jpeg'];
-            if (in_array($format, $allow_format)){
-                $urlExplode = explode("/", $pictureUrl);
-                $name = $urlExplode[sizeof($urlExplode)-1];
-                $destination_file = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload/".$name;
-                copy($pictureUrl, $destination_file);
+            //We add a picture in gallery if text field isn't empty
+            if (!empty($_POST)) {
+                $pictureUrl = $_POST['picture-url'];
+                $format = strtolower(substr($pictureUrl, -4, 4));
+                $allow_format = ['.jpg', '.png', '.gif', 'jpeg'];
+                if (in_array($format, $allow_format)) {
+                    $urlExplode = explode("/", $pictureUrl);
+                    $name = $urlExplode[sizeof($urlExplode) - 1];
+                    $destination_file = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload/" . $name;
+                    copy($pictureUrl, $destination_file);
+                }
             }
-        }
 
-        //We store images in an array in order to send and display them in view
-        $allImg = [];
-        $allImgDirectory = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload";
-        $dir = opendir($allImgDirectory);
-        while($file = readdir($dir)){
-            $format = strtolower(substr($file,-3,3));
-            $allow_format = ['jpg', 'png', 'gif', 'jpeg'];
-            if (in_array($format, $allow_format)){
-                $allImg [] = $file;
+            //We store images in an array in order to send and display them in view
+            $allImg = [];
+            $allImgDirectory = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload";
+            $dir = opendir($allImgDirectory);
+            while ($file = readdir($dir)) {
+                $format = strtolower(substr($file, -3, 3));
+                $allow_format = ['jpg', 'png', 'gif', 'jpeg'];
+                if (in_array($format, $allow_format)) {
+                    $allImg [] = $file;
+                }
             }
+
+            //Get username & picture
+            $username = $this->userClass->displayUsername();
+            $picture = $this->userClass->displayPicture();
+            $username = $username[0];
+            $picture = $picture[0];
+
+            echo $this->twig->render('pictures_admin.html.twig', [
+                "allImg" => $allImg,
+                'username' => $username,
+                'picture' => $picture
+            ]);
+        } else {
+            $this->appClass->forbidden();
         }
-
-        //Get username & picture
-        $username = $this->userClass->displayUsername();
-        $picture = $this->userClass->displayPicture();
-        $username = $username[0];
-        $picture = $picture[0];
-
-        echo $this->twig->render('pictures_admin.html.twig', [
-            "allImg"=>$allImg,
-            'username'=>$username,
-            'picture'=>$picture
-        ]);
     }
 
     /**
