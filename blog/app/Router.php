@@ -81,7 +81,7 @@ class Router
             $this->controller->adminCommentsPage();
 
         //If admin page (pictures)
-        } elseif ('/web/index.php/admin/pictures/' === $this->uri) {
+        } elseif ('/web/index.php/admin/pictures' === $this->uri) {
             $this->controller->adminPicturesPage();
 
         //If admin page (my account)

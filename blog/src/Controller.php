@@ -50,7 +50,7 @@ class Controller
      */
     public function homePage(){
         if ($this->authClass->logged()){
-            $navAdmin = '<div id="navAdmin"><a href="/web/index.php/admin/articles/add/">Ajouter un article</a><a href="/web/index.php/admin/articles?p=1">Articles</a><a href="/web/index.php/admin/comments?p=1">Signalements</a><a href="/web/index.php/admin/pictures/">Multimédia</a><a href="/web/index.php/admin/account/">Mon compte</a></div>';
+            $navAdmin = '<div id="navAdmin"><a href="/web/index.php/admin/articles/add/">Ajouter un article</a><a href="/web/index.php/admin/articles?p=1">Articles</a><a href="/web/index.php/admin/comments?p=1">Signalements</a><a href="/web/index.php/admin/pictures">Multimédia</a><a href="/web/index.php/admin/account/">Mon compte</a></div>';
         } else {
             $navAdmin = "";
         }
@@ -81,7 +81,7 @@ class Controller
 
             //If user is logged, we displaying an admin navbar
             if ($this->authClass->logged()){
-                $navAdmin = '<div id="navAdmin"><a href="/web/index.php/admin/articles/add/">Ajouter un article</a><a href="/web/index.php/admin/articles?p=1">Articles</a><a href="/web/index.php/admin/comments?p=1">Signalements</a><a href="/web/index.php/admin/pictures/">Multimédia</a><a href="/web/index.php/admin/account/">Mon compte</a></div>';
+                $navAdmin = '<div id="navAdmin"><a href="/web/index.php/admin/articles/add/">Ajouter un article</a><a href="/web/index.php/admin/articles?p=1">Articles</a><a href="/web/index.php/admin/comments?p=1">Signalements</a><a href="/web/index.php/admin/pictures">Multimédia</a><a href="/web/index.php/admin/account/">Mon compte</a></div>';
                 $adminIsLogged = true;
             } else {
                 $navAdmin = "";
@@ -498,6 +498,10 @@ class Controller
                 $img = $_GET['n'];
                 if (in_array($img, scandir('/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload/'))) {
                     unlink('/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload/' . $img);
+                    header('Location: /web/index.php/admin/pictures');
+                } else {
+                    $this->flash->setFlash('L\'image n\'a pas pu être supprimé', 'red lighten-2');
+                    $this->flash->getFlash();
                 }
             }
 
@@ -510,9 +514,11 @@ class Controller
                     $tmp_namp = $picture['tmp_name'];
                     $destination_file = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload/" . $picture['name'];
                     move_uploaded_file($tmp_namp, $destination_file);
-
+                    $this->flash->setFlash('L\'image a bien été ajoutée', 'green lighten-2');
+                    $this->flash->getFlash();
                 } else {
-                    echo '<div>Le fichier que vous essayez d\'envoyer n\'est pas une image.</div>';
+                    $this->flash->setFlash('Le format du fichier n\'est pas adapté (seuls .png .jpg .gif sont acceptés)', 'red lighten-2');
+                    $this->flash->getFlash();
                 }
             }
 
@@ -526,6 +532,11 @@ class Controller
                     $name = $urlExplode[sizeof($urlExplode) - 1];
                     $destination_file = "/home/leo/Documents/Dev/formaCPMDev_Blog/blog/web/img/upload/" . $name;
                     copy($pictureUrl, $destination_file);
+                    $this->flash->setFlash('L\'image a bien été ajoutée', 'green lighten-2');
+                    $this->flash->getFlash();
+                } else {
+                    $this->flash->setFlash('Le format du fichier n\'est pas adapté (seuls .png .jpg .gif sont acceptés)', 'red lighten-2');
+                    $this->flash->getFlash();
                 }
             }
 
