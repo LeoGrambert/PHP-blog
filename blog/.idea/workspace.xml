@@ -43,33 +43,76 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Controller.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Controller.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="360" column="70" selection-start-line="360" selection-start-column="70" selection-end-line="360" selection-end-column="70" />
+            <state relative-caret-position="405">
+              <caret line="81" column="62" selection-start-line="81" selection-start-column="62" selection-end-line="81" selection-end-column="62" />
               <folding>
                 <element signature="e#77#89#0#PHP" expanded="true" />
                 <element signature="e#483#878#0#PHP" expanded="false" />
                 <element signature="e#944#2008#0#PHP" expanded="false" />
-                <element signature="e#2077#6063#0#PHP" expanded="false" />
-                <element signature="e#6130#6861#0#PHP" expanded="false" />
-                <element signature="e#6939#7472#0#PHP" expanded="false" />
-                <element signature="e#7556#9741#0#PHP" expanded="false" />
-                <element signature="e#9826#12187#0#PHP" expanded="false" />
-                <element signature="e#12274#12550#0#PHP" expanded="false" />
-                <element signature="e#12636#12910#0#PHP" expanded="false" />
-                <element signature="e#14138#15249#0#PHP" expanded="false" />
-                <element signature="e#15329#17963#0#PHP" expanded="false" />
-                <element signature="e#18041#20947#0#PHP" expanded="false" />
-                <element signature="e#21018#21137#0#PHP" expanded="false" />
-                <element signature="e#21204#21341#0#PHP" expanded="false" />
+                <element signature="e#6793#7524#0#PHP" expanded="false" />
+                <element signature="e#7602#8135#0#PHP" expanded="false" />
+                <element signature="e#8219#10404#0#PHP" expanded="false" />
+                <element signature="e#10489#12850#0#PHP" expanded="false" />
+                <element signature="e#12937#13213#0#PHP" expanded="false" />
+                <element signature="e#13299#13573#0#PHP" expanded="false" />
+                <element signature="e#14801#15912#0#PHP" expanded="false" />
+                <element signature="e#15992#18626#0#PHP" expanded="false" />
+                <element signature="e#18704#21610#0#PHP" expanded="false" />
+                <element signature="e#21681#21800#0#PHP" expanded="false" />
+                <element signature="e#21867#22004#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="error404.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Article.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Article.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="449">
+              <caret line="132" column="46" selection-start-line="132" selection-start-column="46" selection-end-line="132" selection-end-column="46" />
+              <folding>
+                <element signature="e#403#484#0#PHP" expanded="false" />
+                <element signature="e#527#583#0#PHP" expanded="false" />
+                <element signature="e#626#693#0#PHP" expanded="false" />
+                <element signature="e#736#798#0#PHP" expanded="false" />
+                <element signature="e#862#954#0#PHP" expanded="false" />
+                <element signature="e#997#1063#0#PHP" expanded="false" />
+                <element signature="e#1129#1229#0#PHP" expanded="false" />
+                <element signature="e#1272#1338#0#PHP" expanded="false" />
+                <element signature="e#1404#1504#0#PHP" expanded="false" />
+                <element signature="e#1547#1613#0#PHP" expanded="false" />
+                <element signature="e#1679#1779#0#PHP" expanded="false" />
+                <element signature="e#2454#2912#0#PHP" expanded="false" />
+                <element signature="e#4611#5336#0#PHP" expanded="false" />
+                <element signature="e#5378#5454#0#PHP" expanded="false" />
+                <element signature="e#5537#5759#0#PHP" expanded="false" />
+                <element signature="e#5842#6602#0#PHP" expanded="false" />
+                <element signature="e#6644#6726#0#PHP" expanded="false" />
+                <marker date="1494072320916" expanded="true" signature="1958:2002" placeholder="SELECT * FRO... Article" />
+                <marker date="1494072320916" expanded="true" signature="2184:2214" placeholder="SELECT Artic... Article" />
+                <marker date="1494072320916" expanded="true" signature="2775:2819" placeholder="SELECT * FRO... Article" />
+                <marker date="1494072320916" expanded="true" signature="2775:2825" placeholder="SELECT * FRO... Article" />
+                <marker date="1494072320916" expanded="true" signature="2775:2854" placeholder="SELECT * FRO... Article" />
+                <marker date="1494072320916" expanded="true" signature="2775:2855" placeholder="SELECT * FRO... Article" />
+                <marker date="1494072320916" expanded="true" signature="3307:3386" placeholder="SELECT * FRO... Article" />
+                <marker date="1494072320916" expanded="true" signature="3635:3669" placeholder="SELECT * FRO... Article" />
+                <marker date="1494072320916" expanded="true" signature="3998:4029" placeholder="SELECT Artic... Article" />
+                <marker date="1494072320916" expanded="true" signature="3998:4046" placeholder="SELECT Artic... Article" />
+                <marker date="1494072320916" expanded="true" signature="3998:4047" placeholder="SELECT Artic... Article" />
+                <marker date="1494072320916" expanded="true" signature="3998:4059" placeholder="SELECT Artic... Article" />
+                <marker date="1494072320916" expanded="true" signature="4388:4437" placeholder="SELECT Artic... Article" />
+                <marker date="1494072320916" expanded="true" signature="4882:4973" placeholder="INSERT INTO Article... " />
+                <marker date="1494072320916" expanded="true" signature="5646:5678" placeholder="DELETE FROM " />
+                <marker date="1494072320916" expanded="true" signature="6120:6200" placeholder="UPDATE Artic... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="error404.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/templates/error404.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="334">
@@ -150,10 +193,10 @@
         <option value="$PROJECT_DIR$/web/css/article.css" />
         <option value="$PROJECT_DIR$/views/templates/article.html.twig" />
         <option value="$PROJECT_DIR$/web/css/layout.css" />
-        <option value="$PROJECT_DIR$/src/Controller.php" />
         <option value="$PROJECT_DIR$/app/Router.php" />
-        <option value="$PROJECT_DIR$/src/Model/Article.php" />
         <option value="$PROJECT_DIR$/views/templates/error404.html.twig" />
+        <option value="$PROJECT_DIR$/src/Model/Article.php" />
+        <option value="$PROJECT_DIR$/src/Controller.php" />
       </list>
     </option>
   </component>
@@ -468,12 +511,12 @@
       <workItem from="1493631692425" duration="4272000" />
       <workItem from="1493641020365" duration="10404000" />
       <workItem from="1493970653562" duration="13425000" />
-      <workItem from="1494069791585" duration="1753000" />
+      <workItem from="1494069791585" duration="2647000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="311100000" />
+    <option name="totallyTimeSpent" value="311994000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="57" y="24" width="1863" height="1056" extended-state="6" />
@@ -766,6 +809,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
           <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <folding>
+            <element signature="e#6#59#0#PHP" expanded="false" />
+            <marker date="1491911006586" expanded="true" signature="689:726" placeholder="SELECT * FRO... User" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -807,6 +854,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1746">
           <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+          <folding>
+            <element signature="e#413#469#0#PHP" expanded="false" />
+            <element signature="e#512#591#0#PHP" expanded="false" />
+            <element signature="e#634#705#0#PHP" expanded="false" />
+            <element signature="e#748#815#0#PHP" expanded="false" />
+            <element signature="e#858#922#0#PHP" expanded="false" />
+            <element signature="e#987#1083#0#PHP" expanded="false" />
+            <element signature="e#1126#1192#0#PHP" expanded="false" />
+            <element signature="e#1258#1358#0#PHP" expanded="false" />
+            <element signature="e#1401#1465#0#PHP" expanded="false" />
+            <element signature="e#1508#1605#0#PHP" expanded="false" />
+            <element signature="e#1648#1732#0#PHP" expanded="false" />
+            <element signature="e#1775#1837#0#PHP" expanded="false" />
+            <element signature="e#2521#2659#0#PHP" expanded="false" />
+            <element signature="e#2755#3028#0#PHP" expanded="false" />
+            <element signature="e#6037#6373#0#PHP" expanded="false" />
+            <element signature="e#6455#6675#0#PHP" expanded="false" />
+            <element signature="e#6763#7257#0#PHP" expanded="false" />
+            <element signature="e#7339#7499#0#PHP" expanded="false" />
+            <marker date="1493978286263" expanded="true" signature="2860:2925" placeholder="SELECT * FRO... Comment" />
+            <marker date="1493978286263" expanded="true" signature="3941:3983" placeholder="SELECT id, d... Comment" />
+            <marker date="1493978286263" expanded="true" signature="4653:4807" placeholder="INSERT INTO Comment... " />
+            <marker date="1493978286263" expanded="true" signature="5440:5570" placeholder="INSERT INTO Comment... " />
+            <marker date="1493978286263" expanded="true" signature="6218:6264" placeholder="UPDATE Comme... " />
+            <marker date="1493978286263" expanded="true" signature="6562:6594" placeholder="DELETE FROM " />
+            <marker date="1493978286263" expanded="true" signature="7104:7199" placeholder="SELECT * FRO... Comment" />
+            <marker date="1493978286263" expanded="true" signature="7439:7479" placeholder="SELECT id FR... Comment" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -848,47 +923,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Article.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="166" column="37" selection-start-line="166" selection-start-column="37" selection-end-line="166" selection-end-column="37" />
-          <folding>
-            <element signature="e#403#484#0#PHP" expanded="false" />
-            <element signature="e#527#583#0#PHP" expanded="false" />
-            <element signature="e#626#693#0#PHP" expanded="false" />
-            <element signature="e#736#798#0#PHP" expanded="false" />
-            <element signature="e#862#954#0#PHP" expanded="false" />
-            <element signature="e#997#1063#0#PHP" expanded="false" />
-            <element signature="e#1129#1229#0#PHP" expanded="false" />
-            <element signature="e#1272#1338#0#PHP" expanded="false" />
-            <element signature="e#1404#1504#0#PHP" expanded="false" />
-            <element signature="e#1547#1613#0#PHP" expanded="false" />
-            <element signature="e#1679#1779#0#PHP" expanded="false" />
-            <element signature="e#2132#2590#0#PHP" expanded="false" />
-            <element signature="e#4289#5014#0#PHP" expanded="false" />
-            <element signature="e#5056#5132#0#PHP" expanded="false" />
-            <element signature="e#5215#5437#0#PHP" expanded="false" />
-            <element signature="e#5520#6280#0#PHP" expanded="false" />
-            <element signature="e#6322#6404#0#PHP" expanded="false" />
-            <marker date="1493988200821" expanded="true" signature="1958:2002" placeholder="SELECT * FRO... Article" />
-            <marker date="1493988200821" expanded="true" signature="2453:2497" placeholder="SELECT * FRO... Article" />
-            <marker date="1493988200821" expanded="true" signature="2453:2503" placeholder="SELECT * FRO... Article" />
-            <marker date="1493988200821" expanded="true" signature="2453:2532" placeholder="SELECT * FRO... Article" />
-            <marker date="1493988200821" expanded="true" signature="2453:2533" placeholder="SELECT * FRO... Article" />
-            <marker date="1493988200821" expanded="true" signature="2985:3064" placeholder="SELECT * FRO... Article" />
-            <marker date="1493988200821" expanded="true" signature="3313:3347" placeholder="SELECT * FRO... Article" />
-            <marker date="1493988200821" expanded="true" signature="3676:3707" placeholder="SELECT Artic... Article" />
-            <marker date="1493988200821" expanded="true" signature="3676:3724" placeholder="SELECT Artic... Article" />
-            <marker date="1493988200821" expanded="true" signature="3676:3725" placeholder="SELECT Artic... Article" />
-            <marker date="1493988200821" expanded="true" signature="3676:3737" placeholder="SELECT Artic... Article" />
-            <marker date="1493988200821" expanded="true" signature="4066:4115" placeholder="SELECT Artic... Article" />
-            <marker date="1493988200821" expanded="true" signature="4560:4651" placeholder="INSERT INTO Article... " />
-            <marker date="1493988200821" expanded="true" signature="5324:5356" placeholder="DELETE FROM " />
-            <marker date="1493988200821" expanded="true" signature="5798:5878" placeholder="UPDATE Artic... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Router.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
@@ -915,30 +949,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="360" column="70" selection-start-line="360" selection-start-column="70" selection-end-line="360" selection-end-column="70" />
-          <folding>
-            <element signature="e#77#89#0#PHP" expanded="true" />
-            <element signature="e#483#878#0#PHP" expanded="false" />
-            <element signature="e#944#2008#0#PHP" expanded="false" />
-            <element signature="e#2077#6063#0#PHP" expanded="false" />
-            <element signature="e#6130#6861#0#PHP" expanded="false" />
-            <element signature="e#6939#7472#0#PHP" expanded="false" />
-            <element signature="e#7556#9741#0#PHP" expanded="false" />
-            <element signature="e#9826#12187#0#PHP" expanded="false" />
-            <element signature="e#12274#12550#0#PHP" expanded="false" />
-            <element signature="e#12636#12910#0#PHP" expanded="false" />
-            <element signature="e#14138#15249#0#PHP" expanded="false" />
-            <element signature="e#15329#17963#0#PHP" expanded="false" />
-            <element signature="e#18041#20947#0#PHP" expanded="false" />
-            <element signature="e#21018#21137#0#PHP" expanded="false" />
-            <element signature="e#21204#21341#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/templates/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="618">
@@ -960,6 +970,71 @@
         <state relative-caret-position="334">
           <caret line="55" column="116" selection-start-line="55" selection-start-column="116" selection-end-line="55" selection-end-column="116" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Article.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="132" column="46" selection-start-line="132" selection-start-column="46" selection-end-line="132" selection-end-column="46" />
+          <folding>
+            <element signature="e#403#484#0#PHP" expanded="false" />
+            <element signature="e#527#583#0#PHP" expanded="false" />
+            <element signature="e#626#693#0#PHP" expanded="false" />
+            <element signature="e#736#798#0#PHP" expanded="false" />
+            <element signature="e#862#954#0#PHP" expanded="false" />
+            <element signature="e#997#1063#0#PHP" expanded="false" />
+            <element signature="e#1129#1229#0#PHP" expanded="false" />
+            <element signature="e#1272#1338#0#PHP" expanded="false" />
+            <element signature="e#1404#1504#0#PHP" expanded="false" />
+            <element signature="e#1547#1613#0#PHP" expanded="false" />
+            <element signature="e#1679#1779#0#PHP" expanded="false" />
+            <element signature="e#2454#2912#0#PHP" expanded="false" />
+            <element signature="e#4611#5336#0#PHP" expanded="false" />
+            <element signature="e#5378#5454#0#PHP" expanded="false" />
+            <element signature="e#5537#5759#0#PHP" expanded="false" />
+            <element signature="e#5842#6602#0#PHP" expanded="false" />
+            <element signature="e#6644#6726#0#PHP" expanded="false" />
+            <marker date="1494072320916" expanded="true" signature="1958:2002" placeholder="SELECT * FRO... Article" />
+            <marker date="1494072320916" expanded="true" signature="2184:2214" placeholder="SELECT Artic... Article" />
+            <marker date="1494072320916" expanded="true" signature="2775:2819" placeholder="SELECT * FRO... Article" />
+            <marker date="1494072320916" expanded="true" signature="2775:2825" placeholder="SELECT * FRO... Article" />
+            <marker date="1494072320916" expanded="true" signature="2775:2854" placeholder="SELECT * FRO... Article" />
+            <marker date="1494072320916" expanded="true" signature="2775:2855" placeholder="SELECT * FRO... Article" />
+            <marker date="1494072320916" expanded="true" signature="3307:3386" placeholder="SELECT * FRO... Article" />
+            <marker date="1494072320916" expanded="true" signature="3635:3669" placeholder="SELECT * FRO... Article" />
+            <marker date="1494072320916" expanded="true" signature="3998:4029" placeholder="SELECT Artic... Article" />
+            <marker date="1494072320916" expanded="true" signature="3998:4046" placeholder="SELECT Artic... Article" />
+            <marker date="1494072320916" expanded="true" signature="3998:4047" placeholder="SELECT Artic... Article" />
+            <marker date="1494072320916" expanded="true" signature="3998:4059" placeholder="SELECT Artic... Article" />
+            <marker date="1494072320916" expanded="true" signature="4388:4437" placeholder="SELECT Artic... Article" />
+            <marker date="1494072320916" expanded="true" signature="4882:4973" placeholder="INSERT INTO Article... " />
+            <marker date="1494072320916" expanded="true" signature="5646:5678" placeholder="DELETE FROM " />
+            <marker date="1494072320916" expanded="true" signature="6120:6200" placeholder="UPDATE Artic... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="81" column="62" selection-start-line="81" selection-start-column="62" selection-end-line="81" selection-end-column="62" />
+          <folding>
+            <element signature="e#77#89#0#PHP" expanded="true" />
+            <element signature="e#483#878#0#PHP" expanded="false" />
+            <element signature="e#944#2008#0#PHP" expanded="false" />
+            <element signature="e#6793#7524#0#PHP" expanded="false" />
+            <element signature="e#7602#8135#0#PHP" expanded="false" />
+            <element signature="e#8219#10404#0#PHP" expanded="false" />
+            <element signature="e#10489#12850#0#PHP" expanded="false" />
+            <element signature="e#12937#13213#0#PHP" expanded="false" />
+            <element signature="e#13299#13573#0#PHP" expanded="false" />
+            <element signature="e#14801#15912#0#PHP" expanded="false" />
+            <element signature="e#15992#18626#0#PHP" expanded="false" />
+            <element signature="e#18704#21610#0#PHP" expanded="false" />
+            <element signature="e#21681#21800#0#PHP" expanded="false" />
+            <element signature="e#21867#22004#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

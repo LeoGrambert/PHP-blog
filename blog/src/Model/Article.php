@@ -122,6 +122,19 @@ class Article
             );
     }
 
+    public function getArticlesIdInArray(){
+        $ids = [];
+        $results = App::getDatabase()
+        ->query(
+            'SELECT Article.id FROM Article',
+            __CLASS__
+        );
+        foreach ($results as $result){
+            $ids [] = intval($result->getId());
+        }
+        return $ids;
+    }
+
     /**
      * Query to get articles on front
      * @return array
