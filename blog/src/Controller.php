@@ -236,23 +236,25 @@ class Controller
             }
 
             //Add an article
-            if (!empty($_POST['title']) && !empty($_POST['summary']) && !empty($_POST['content'])) {
-                if (strlen($_POST['title']) < 100){
-                    $this->articleClass->addAnArticle();
-                    if ($this->articleClass->getAddAnArticle() === true) {
-                        $this->flash->setFlash('Votre article a bien été ajouté.', 'green lighten-2');
-                        header('Location: /web/index.php/admin/articles?p=1');
+            if (isset($_POST['title']) && isset($_POST['summary']) && isset($_POST['content'])){
+                if (!empty($_POST['title']) && !empty($_POST['summary']) && !empty($_POST['content'])) {
+                    if (strlen($_POST['title']) < 100){
+                        $this->articleClass->addAnArticle();
+                        if ($this->articleClass->getAddAnArticle() === true) {
+                            $this->flash->setFlash('Votre article a bien été ajouté.', 'green lighten-2');
+                            header('Location: /web/index.php/admin/articles?p=1');
+                        } else {
+                            $this->flash->setFlash('Une erreur est survenue lors de l\'envoi. Veuillez réessayer.', 'red lighten-2');
+                            $this->flash->getFlash();
+                        }
                     } else {
-                        $this->flash->setFlash('Une erreur est survenue lors de l\'envoi. Veuillez réessayer.', 'red lighten-2');
+                        $this->flash->setFlash('Le titre de l\'article est trop long.', 'red lighten-2');
                         $this->flash->getFlash();
                     }
                 } else {
-                    $this->flash->setFlash('Le titre de l\'article est trop long.', 'red lighten-2');
+                    $this->flash->setFlash('Le formulaire n\'est pas correctement renseigné.', 'red lighten-2');
                     $this->flash->getFlash();
                 }
-            } else {
-                $this->flash->setFlash('Le formulaire n\'est pas correctement renseigné.', 'red lighten-2');
-                $this->flash->getFlash();
             }
 
             //Get username & picture
@@ -294,22 +296,24 @@ class Controller
 
             // Update an article
             if (isset($_POST['title']) && isset($_POST['summary']) && isset($_POST['content'])){
-                if (strlen($_POST['title']) < 100) {
-                    $this->articleClass->updateAnArticle();
-                    if ($this->articleClass->getUpdateAnArticle() === true) {
-                        $this->flash->setFlash('Votre article a bien été modifié.', 'green lighten-2');
-                        header('Location: /web/index.php/admin/articles?p=1');
+                if (!empty($_POST['title']) && !empty($_POST['summary']) && !empty($_POST['content'])) {
+                    if (strlen($_POST['title']) < 100) {
+                        $this->articleClass->updateAnArticle();
+                        if ($this->articleClass->getUpdateAnArticle() === true) {
+                            $this->flash->setFlash('Votre article a bien été modifié.', 'green lighten-2');
+                            header('Location: /web/index.php/admin/articles?p=1');
+                        } else {
+                            $this->flash->setFlash('Une erreur est survenue. Votre article n\'a pas été modifié. Veuillez réessayer', 'red lighten-2');
+                            $this->flash->getFlash();
+                        }
                     } else {
-                        $this->flash->setFlash('Une erreur est survenue. Votre article n\'a pas été modifié. Veuillez réessayer', 'red lighten-2');
+                        $this->flash->setFlash('Le titre de l\'article est trop long.', 'red lighten-2');
                         $this->flash->getFlash();
                     }
                 } else {
-                    $this->flash->setFlash('Le titre de l\'article est trop long.', 'red lighten-2');
+                    $this->flash->setFlash('Le formulaire n\'est pas correctement renseigné.', 'red lighten-2');
                     $this->flash->getFlash();
                 }
-            } else {
-                $this->flash->setFlash('Le formulaire n\'est pas correctement renseigné.', 'red lighten-2');
-                $this->flash->getFlash();
             }
 
             //Get username & picture

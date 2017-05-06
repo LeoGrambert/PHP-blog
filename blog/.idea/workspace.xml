@@ -46,23 +46,24 @@
       <file leaf-file-name="Controller.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="81" column="62" selection-start-line="81" selection-start-column="62" selection-end-line="81" selection-end-column="62" />
+            <state relative-caret-position="687">
+              <caret line="315" column="17" selection-start-line="315" selection-start-column="17" selection-end-line="315" selection-end-column="17" />
               <folding>
                 <element signature="e#77#89#0#PHP" expanded="true" />
                 <element signature="e#483#878#0#PHP" expanded="false" />
                 <element signature="e#944#2008#0#PHP" expanded="false" />
+                <element signature="e#2077#6726#0#PHP" expanded="false" />
                 <element signature="e#6793#7524#0#PHP" expanded="false" />
                 <element signature="e#7602#8135#0#PHP" expanded="false" />
-                <element signature="e#8219#10404#0#PHP" expanded="false" />
-                <element signature="e#10489#12850#0#PHP" expanded="false" />
-                <element signature="e#12937#13213#0#PHP" expanded="false" />
-                <element signature="e#13299#13573#0#PHP" expanded="false" />
-                <element signature="e#14801#15912#0#PHP" expanded="false" />
-                <element signature="e#15992#18626#0#PHP" expanded="false" />
-                <element signature="e#18704#21610#0#PHP" expanded="false" />
-                <element signature="e#21681#21800#0#PHP" expanded="false" />
-                <element signature="e#21867#22004#0#PHP" expanded="false" />
+                <element signature="e#8219#10587#0#PHP" expanded="false" />
+                <element signature="e#13307#13583#0#PHP" expanded="false" />
+                <element signature="e#13669#13943#0#PHP" expanded="false" />
+                <element signature="e#14027#15093#0#PHP" expanded="false" />
+                <element signature="e#15171#16282#0#PHP" expanded="false" />
+                <element signature="e#16362#18996#0#PHP" expanded="false" />
+                <element signature="e#19074#21980#0#PHP" expanded="false" />
+                <element signature="e#22051#22170#0#PHP" expanded="false" />
+                <element signature="e#22237#22374#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -71,7 +72,7 @@
       <file leaf-file-name="Article.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/Article.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
+            <state relative-caret-position="189">
               <caret line="132" column="46" selection-start-line="132" selection-start-column="46" selection-end-line="132" selection-end-column="46" />
               <folding>
                 <element signature="e#403#484#0#PHP" expanded="false" />
@@ -86,27 +87,27 @@
                 <element signature="e#1547#1613#0#PHP" expanded="false" />
                 <element signature="e#1679#1779#0#PHP" expanded="false" />
                 <element signature="e#2454#2912#0#PHP" expanded="false" />
-                <element signature="e#4611#5336#0#PHP" expanded="false" />
-                <element signature="e#5378#5454#0#PHP" expanded="false" />
+                <element signature="e#2993#3444#0#PHP" expanded="false" />
+                <element signature="e#3527#3771#0#PHP" expanded="false" />
+                <element signature="e#3867#4136#0#PHP" expanded="false" />
+                <element signature="e#4248#4531#0#PHP" expanded="false" />
                 <element signature="e#5537#5759#0#PHP" expanded="false" />
-                <element signature="e#5842#6602#0#PHP" expanded="false" />
-                <element signature="e#6644#6726#0#PHP" expanded="false" />
-                <marker date="1494072320916" expanded="true" signature="1958:2002" placeholder="SELECT * FRO... Article" />
-                <marker date="1494072320916" expanded="true" signature="2184:2214" placeholder="SELECT Artic... Article" />
-                <marker date="1494072320916" expanded="true" signature="2775:2819" placeholder="SELECT * FRO... Article" />
-                <marker date="1494072320916" expanded="true" signature="2775:2825" placeholder="SELECT * FRO... Article" />
-                <marker date="1494072320916" expanded="true" signature="2775:2854" placeholder="SELECT * FRO... Article" />
-                <marker date="1494072320916" expanded="true" signature="2775:2855" placeholder="SELECT * FRO... Article" />
-                <marker date="1494072320916" expanded="true" signature="3307:3386" placeholder="SELECT * FRO... Article" />
-                <marker date="1494072320916" expanded="true" signature="3635:3669" placeholder="SELECT * FRO... Article" />
-                <marker date="1494072320916" expanded="true" signature="3998:4029" placeholder="SELECT Artic... Article" />
-                <marker date="1494072320916" expanded="true" signature="3998:4046" placeholder="SELECT Artic... Article" />
-                <marker date="1494072320916" expanded="true" signature="3998:4047" placeholder="SELECT Artic... Article" />
-                <marker date="1494072320916" expanded="true" signature="3998:4059" placeholder="SELECT Artic... Article" />
-                <marker date="1494072320916" expanded="true" signature="4388:4437" placeholder="SELECT Artic... Article" />
-                <marker date="1494072320916" expanded="true" signature="4882:4973" placeholder="INSERT INTO Article... " />
-                <marker date="1494072320916" expanded="true" signature="5646:5678" placeholder="DELETE FROM " />
-                <marker date="1494072320916" expanded="true" signature="6120:6200" placeholder="UPDATE Artic... " />
+                <marker date="1494073314126" expanded="true" signature="1958:2002" placeholder="SELECT * FRO... Article" />
+                <marker date="1494073314126" expanded="true" signature="2184:2214" placeholder="SELECT Artic... Article" />
+                <marker date="1494073314126" expanded="true" signature="2775:2819" placeholder="SELECT * FRO... Article" />
+                <marker date="1494073314126" expanded="true" signature="2775:2825" placeholder="SELECT * FRO... Article" />
+                <marker date="1494073314126" expanded="true" signature="2775:2854" placeholder="SELECT * FRO... Article" />
+                <marker date="1494073314126" expanded="true" signature="2775:2855" placeholder="SELECT * FRO... Article" />
+                <marker date="1494073314126" expanded="true" signature="3307:3386" placeholder="SELECT * FRO... Article" />
+                <marker date="1494073314126" expanded="true" signature="3635:3669" placeholder="SELECT * FRO... Article" />
+                <marker date="1494073314126" expanded="true" signature="3998:4029" placeholder="SELECT Artic... Article" />
+                <marker date="1494073314126" expanded="true" signature="3998:4046" placeholder="SELECT Artic... Article" />
+                <marker date="1494073314126" expanded="true" signature="3998:4047" placeholder="SELECT Artic... Article" />
+                <marker date="1494073314126" expanded="true" signature="3998:4059" placeholder="SELECT Artic... Article" />
+                <marker date="1494073314126" expanded="true" signature="4388:4437" placeholder="SELECT Artic... Article" />
+                <marker date="1494073314126" expanded="true" signature="4882:4973" placeholder="INSERT INTO Article... " />
+                <marker date="1494073314126" expanded="true" signature="5646:5678" placeholder="DELETE FROM " />
+                <marker date="1494073314126" expanded="true" signature="6120:6200" placeholder="UPDATE Artic... " />
               </folding>
             </state>
           </provider>
@@ -511,16 +512,16 @@
       <workItem from="1493631692425" duration="4272000" />
       <workItem from="1493641020365" duration="10404000" />
       <workItem from="1493970653562" duration="13425000" />
-      <workItem from="1494069791585" duration="2647000" />
+      <workItem from="1494069791585" duration="3720000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="311994000" />
+    <option name="totallyTimeSpent" value="313067000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="57" y="24" width="1863" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17517847" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -528,7 +529,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0933553" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21887967" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21887967" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -975,7 +976,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Article.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
+        <state relative-caret-position="189">
           <caret line="132" column="46" selection-start-line="132" selection-start-column="46" selection-end-line="132" selection-end-column="46" />
           <folding>
             <element signature="e#403#484#0#PHP" expanded="false" />
@@ -990,50 +991,51 @@
             <element signature="e#1547#1613#0#PHP" expanded="false" />
             <element signature="e#1679#1779#0#PHP" expanded="false" />
             <element signature="e#2454#2912#0#PHP" expanded="false" />
-            <element signature="e#4611#5336#0#PHP" expanded="false" />
-            <element signature="e#5378#5454#0#PHP" expanded="false" />
+            <element signature="e#2993#3444#0#PHP" expanded="false" />
+            <element signature="e#3527#3771#0#PHP" expanded="false" />
+            <element signature="e#3867#4136#0#PHP" expanded="false" />
+            <element signature="e#4248#4531#0#PHP" expanded="false" />
             <element signature="e#5537#5759#0#PHP" expanded="false" />
-            <element signature="e#5842#6602#0#PHP" expanded="false" />
-            <element signature="e#6644#6726#0#PHP" expanded="false" />
-            <marker date="1494072320916" expanded="true" signature="1958:2002" placeholder="SELECT * FRO... Article" />
-            <marker date="1494072320916" expanded="true" signature="2184:2214" placeholder="SELECT Artic... Article" />
-            <marker date="1494072320916" expanded="true" signature="2775:2819" placeholder="SELECT * FRO... Article" />
-            <marker date="1494072320916" expanded="true" signature="2775:2825" placeholder="SELECT * FRO... Article" />
-            <marker date="1494072320916" expanded="true" signature="2775:2854" placeholder="SELECT * FRO... Article" />
-            <marker date="1494072320916" expanded="true" signature="2775:2855" placeholder="SELECT * FRO... Article" />
-            <marker date="1494072320916" expanded="true" signature="3307:3386" placeholder="SELECT * FRO... Article" />
-            <marker date="1494072320916" expanded="true" signature="3635:3669" placeholder="SELECT * FRO... Article" />
-            <marker date="1494072320916" expanded="true" signature="3998:4029" placeholder="SELECT Artic... Article" />
-            <marker date="1494072320916" expanded="true" signature="3998:4046" placeholder="SELECT Artic... Article" />
-            <marker date="1494072320916" expanded="true" signature="3998:4047" placeholder="SELECT Artic... Article" />
-            <marker date="1494072320916" expanded="true" signature="3998:4059" placeholder="SELECT Artic... Article" />
-            <marker date="1494072320916" expanded="true" signature="4388:4437" placeholder="SELECT Artic... Article" />
-            <marker date="1494072320916" expanded="true" signature="4882:4973" placeholder="INSERT INTO Article... " />
-            <marker date="1494072320916" expanded="true" signature="5646:5678" placeholder="DELETE FROM " />
-            <marker date="1494072320916" expanded="true" signature="6120:6200" placeholder="UPDATE Artic... " />
+            <marker date="1494073314126" expanded="true" signature="1958:2002" placeholder="SELECT * FRO... Article" />
+            <marker date="1494073314126" expanded="true" signature="2184:2214" placeholder="SELECT Artic... Article" />
+            <marker date="1494073314126" expanded="true" signature="2775:2819" placeholder="SELECT * FRO... Article" />
+            <marker date="1494073314126" expanded="true" signature="2775:2825" placeholder="SELECT * FRO... Article" />
+            <marker date="1494073314126" expanded="true" signature="2775:2854" placeholder="SELECT * FRO... Article" />
+            <marker date="1494073314126" expanded="true" signature="2775:2855" placeholder="SELECT * FRO... Article" />
+            <marker date="1494073314126" expanded="true" signature="3307:3386" placeholder="SELECT * FRO... Article" />
+            <marker date="1494073314126" expanded="true" signature="3635:3669" placeholder="SELECT * FRO... Article" />
+            <marker date="1494073314126" expanded="true" signature="3998:4029" placeholder="SELECT Artic... Article" />
+            <marker date="1494073314126" expanded="true" signature="3998:4046" placeholder="SELECT Artic... Article" />
+            <marker date="1494073314126" expanded="true" signature="3998:4047" placeholder="SELECT Artic... Article" />
+            <marker date="1494073314126" expanded="true" signature="3998:4059" placeholder="SELECT Artic... Article" />
+            <marker date="1494073314126" expanded="true" signature="4388:4437" placeholder="SELECT Artic... Article" />
+            <marker date="1494073314126" expanded="true" signature="4882:4973" placeholder="INSERT INTO Article... " />
+            <marker date="1494073314126" expanded="true" signature="5646:5678" placeholder="DELETE FROM " />
+            <marker date="1494073314126" expanded="true" signature="6120:6200" placeholder="UPDATE Artic... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="81" column="62" selection-start-line="81" selection-start-column="62" selection-end-line="81" selection-end-column="62" />
+        <state relative-caret-position="687">
+          <caret line="315" column="17" selection-start-line="315" selection-start-column="17" selection-end-line="315" selection-end-column="17" />
           <folding>
             <element signature="e#77#89#0#PHP" expanded="true" />
             <element signature="e#483#878#0#PHP" expanded="false" />
             <element signature="e#944#2008#0#PHP" expanded="false" />
+            <element signature="e#2077#6726#0#PHP" expanded="false" />
             <element signature="e#6793#7524#0#PHP" expanded="false" />
             <element signature="e#7602#8135#0#PHP" expanded="false" />
-            <element signature="e#8219#10404#0#PHP" expanded="false" />
-            <element signature="e#10489#12850#0#PHP" expanded="false" />
-            <element signature="e#12937#13213#0#PHP" expanded="false" />
-            <element signature="e#13299#13573#0#PHP" expanded="false" />
-            <element signature="e#14801#15912#0#PHP" expanded="false" />
-            <element signature="e#15992#18626#0#PHP" expanded="false" />
-            <element signature="e#18704#21610#0#PHP" expanded="false" />
-            <element signature="e#21681#21800#0#PHP" expanded="false" />
-            <element signature="e#21867#22004#0#PHP" expanded="false" />
+            <element signature="e#8219#10587#0#PHP" expanded="false" />
+            <element signature="e#13307#13583#0#PHP" expanded="false" />
+            <element signature="e#13669#13943#0#PHP" expanded="false" />
+            <element signature="e#14027#15093#0#PHP" expanded="false" />
+            <element signature="e#15171#16282#0#PHP" expanded="false" />
+            <element signature="e#16362#18996#0#PHP" expanded="false" />
+            <element signature="e#19074#21980#0#PHP" expanded="false" />
+            <element signature="e#22051#22170#0#PHP" expanded="false" />
+            <element signature="e#22237#22374#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
