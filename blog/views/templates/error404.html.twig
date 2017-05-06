@@ -1,8 +1,66 @@
-{%  extends 'layout.html.twig' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Billet simple pour l'Alaska, un roman par Jean Forteroche">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Jean Forteroche - 404</title>
 
-{% block title %}404 Page Not Found{% endblock %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/web/lib/materialize/css/material.grey-orange.min.css">
+    <link rel="stylesheet" href="/web/lib/materialize/css/materialize.min.css">
+    <link rel="icon" type="image/png" href="/web/img/library.png" />
+    <style>
+        body{
+            background-size: cover;
+            background-attachment: fixed;
+            background-image: url('/web/img/lost.png');
+            content: '';
+            will-change: transform;
+            z-index: -1;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            position: fixed;
+        }
+        .container{
+            text-align: center;
+            background-color: rgba(38,50,56,0.8);
+            width: 100%;
+            height: 100%;
+            left:0;
+            top:0;
+        }
+        h4{
+            padding-top:12%;
+        }
+        a button{
+            margin-top: 3%;
+        }
+        #text{
+            color:white;
+        }
+    </style>
+</head>
 
-{% block content %}
-<h1>404 - Page Not Found</h1>
-<p>La page que vous recherchez n'existe pas (plus)</p>
-{% endblock %}
+<body>
+    <div class="container">
+        <div id="text">
+            <h4>Erreur 404 - Page non trouvé</h4>
+            <h5>Vous voilà perdu en Alaska...</h5>
+        </div>
+        <a href="/web/index.php?p=1"><button class="waves-effect waves-light btn orange accent-2">Retournez à l'accueil</button></a><br/>
+        <a href="/web/index.php/article?id=1"><button class="waves-effect waves-light btn orange accent-2">Commencez la lecture du premier chapitre</button></a>
+
+    </div>
+</body>
+
+
+
+<script src="/web/lib/jquery/jquery.min.js"></script>
+<script src="/web/lib/materialize/js/materialize.min.js"></script>
+</body>
+</html>
