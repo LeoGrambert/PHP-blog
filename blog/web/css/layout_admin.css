@@ -151,8 +151,8 @@ html, body {
 }
 .demo-drawer-header button{
     top:0;
-    left: 17%;
-    position: fixed;
+    left: 14%;
+    position: absolute;
 }
 form .wysiwyg_label{
     margin-top:-3.5%;
