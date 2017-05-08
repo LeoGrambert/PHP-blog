@@ -122,6 +122,9 @@ class Article
             );
     }
 
+    /**
+     * @return array
+     */
     public function getArticlesIdInArray(){
         $ids = [];
         $results = App::getDatabase()

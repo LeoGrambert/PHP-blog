@@ -7,7 +7,8 @@
 
 namespace app;
 
-use src\Controller;
+use src\Controller\AdminController;
+use src\Controller\FrontController;
 
 /**
  * Class Router
@@ -16,7 +17,8 @@ use src\Controller;
 class Router
 {
     private $uri;
-    private $controller;
+    private $frontController;
+    private $adminController;
 
     /**
      * Router constructor.
@@ -26,7 +28,8 @@ class Router
         // route the request internally
         $this->uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         // load controller
-        $this->controller = new Controller();
+        $this->frontController = new FrontController();
+        $this->adminController = new AdminController();
     }
 
     /**
@@ -37,60 +40,60 @@ class Router
         //If admin page (disconnect)
         if ('/web/index.php' === $this->uri) {
             if(isset($_GET['p']) && $_GET['p'] === 'deconnexion'){
-                $this->controller->adminDisconnectPage();
+                $this->adminController->adminDisconnectPage();
 
         //If homepage
             } elseif(isset($_GET['p'])) {
-                $this->controller->homePage();
+                $this->frontController->homePage();
             }
 
         //If article page
         } elseif ('/web/index.php/article' === $this->uri && isset($_GET['id'])) {
-            $this->controller->articlePage();
+            $this->frontController->articlePage();
 
          //If login page
         } elseif ('/web/index.php/login/' === $this->uri) {
-            $this->controller->loginPage();
+            $this->frontController->loginPage();
 
         //If admin page (dashboard)
         } elseif ('/web/index.php/admin/home/' === $this->uri) {
-            $this->controller->adminHomePage();
+            $this->adminController->adminHomePage();
 
         //If admin page (update an article)
         } elseif (('/web/index.php/admin/articles' === $this->uri) && ($_GET['p'] === 'edit') && (isset($_GET['id']))){
-            $this->controller->adminEditArticlePage();
+            $this->adminController->adminEditArticlePage();
 
         //If admin page (add an article)
         } elseif ('/web/index.php/admin/articles/add/' === $this->uri) {
-            $this->controller->adminAddArticlePage();
+            $this->adminController->adminAddArticlePage();
 
         //If admin page (delete an article)
         } elseif (('/web/index.php/admin/articles' === $this->uri) && ($_GET['p'] === 'delete') && (isset($_GET['id']))){
-            $this->controller->adminDeleteArticlePage();
+            $this->adminController->adminDeleteArticlePage();
 
         //If admin page (articles)
         } elseif (('/web/index.php/admin/articles' === $this->uri)) {
-            $this->controller->adminArticlesPage();
+            $this->adminController->adminArticlesPage();
 
         //If admin page (delete a comment)
         } elseif (('/web/index.php/admin/comments' === $this->uri) && ($_GET['p'] === 'delete') && (isset($_GET['id']))){
-            $this->controller->adminDeleteCommentPage();
+            $this->adminController->adminDeleteCommentPage();
 
         //If admin page (comments)
         } elseif ('/web/index.php/admin/comments' === $this->uri) {
-            $this->controller->adminCommentsPage();
+            $this->adminController->adminCommentsPage();
 
         //If admin page (pictures)
         } elseif ('/web/index.php/admin/pictures' === $this->uri) {
-            $this->controller->adminPicturesPage();
+            $this->adminController->adminPicturesPage();
 
         //If admin page (my account)
         } elseif ('/web/index.php/admin/account/' === $this->uri) {
-            $this->controller->adminAccountPage();
+            $this->adminController->adminAccountPage();
 
         //If not => 404
         } else {
-            $this->controller->errorPage();
+            $this->frontController->errorPage();
         }
     }
 

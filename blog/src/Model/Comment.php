@@ -175,7 +175,7 @@ class Comment
         if (empty($_POST['author'])){
             $author = 'Anonyme';
         } else {
-            $author = htmlspecialchars(implode([$_POST['author']]));
+            $author = htmlspecialchars($_POST['author']);
         }
 
         //We select parent comment id and we calculate the response depth

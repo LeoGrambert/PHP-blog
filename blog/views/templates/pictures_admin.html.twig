@@ -44,9 +44,7 @@
     </div>
     <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col" id="gallery">
         {% for img in allImg %}
-            <a class="img" href="/web/img/upload/{{ img }}">
-                <img class="gallery" src="/web/img/upload/{{ img }}">
-            </a>
+            <img class="gallery" src="/web/img/upload/{{ img }}">
             <a class="delete" href="/web/index.php/admin/pictures?n={{ img }}"><i class="material-icons">delete</i></a>
 
         {% endfor %}
