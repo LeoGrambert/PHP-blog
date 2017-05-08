@@ -431,3 +431,36 @@ body .demo-blog {
 .pagination li a{
     color:white;
 }
+@media screen and (max-width: 800px){
+    .headerImg{
+        width: inherit;
+    }
+    #navAdmin{
+        position:absolute;
+    }
+}
+@media screen and (max-width: 400px){
+    #navAdmin a{
+        font-size: 0.8em;
+        margin:0 1% 0 1%;
+    }
+    .mdl-mini-footer{
+        padding:0;
+    }
+    body .shareWindow{
+        position: absolute;
+        top:272px;
+        width:100%;
+    }
+    .demo-blog .demo-blog__posts > .demo-nav{
+        font-size: 0.8em;
+        margin:0;
+    }
+    #loginForm{
+        margin-left: 2% !important;
+        width:97%;
+    }
+    #loginForm form button{
+        margin-left:2%;
+    }
+}
