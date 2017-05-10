@@ -20,13 +20,13 @@
                     <tr>
                         <td>{{ article.dateAdd|date('d-m-Y') }}</td>
                         <td>{{ article.title }}</td>
-                        <td class="actions"><a class="waves-effect waves-light btn-floating orange accent-2" href="/front/projets/blogEcrivain/blog/web/index.php/article?id={{ article.id }}"><i class="material-icons">visibility</i></a></td>
-                        <td class="actions"><a class="waves-effect waves-light btn-floating orange accent-2" href="/front/projets/blogEcrivain/blog/web/index.php/admin/articles?p=edit&id={{ article.id }}"><i class="material-icons">mode_edit</i></a></td>
+                        <td class="actions"><a class="waves-effect waves-light btn-floating orange accent-2" href="/web/index.php/article?id={{ article.id }}"><i class="material-icons">visibility</i></a></td>
+                        <td class="actions"><a class="waves-effect waves-light btn-floating orange accent-2" href="/web/index.php/admin/articles?p=edit&id={{ article.id }}"><i class="material-icons">mode_edit</i></a></td>
                         <td class="actions">
                             <div id="background"></div>
                             <a class="waves-effect waves-light btn-floating red accent-2 showButton" id="showButton-{{ article.id }}"><i class="material-icons">delete</i></a>
                             <div id="modal-{{ article.id }}" class="popup modal">
-                                <form action="/front/projets/blogEcrivain/blog/web/index.php/admin/articles?p=delete&id={{ article.id }}" method="post" id="deleteForm-{{ article.id }}" class="deleteForm">
+                                <form action="/web/index.php/admin/articles?p=delete&id={{ article.id }}" method="post" id="deleteForm-{{ article.id }}" class="deleteForm">
                                     <p>Voulez-vous vraiment supprimer cet article ?</p>
                                     <p><em>{{ article.title }}</em></p>
                                     <input type="hidden" name="id" id="articleId" value="{{ article.id }}">
@@ -43,9 +43,9 @@
             <ul class="pagination">
                 {% for i in 1..nbPages %}
                     {% if curPage == i %}
-                        <li class="active"><a href="/front/projets/blogEcrivain/blog/web/index.php/admin/articles?p={{ i }}">{{ i }}</a></li>
+                        <li class="active"><a href="/web/index.php/admin/articles?p={{ i }}">{{ i }}</a></li>
                     {% else %}
-                        <li class="waves-effect"><a href="/front/projets/blogEcrivain/blog/web/index.php/admin/articles?p={{ i }}">{{ i }}</a></li>
+                        <li class="waves-effect"><a href="/web/index.php/admin/articles?p={{ i }}">{{ i }}</a></li>
                     {% endif %}
                 {% endfor %}
                 </ul>

@@ -19,7 +19,7 @@
                     <select name="picture" id="choose-picture" class="icons">
                         <option value="" disabled selected>Sans photo</option>
                         {% for img in allImg %}
-                        <option value="/front/projets/blogEcrivain/blog/web/img/upload/{{ img }}" data-icon="/front/projets/blogEcrivain/blog/web/img/upload/{{ img }}" class="left circle">{{ img }}</option>
+                        <option value="/web/img/upload/{{ img }}" data-icon="/web/img/upload/{{ img }}" class="left circle">{{ img }}</option>
                         {% endfor %}
                     </select>
                     <label for="choose-picture">Image d'en-tête</label>

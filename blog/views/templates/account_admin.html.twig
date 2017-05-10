@@ -3,7 +3,7 @@
 {% block title %}Signalement de commentaires{% endblock %}
 
 {% block content %}
-    <link rel="stylesheet" href="/front/projets/blogEcrivain/blog/web/css/account.css"/>
+    <link rel="stylesheet" href="/web/css/account.css"/>
     <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
         <h6 id="account-title">
             Bonjour {{ username.username }}
@@ -50,7 +50,7 @@
                 <select name="picture" id="choose-picture" class="icons">
                     <option value="" selected>Sans photo</option>
                     {% for img in allImg %}
-                        <option value="/front/projets/blogEcrivain/blog/web/img/upload/{{ img }}" data-icon="/front/projets/blogEcrivain/blog/web/img/upload/{{ img }}" class="left circle">{{ img }}</option>
+                        <option value="/web/img/upload/{{ img }}" data-icon="/web/img/upload/{{ img }}" class="left circle">{{ img }}</option>
                     {% endfor %}
                 </select>
                 <label for="choose-picture">Choisissez votre photo</label>
