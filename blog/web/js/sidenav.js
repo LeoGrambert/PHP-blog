@@ -2,7 +2,7 @@
  * Created by leo on 08/05/17.
  * Contact : leo@grambert.fr
  */
-//We use this script in order to display admin sidenav on tablet and smartphone
+//We use this in order to display admin sidenav on tablet and smartphone
 $(function () {
     var $width = $(window).width();
     console.log($width);

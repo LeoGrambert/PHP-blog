@@ -35,6 +35,10 @@ class User
         return $this->picture;
     }
 
+    /**
+     * Query to get password
+     * @return mixed
+     */
     public function getPassword(){
         $queryToGetPasswords = App::getDatabase()
             ->query('SELECT password FROM User WHERE id=1',

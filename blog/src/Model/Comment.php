@@ -203,8 +203,8 @@ class Comment
             if ($authDb->logged()){
                 return App::getDatabase()
                     ->prepare(
-                        'INSERT INTO Comment (article_id, author, content, parent_comment_id, email, depth, isAdministrator) 
-                         VALUES (?, ?, ?, ?, ?, ?, ?)',
+                        'INSERT INTO Comment (article_id, date_add, author, content, parent_comment_id, email, depth, isAdministrator) 
+                         VALUES (?, NOW(), ?, ?, ?, ?, ?, ?)',
                         ([
                             $_GET['id'],
                             $username[0]->getUsername(),
@@ -220,8 +220,8 @@ class Comment
             } else {
             return App::getDatabase()
                 ->prepare(
-                    'INSERT INTO Comment (article_id, author, content, parent_comment_id, email, depth) 
-                     VALUES (?, ?, ?, ?, ?, ?)',
+                    'INSERT INTO Comment (article_id, date_add, author, content, parent_comment_id, email, depth) 
+                     VALUES (?, NOW(), ?, ?, ?, ?, ?)',
                     ([
                         $_GET['id'],
                         $author,

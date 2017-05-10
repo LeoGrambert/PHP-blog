@@ -16,6 +16,11 @@ use src\Model\Comment;
 use src\Model\FlashMsg;
 use src\Model\User;
 
+/**
+ * This is the controller for admin pages
+ * Class AdminController
+ * @package src\Controller
+ */
 class AdminController
 {
     private $twig;

@@ -16,7 +16,8 @@ use src\Database;
  * *********************************************************
  * This file is the configuration file of this site. 
  * Use it by adapting the login credentials to your database.
- * If you need, contact me here : leo@grambert.fr
+ * If you need : 
+ *  Contact me here : leo@grambert.fr
  * *********************************************************
  */
 class App_test
@@ -39,6 +40,9 @@ class App_test
         return self::$_database;
     }
 
+    /**
+     * If we tried to access admin pages without be logged
+     */
     public function forbidden(){
         header('HTTP/1.0 403 Forbidden');
         die('Accès interdit, <a href="/web/index.php/login/">veuillez vous authentifier</a>');

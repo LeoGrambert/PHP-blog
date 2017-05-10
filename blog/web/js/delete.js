@@ -1,6 +1,6 @@
 /**
  * Created by leo on 18/04/17.
- * Used to display a modal in order to ask confirmation before deleting an article.
+ * Used to display a modal in order to ask confirmation before deleting an article or a comment.
  */
 $(function () {
 

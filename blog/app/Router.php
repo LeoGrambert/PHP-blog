@@ -22,6 +22,7 @@ class Router
 
     /**
      * Router constructor.
+     * We get the url and we load controllers.
      */
     public function __construct()
     {
@@ -33,7 +34,7 @@ class Router
     }
 
     /**
-     * Router
+     * This is the router.
      */
     public function routerRequete()
     {

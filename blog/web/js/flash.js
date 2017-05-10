@@ -1,5 +1,6 @@
 /**
  * Created by leo on 18/04/17.
+ * We use this in order to hide flash message after 3 seconds.
  */
 $(function () {
     var alert = $('#flash-message');

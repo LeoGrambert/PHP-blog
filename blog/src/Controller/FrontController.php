@@ -16,6 +16,7 @@ use src\Model\User;
 
 
 /**
+ * This is the controller for front pages
  * Class Controller
  * @package src
  */
@@ -183,7 +184,7 @@ class FrontController
     public function loginPage(){
         //If user is log -> he's redirected to admin
         if($this->authClass->logged()){
-            echo $this->adminHomePage();
+            header('Location: /web/index.php/admin/home/');
         } else {
             //If he's not log, he need to log in
             if(!empty($_POST)){

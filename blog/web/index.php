@@ -11,8 +11,13 @@ use app\Router;
 
 /*
  * Load what we need
+ * This is my main controller that loads my configuration file (App.php) and my router.
  *
+ * Need help to understand this ? Go here :
+ * https://github.com/LeoGrambert/projet3_CPMDev/blob/master/docs/logique_mvc.png
  */
+
+
 //call load app function -> initialize session and load autoloader
 if(file_exists('../app/App.php')){
     require '../app/App.php';

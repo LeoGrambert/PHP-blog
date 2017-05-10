@@ -1,5 +1,6 @@
 /**
  * Created by leo on 01/04/17.
+ * We use this in order to display article page url
  */
 $(function(){
 

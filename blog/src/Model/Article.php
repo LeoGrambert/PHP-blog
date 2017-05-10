@@ -123,6 +123,7 @@ class Article
     }
 
     /**
+     * Query to get all articles id in an array
      * @return array
      */
     public function getArticlesIdInArray(){
@@ -177,7 +178,7 @@ class Article
     }
 
     /**
-     * Query to get article by id
+     * Query to get one article by id
      * @return array|mixed
      */
     public function getArticleById(){
@@ -228,8 +229,8 @@ class Article
         }
         $add = App::getDatabase()
             ->prepare(
-                'INSERT INTO Article (title, summary, content, picture)
-                 VALUES (?, ?, ?, ?)',
+                'INSERT INTO Article (date_add, title, summary, content, picture)
+                 VALUES (NOW(), ?, ?, ?, ?)',
                 ([
                     htmlspecialchars($_POST['title']),
                     htmlspecialchars_decode($_POST['summary']),
@@ -243,6 +244,7 @@ class Article
     }
 
     /**
+     * Method to verify that the article has been added
      * @return bool
      */
     public function getAddAnArticle(){
@@ -289,6 +291,7 @@ class Article
     }
 
     /**
+     * Method to verify that the article has been updated
      * @return bool
      */
     public function getUpdateAnArticle(){

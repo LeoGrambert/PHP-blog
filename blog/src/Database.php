@@ -9,7 +9,11 @@ namespace src;
 
 use \PDO;
 
-
+/**
+ * We use this class in order to connect at database and make SQL queries
+ * Class Database
+ * @package src
+ */
 class Database
 {
     private $db_name;
@@ -47,6 +51,7 @@ class Database
     /**
      * @param $statement
      * @param $class_name
+     * @param bool $one
      * @return array
      */
     public function query($statement, $class_name = null, $one = false){
