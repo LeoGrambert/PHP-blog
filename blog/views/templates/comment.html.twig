@@ -2,7 +2,7 @@
 <div class="comment mdl-color-text--grey-700 {% if comment.isAdministrator == true %}administrator{% endif %}" id="comment-{{ comment.id }}">
     <header class="comment__header">
         {% if comment.picture == null %}
-            <img src="../../web/img/user.png" class="comment__avatar">
+            <img src="/front/projets/blogEcrivain/blog/web/img/user.png" class="comment__avatar">
         {% else %}
             <img src="{{ comment.picture }}" class="comment__avatar">
         {% endif %}

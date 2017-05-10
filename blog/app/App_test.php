@@ -45,7 +45,7 @@ class App_test
      */
     public function forbidden(){
         header('HTTP/1.0 403 Forbidden');
-        die('Accès interdit, <a href="/web/index.php/login/">veuillez vous authentifier</a>');
+        die('Accès interdit, <a href="/front/projets/blogEcrivain/blog/web/index.php/login/">veuillez vous authentifier</a>');
     }
 
     /**

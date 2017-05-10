@@ -39,7 +39,7 @@ class Router
     public function routerRequete()
     {
         //If admin page (disconnect)
-        if ('/web/index.php' === $this->uri) {
+        if ('/front/projets/blogEcrivain/blog/web/index.php' === $this->uri) {
             if(isset($_GET['p']) && $_GET['p'] === 'deconnexion'){
                 $this->adminController->adminDisconnectPage();
 
@@ -49,47 +49,47 @@ class Router
             }
 
         //If article page
-        } elseif ('/web/index.php/article' === $this->uri && isset($_GET['id'])) {
+        } elseif ('/front/projets/blogEcrivain/blog/web/index.php/article' === $this->uri && isset($_GET['id'])) {
             $this->frontController->articlePage();
 
          //If login page
-        } elseif ('/web/index.php/login/' === $this->uri) {
+        } elseif ('/front/projets/blogEcrivain/blog/web/index.php/login/' === $this->uri) {
             $this->frontController->loginPage();
 
         //If admin page (dashboard)
-        } elseif ('/web/index.php/admin/home/' === $this->uri) {
+        } elseif ('/front/projets/blogEcrivain/blog/web/index.php/admin/home/' === $this->uri) {
             $this->adminController->adminHomePage();
 
         //If admin page (update an article)
-        } elseif (('/web/index.php/admin/articles' === $this->uri) && ($_GET['p'] === 'edit') && (isset($_GET['id']))){
+        } elseif (('/front/projets/blogEcrivain/blog/web/index.php/admin/articles' === $this->uri) && ($_GET['p'] === 'edit') && (isset($_GET['id']))){
             $this->adminController->adminEditArticlePage();
 
         //If admin page (add an article)
-        } elseif ('/web/index.php/admin/articles/add/' === $this->uri) {
+        } elseif ('/front/projets/blogEcrivain/blog/web/index.php/admin/articles/add/' === $this->uri) {
             $this->adminController->adminAddArticlePage();
 
         //If admin page (delete an article)
-        } elseif (('/web/index.php/admin/articles' === $this->uri) && ($_GET['p'] === 'delete') && (isset($_GET['id']))){
+        } elseif (('/front/projets/blogEcrivain/blog/web/index.php/admin/articles' === $this->uri) && ($_GET['p'] === 'delete') && (isset($_GET['id']))){
             $this->adminController->adminDeleteArticlePage();
 
         //If admin page (articles)
-        } elseif (('/web/index.php/admin/articles' === $this->uri)) {
+        } elseif (('/front/projets/blogEcrivain/blog/web/index.php/admin/articles' === $this->uri)) {
             $this->adminController->adminArticlesPage();
 
         //If admin page (delete a comment)
-        } elseif (('/web/index.php/admin/comments' === $this->uri) && ($_GET['p'] === 'delete') && (isset($_GET['id']))){
+        } elseif (('/front/projets/blogEcrivain/blog/web/index.php/admin/comments' === $this->uri) && ($_GET['p'] === 'delete') && (isset($_GET['id']))){
             $this->adminController->adminDeleteCommentPage();
 
         //If admin page (comments)
-        } elseif ('/web/index.php/admin/comments' === $this->uri) {
+        } elseif ('/front/projets/blogEcrivain/blog/web/index.php/admin/comments' === $this->uri) {
             $this->adminController->adminCommentsPage();
 
         //If admin page (pictures)
-        } elseif ('/web/index.php/admin/pictures' === $this->uri) {
+        } elseif ('/front/projets/blogEcrivain/blog/web/index.php/admin/pictures' === $this->uri) {
             $this->adminController->adminPicturesPage();
 
         //If admin page (my account)
-        } elseif ('/web/index.php/admin/account/' === $this->uri) {
+        } elseif ('/front/projets/blogEcrivain/blog/web/index.php/admin/account/' === $this->uri) {
             $this->adminController->adminAccountPage();
 
         //If not => 404

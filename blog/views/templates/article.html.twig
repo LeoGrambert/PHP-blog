@@ -9,7 +9,7 @@
 {% block title %}{{ article.title }}{% endblock %}
 
 {% block content %}
-    <link rel="stylesheet" href="../../web/css/article.css"/>
+    <link rel="stylesheet" href="/front/projets/blogEcrivain/blog/web/css/article.css"/>
     <nav>
         <ul id="slide-out" class="side-nav orange accent-2">
             <li>
@@ -19,13 +19,13 @@
             </li>
             <hr>
             {% for article in articles|reverse %}
-                <li><a href="/web/{{ article.url }}">{{ article.title }}</a></li><br/>
+                <li><a href="/front/projets/blogEcrivain/blog/web/{{ article.url }}">{{ article.title }}</a></li><br/>
             {% endfor %}
         </ul>
     </nav>
     <a href="#" data-activates="slide-out" class="button-collapse waves-effect waves-light btn orange accent-2"><i class="material-icons">menu</i></a>
     <div id="back">
-        <a class="waves-effect waves-light btn orange accent-2" href="/web/index.php?p=1">Accueil</a>
+        <a class="waves-effect waves-light btn orange accent-2" href="/front/projets/blogEcrivain/blog/web/index.php?p=1">Accueil</a>
     </div>
     <div class="demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
         <main class="mdl-layout__content">
@@ -92,7 +92,7 @@
 
                 <nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
                     {% if previousId.id >= 1 %}
-                        <a href="/web/index.php/article?id={{ previousId.id }}" class="demo-nav__button">
+                        <a href="/front/projets/blogEcrivain/blog/web/index.php/article?id={{ previousId.id }}" class="demo-nav__button">
                             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                                 <i class="material-icons">arrow_back</i>
                             </button>
@@ -101,7 +101,7 @@
                     {% endif %}
                         <div class="section-spacer"></div>
                     {% if nextId != null %}
-                        <a href="/web/index.php/article?id={{ nextId }}" class="demo-nav__button">
+                        <a href="/front/projets/blogEcrivain/blog/web/index.php/article?id={{ nextId }}" class="demo-nav__button">
                             Chapitre suivant
                             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                                 <i class="material-icons">arrow_forward</i>
