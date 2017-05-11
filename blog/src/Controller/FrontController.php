@@ -96,12 +96,13 @@ class FrontController
             $articles = $this->articleClass->getArticles();
 
             //query to add a comment
+            $lastInsertId = "area";
             if(isset($_POST['content'])){
                 if(!empty($_POST['content']))
                 {
                     $this->commentClass->addComment();
-                    $this->flash->setFlash('Votre commentaire a été publié.', 'green lighten-2');
-                    $this->flash->getFlash();
+                    $lastInsertId = $this->commentClass->getLastInsertId();
+                    header('Location: /web/index.php/article?id='.$_GET['id'].'#comment-'.$lastInsertId);
                 } else {
                     $this->flash->setFlash('Une erreur est survenue. Votre commentaire n\'a pas été publié', 'red lighten-2');
                     $this->flash->getFlash();
@@ -169,7 +170,8 @@ class FrontController
                 'nextId'=>$nextId,
                 'previousId'=>$previousId,
                 'navAdmin'=>$navAdmin,
-                'adminIsLogged'=>$adminIsLogged
+                'adminIsLogged'=>$adminIsLogged,
+                'lastInsertId'=>$lastInsertId
             ]);
 
         } else {

@@ -291,4 +291,12 @@ class Comment
         return App::getDatabase()
             ->query('SELECT id FROM Comment WHERE report != 0', __CLASS__);
     }
+
+    /**
+     * Get the last insert id in order to redirect on the comment that has just been published
+     * @return string
+     */
+    public function getLastInsertId(){
+        return App::getDatabase()->lastInsertId();
+    }
 }
