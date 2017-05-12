@@ -431,6 +431,9 @@ body .demo-blog {
 .pagination li a{
     color:white;
 }
+.container{
+    min-height: calc(100vh - 200px)
+}
 @media screen and (max-width: 800px){
     .headerImg{
         width: inherit;

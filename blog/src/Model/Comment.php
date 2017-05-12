@@ -278,7 +278,7 @@ class Comment
         
         return App::getDatabase()
             ->query(
-                'SELECT * FROM Comment WHERE report != 0 ORDER BY report DESC LIMIT '.(($curPage-1)*$perPage).','.$perPage,
+                'SELECT * FROM Comment ORDER BY report DESC LIMIT '.(($curPage-1)*$perPage).','.$perPage,
                 __CLASS__
             );
     }
