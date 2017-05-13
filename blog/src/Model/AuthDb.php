@@ -45,9 +45,10 @@ class AuthDb
     {
         $user = $this->db->prepare('SELECT * FROM User WHERE username = ?', [$username], null, true);
         if($user){
-            if($user->password === md5($password));
+            if($user->password == md5($password)){
             $_SESSION['auth'] = $user->id;
             return true;
+            }
         }
         return false;
     }
