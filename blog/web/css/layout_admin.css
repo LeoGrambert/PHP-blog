@@ -270,6 +270,12 @@ menu{
     border:1px solid grey;
     vertical-align: middle;
 }
+#allComment + label{
+    margin:1% 0 2% 0;
+}
+.noReport{
+    display:none;
+}
 .deleteForm p{
     text-align:center;
 }

@@ -5,6 +5,7 @@
 {% block content %}
     <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col table">
         <h6 id="table-comments-title">Liste des commentaires signalés</h6>
+        <input type="checkbox" title="allComment" id="allComment"/><label for="allComment">Afficher tout les commentaires (y compris ceux non signalés)</label>
         <table id="comments">
             <thead>
             <tr>
@@ -17,7 +18,7 @@
             </thead>
             <tbody>
             {% for commentWithReport in commentsWithReport %}
-                <tr>
+                <tr {% if commentWithReport.report == 0 %}class="noReport"{% endif %}>
                     <td>{{ commentWithReport.dateAdd }}</td>
                     <td>{{ commentWithReport.author }}<br><br>
                     <em>E-mail : {% if commentWithReport.email %}{{ commentWithReport.email }}{% else %}Non renseigné{% endif %}</em></td>

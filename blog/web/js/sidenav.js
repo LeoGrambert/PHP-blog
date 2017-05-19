@@ -5,7 +5,6 @@
 //We use this in order to display admin sidenav on tablet and smartphone
 $(function () {
     var $width = $(window).width();
-    console.log($width);
         $('#hamburger').click(function(e){
             e.preventDefault();
             if ($width >= 767){
