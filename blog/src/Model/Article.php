@@ -196,7 +196,7 @@ class Article
      * @return array
      */
     public function getNextArticle(){
-        $currentId = $_GET['id'];
+        $currentId = htmlspecialchars($_GET['id']);
         $nextArticle = App::getDatabase()
             ->query('SELECT Article.id FROM Article WHERE Article.id >'.$currentId,
                 __CLASS__
@@ -209,7 +209,7 @@ class Article
      * @return array
      */
     public function getPreviousArticle(){
-        $currentId = $_GET['id'];
+        $currentId = htmlspecialchars($_GET['id']);
         $previousArticles = App::getDatabase()
             ->query('SELECT Article.id FROM Article WHERE Article.id <'.$currentId,
                 __CLASS__
