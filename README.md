@@ -12,7 +12,7 @@ Find the website here : https://leogrambert.fr/front/projets/blogEcrivain
 <h5>3. Connect to mysql <code>mysql -u yourUsername -p</code> and create database <code>CREATE DATABASE blog_JF;</code>
 <br>Import the sql files (you can find those in docs/) and copy paste the content in your command prompt</h5>
 <h5>4. Change the constants in the App_dev.php file (DB_USER, DB_PASS and DB_HOST) and change the file name to App.php (don't forget to also change the class name)</h5>
-<h5>5. In your command prompt, go in blog/ and run php server <code>php -S localhost:8080 -ddisplay_errors=1 -dzend_extension=xdebug.so -dxdebug.remote_enable=1 -dxdebug.remote_autostart=1 -dxdebug.remote_port=3004</code></h5>
+<h5>5. In your command prompt, go in blog/ (don't forget, otherwise you'll get an 404 error) and run php server <code>php -S localhost:8080 -ddisplay_errors=1 -dzend_extension=xdebug.so -dxdebug.remote_enable=1 -dxdebug.remote_autostart=1 -dxdebug.remote_port=3004</code></h5>
 
 Now, you can go to this adress : http://127.0.0.1:8080/web/index.php?p=1
 
