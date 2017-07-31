@@ -16,7 +16,7 @@ Find the website here : https://leogrambert.fr/front/projets/blogEcrivain
 
 Now, you can go to this adress : http://127.0.0.1:8080/web/index.php?p=1
 
-To access the administration interface, use this : "Username" "Password"
+To access the administration interface, use this : "username" "password"
 
 <hr>
 
