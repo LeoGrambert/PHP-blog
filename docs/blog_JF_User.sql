@@ -6,4 +6,4 @@ CREATE TABLE User
     picture VARCHAR(255) DEFAULT '/web/img/user.png'
 );
 CREATE UNIQUE INDEX User_id_uindex ON User (id);
-INSERT INTO blog_JF.User (username, password, picture) VALUES ('username', 'password', '/web/img/upload/man.png');
+INSERT INTO blog_JF.User (username, password, picture) VALUES ('username', '5f4dcc3b5aa765d61d8327deb882cf99', '/web/img/upload/man.png');
