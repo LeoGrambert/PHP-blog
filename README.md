@@ -1,7 +1,6 @@
 # Projet3_CPMDev
 
 <h4>Create a blog to a writter without framework or CMS</h4>
-Find the website here : https://leogrambert.fr/front/projets/blogEcrivain
 
 <hr>
 
