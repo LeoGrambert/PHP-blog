@@ -6,7 +6,7 @@
 
 <h4>How to download and use this project ?</h4>
 
-<h5>1. Download <a href="https://leogrambert.fr/front/projets/blogEcrivain/projet3_CPMDev-master.zip">this</a></h5>
+<h5>1. Download <a href="/LeoGrambert/projet3_CPMDev/archive/master.zip">this</a></h5>
 <h5>2. Unzip it where you want</h5>
 <h5>3. Connect to mysql <code>mysql -u yourUsername -p</code> and create database <code>CREATE DATABASE blog_JF;</code>
 <br>Import the sql files (you can find those in docs/) and copy paste the content in your command prompt</h5>
