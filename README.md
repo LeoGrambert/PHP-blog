@@ -21,7 +21,7 @@ To access the administration interface, use this : "username" "password"
 
 <strong>Architecture logic :</strong>
 
-![diagram](https://leogrambert.fr/front/projets/blogEcrivain/docs/logique_mvc.png)
+![diagram](https://github.com/LeoGrambert/projet3_CPMDev/blob/master/docs/logique_mvc.png?raw=true)
 
 <hr>
 
